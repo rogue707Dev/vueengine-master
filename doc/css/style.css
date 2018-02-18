@@ -1,0 +1,71 @@
+body {
+    background-color: #eee;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 18px;
+    margin: 25px;
+}
+
+.main-container {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+    margin: 0 auto;
+    max-width: 910px;
+    padding: 5px 25px;
+    position: relative;
+}
+
+.sub-title {
+    display: block;
+    font-size: 50%;
+}
+
+.author {
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.note {
+    color: #808080;
+    padding-left: 25px;
+}
+.note::before {
+    content: "ⓘ";
+    position: absolute;
+    left: 25px;
+    font-style: normal;
+    margin-top: -4px;
+    font-size: 18px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: #c00;
+}
+
+figure {
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+}
+
+figcaption {
+    color: #808080;
+    font-size: 90%;
+    padding-left: 20px;
+}
+figcaption:before {
+    content: '➦';
+    left: 0;
+    margin-top: -3px;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+figcaption ul {
+    margin: 0;
+    padding: 0 20px;
+}

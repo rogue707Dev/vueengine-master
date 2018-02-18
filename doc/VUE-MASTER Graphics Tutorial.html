@@ -1,0 +1,289 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <title>VUE-MASTER Graphics Tutorial</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main-container">
+
+        <h1>
+            VUE-MASTER Graphics Tutorial
+            <span class="author">By STEREO BOY</span>
+        </h1>
+
+        <p>In this tutorial, I'm sharing my experiences with creating the <a href="http://www.planetvb.com/modules/newbb/viewtopic.php?topic_id=7005" target="_blank"><i>VUE-MASTER</i> Demo Reel</a>...</p>
+
+        <p>Contents:</p>
+        <ul>
+            <li><a href="#1">Part 1: How to prepare 3D images for the <i>VIRTUAL BOY</i></a></li>
+            <li><a href="#2">Part 2: How to optimize your images and reduce tiles count</a></li>
+        </ul>
+        <br>
+
+        <hr/>
+
+        <a name="1"></a>
+        <h2>Part 1: How to prepare 3D images for the <i>VIRTUAL BOY</i></h2>
+
+        <p>This part describes how to prepare existing 3D source images for a <i>VIRTUAL BOY</i> ROM. If you want to know more about creating 3D images, please search the internet for further information.</p>
+
+        <div class="note">
+            For example: You could use a 3D camera or 3D software like <a href="https://www.blender.org/" target="_blank">Blender</a> to create 3D images. Or just shift 2D layers to the left and right to create <a href="https://en.wikipedia.org/wiki/Parallax" target="_blank">parallax</a>. And before <a href="http://www.planetvb.com/modules/usercenter/index.php?section=profile&uid=1719" target="_blank">Morintari</a> has to remind us again: there's a pixel art tool out there, that even let's you draw right in 3D ... that's right - I'm promoting <a href="https://youtu.be/BVhQDau0mz4" target="_blank">ProMotion</a> here! 😁
+        </div>
+
+        <h3>What you will need:</h3>
+        <ul>
+            <li>editable 3D source images (as separate left and right files or side-by-side)</li>
+            <li>a graphics tool, that lets you edit the color table / palette (and apply dithering preferably), like <a href="https://en.wikipedia.org/wiki/Adobe_Photoshop" target="_blank">Photoshop</a> or <a href="https://www.gimp.org/" target="_blank">GIMP</a></li>
+            <li>optional: download color table files attached to this tutorial</li>
+        </ul>
+
+        <div class="note">
+            The following hard- and software was used to create the 3D images for the VUE-MASTER Demo Reel:
+            <ul>
+                <li>The 3D photos were shot with a <a href="https://en.wikipedia.org/wiki/Fujifilm_FinePix_Real_3D" target="_blank">Fuji W3</a></li>
+                <li>CGI was rendered with <a href="https://en.wikipedia.org/wiki/Cinema_4D" target="_blank">Cinema 4D</a></li>
+                <li>Preparing images for the VIRTUAL BOY was done with <a href="https://en.wikipedia.org/wiki/Adobe_Photoshop" target="_blank">Photoshop</a> (CS6)</li>
+            </ul>
+        </div>
+
+        <h3>Specifications for <i>VUE-MASTER</i> graphics</h3>
+
+        <p>These are the technical specifications that our images are supposed to meet:</p>
+        <ul>
+            <li>3D layout: 2 separate images (left and right 3D view) (duplicate 1 view for 2D images)</li>
+            <li>Image Size: 384 x 224 pixels (for each 3D view)</li>
+            <li>Color Mode: Indexed (4 colors: black and three shades of red)</li>
+            <li>both views together must consist of a maximum of 2033 different tiles (8x8 pixels each)</li>
+        </ul>
+
+        <div class="note">
+            Note: Last one can be a tricky part for very detailed images. If your image turn's out to have more different tiles than 2033, please refer to <a href="#2">part 2</a> of this tutorial. Do not count tiles yourself, VBDE's GRIT will tell you. 😉
+        </div>
+
+        <h3>Step 1 - 3D layout / Setup Workspace</h3>
+
+        <p>The final 3D image needs to be exported as 2 separate PNG files for left and right view, but I recommend to import all source files into a single composition file first, for 3D synchronized editing. You could arrange L&R views as layers one above the other or just place them side by side.</p>
+
+        <p>Each layout has different advantages&hellip;</p>
+
+        <p>one above the other:</p>
+        <ul>
+            <li>quickly copy 2D elements from one view to the other</li>
+            <li>quickly compare left and right views by un/hiding upper composition</li>
+            <li>compose both views for anaglyph glasses or other 3D previewing methods</li>
+        </ul>
+
+        <p>side by side:</p>
+        <ul>
+            <li>always see both views</li>
+            <li>if you can do cross-eyed or parallel 3D free viewing, arrange views accordingly</li>
+            <li>Photoshop: you can use the Slice Tool* to define left & right views</li>
+        </ul>
+
+        <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-01_PSD-Slice-Tool.PNG"/><br>
+        *Photoshop's Slice Tool: you can slice L&R views to quickly export them via "Save for Web"
+
+        <h3>Step 2 - Image Size</h3>
+
+        <p>Scale down your composition to 384 x 224 pixels (or 768 x 224 for side-by-side layout). In Photoshop, you can also do this when exporting PNGs via <i>"Save for Web"</i>.</p>
+
+        <div class="note">
+            Note: Photoshop recommends „Bicubic" resampling for downscaling, but I prefer "Bilinear", as Bicubic creates very hard results and glows along high-contrast edges (similar effect with GIMP's "Sinc/Lanczos3" interpolation). Compare different resample / interpolation types to find the best results for your image.
+        </div>
+
+        <h3>Step 3 - Indexed Color & Dithering</h3>
+
+        <p>The easiest way to do this is to download and import a predefined color table / palette file attached to this tutorial:</p>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-02_emulator.png"/>
+            <figcaption>"VUE Emulator" ( #000000, #870000, #b90000, #ff0000 ) (<a href="palette/VUE-Emulator.zip">Download</a>)</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-03_blueberry-wine.png"/>
+            <figcaption>"VUE Blueberry Wine" ( #000000, #73001b, #a50027, #ff003c ) (<a href="palette/VUE-Blueberry-Wine.zip">Download</a>)</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-04_linear.png"/>
+            <figcaption>"VUE Linear" ( #000000, #550000, #aa0000, #ff0000 ) (<a href="palette/VUE-Linear.zip">Download</a>)</figcaption>
+        </figure>
+
+        <p>The color table will have <b>no effect on the final color values of the ROM</b> (which will be replaced with standard colors by the VUEngine). It's primarily for your preview*, so choose a table that looks close to <i>VIRTUAL BOY</i>'s color output on your computer display. I recommend "VUE Emulator" or "VUE Blueberry Wine".</p>
+
+        <div class="note">
+            * Note #1: The color table DOES have a slight effect on color distribution and dithering while reducing colors. You can try different tables if you're having problems to get the dithering results you're looking for.
+        </div>
+
+        <div class="note">
+            Note #2: If you're defining a color table yourself, make sure indexes are in correct order:
+            <ul>
+                <li>#0 must be black</li>
+                <li>#1 must be dark red</li>
+                <li>#2 must be medium red</li>
+                <li>#3 must be bright red</li>
+            </ul>
+        </div>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-05_PSD-Index-colors.png"/>
+            <figcaption>Photoshop: one way to reduce colors and import a color table file is <i>Image > Mode > Indexed Color > Palette: Custom > Load&hellip;</i></figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-06_PSD-save-for-web.png"/>
+            <figcaption>Photoshop's <i>"Save for Web"</i> dialog also offers a convenient way to scale down, reduce colors, preview dithering results and export PNG files in one step. Make sure to <i>"Sort by Luminance"</i> when editing or importing a color table.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-07_GIMP-Import-color-table.PNG"/>
+            <figcaption>GIMP: Import color table files in the <i>palettes window</i> before you convert your image to indexed color mode.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-08_GIMP_Index-colors.PNG"/>
+            <figcaption>GIMP: Make sure to uncheck <i>"Remove unused colors from colormap"</i> when converting colors, as this option might mess up the color indexes.</figcaption>
+        </figure>
+
+        <p>If you're not satisfied with the resulting color distribution in your image, undo / cancel indexing colors and try to make some color adjustments to your image before.</p>
+
+        <h3>Using Dithering</h3>
+
+        <p>If your image already is a low res pixel art with only a few colors, you wouldn't want to use Dithering.</p>
+
+        <p>Also when your image only has 2 colors (like shadow art) you will get the best anti aliasing results when you turn Dithering off.</p>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-09_Shadow-art.png"/>
+            <figcaption>Shadow Art: turn off Dithering for better Anti Aliasing</figcaption>
+        </figure>
+
+        <p>If your source image has a <b>high color depth</b>, Dithering will keep much more details of your image when indexing colors, but therefore will produce more 8x8 tiles. If your image turn's out to have more different tiles than 2033, please refer to <a href="#2">part 2</a> of this tutorial.</p>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-09a_VueMaImg7_source.png"/>
+            <figcaption>Source image (256 colors)</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-09b_VueMaImg7_no-dither.png"/>
+            <figcaption>Image with 4 indexed colors (no dithering)</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-02_emulator.png"/>
+            <figcaption>Image with 4 indexed colors (dithering)</figcaption>
+        </figure>
+
+        <p>In Photoshop you will mostly get the best results with <i>"Diffusion Dithering"</i>. <i>"Pattern Dithering"</i> also can create very nice looking results (and will create less tiles too), but small patterns tend to cause unintended 3D effects in stereo images (for further information on this effect please refer to <a href="#2">part 2</a> of this tutorial).</p>
+
+        <p>Try different dithering algorithms and compare the results in 3D, before you REELease your reel. 😎</p>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-09_Gradient_source.png"/>
+            <figcaption>Original gradient (256 colors)</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-10_Gradient-no-dither.png"/>
+            <figcaption>Indexed gradient (4 colors, no dithering applied)</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-11_Gradient-Diffusion.png"/>
+            <figcaption>Indexed gradient with "Diffusion Dithering"</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-12_Gradient-Pattern.png"/>
+            <figcaption>Indexed gradient with "Pattern Dithering"</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/graphics/VUE-MA-Graphics_Pt-1_Img-13_Gradient-Noise.png"/>
+            <figcaption>Indexed gradient with "Noise Dithering"</figcaption>
+        </figure>
+
+        <div class="note">
+            Note: I do not use GIMP regularly and unfortunately wasn't able to create dithered gradients with it, that make some sense - hopefully you're more lucky than me. 😛
+        </div>
+
+        <h3>Step 4 - Exporting images</h3>
+
+        <p>Export separate PNG files for left and right view. Name them like this (as VBDE will search for these files):</p>
+
+        <ol>
+            <li>VueMasterImage1Left.png, VueMasterImage1Right.png</li>
+            <li>VueMasterImage2Left.png, VueMasterImage2Right.png</li>
+            <li>and so on ...</li>
+        </ol>
+        <br>
+
+        <hr/>
+
+        <a name="2"></a>
+        <h2>Part 2: How to optimize your images and reduce tiles count</h2>
+
+        <p>This part will give some advanced tips to tackle tiles count and create more optimized and beautiful results.</p>
+
+        <p><a href="http://www.coranac.com/projects/grit/" target="_blank">GRIT</a> is part of <i>VBDE</i> and will automatically cut each view into a pattern of 48 x 28 tiles (8x8 pixels each tile) - that's a total of 2688 for 3D images. Unfortunately, <i></i>VUE-MASTER</i> can only load a maximum of <b>2033 tiles</b> (almost 76%) at a time (due to limitations of the <i>VIRTUAL BOY</i>):</p>
+
+        <img src="img/graphics/VUE-MA-Graphics_Pt-2_Img-01_Grid-2033-tiles.png"/>
+
+        <ul>
+            <li>Tiles pattern for each view: 48 x 28 = 1344 tiles</li>
+            <li>Two views needed for 3D images: 2688 tiles in total</li>
+            <li>Maximum loadable tiles: <b>2033</b></li>
+        </ul>
+
+        <p>GRIT also tries to solve this problem for you: it automatically identifies identical tiles in your image, so they only must be loaded once! It also finds mirrored instances! I love this tool.</p>
+
+        <p>But some images are just having so much individual details, that even GRIT doesn't find enough twins. In these cases, there are different options to optimize your image&hellip;</p>
+
+        <h3>Easy way to reduce tiles count: reducing image details</h3>
+
+        <p>To reduce the details of your image, you can:</p>
+
+        <ul>
+            <li>crop the image, making it letterboxed (can save many tiles)</li>
+            <li>for Photoshop's Diffusion Dithering, you can use a slider to <i>"Specify the amount of dither"</i> (count of saved tiles depends on your image)</li>
+        </ul>
+
+        <h3>More sophisticated way: use repeating tiles</h3>
+
+        <p>Tips to find or create more repeating tiles:</p>
+
+        <ul>
+            <li>Make your graphics tool show you a grid of 8x8 pixels</li>
+            <li>Shifting 2D elements (like text or back plates) by 8px steps between 3D views (this can significantly reduce the count of tiles for larger layers!)</li>
+            <li>And keep in mind: you can also use mirrored tiles</li>
+            <li>Use Pattern Dithering (carefully) instead of Diffusion&hellip;</li>
+        </ul>
+
+        <h3>Use Pattern Dithering carefully in 3D images</h3>
+
+        <p>Using "Pattern Dithering" instead of Diffusion (GIMP: "Positioned" instead of "Floyd-Steinberg") will create less tiles, but small patterns tend to be problematic in 3D stereo images, as they can produce random depth allocations:</p>
+
+        <img src="img/graphics/VUE-MA-Graphics_Pt-2_Img-02_pattern-3D.png"/>
+
+        <p>Looking at Image #3 from the demo reel in 3D, you can experience the effects that small patterns are creating in 3D stereo: the pattern dithered background at the right edge of the image can be perceived at different depth levels (depending on your imagination) - it can appear in front of the table for example.</p>
+
+        <h3>Combine different techniques to find the optimal solution for your image</h3>
+
+        <p>You can separate your image into fore- and background to use pattern dithering on less important areas of your image only. If you're using 2D layers, you should even be able to pattern dither them without creating 3D problems: use the same pre-dithered layer in both views. Shift it in 8 pixel steps, to save even more tiles!</p>
+
+        <img src="img/graphics/VUE-MA-Graphics_Pt-2_Img-03_8px-shift.png"/>
+
+        <p>The 2D background layer of image #7 also uses pattern dithering, but the dither was rendered only once and used for both views. In contrast to image #3, your brain indicates only one perfect matching depth level for the background. The background was also shifted by 8 pixels (4 pixels in each view), to save <b>many</b> tiles: you can find many tiles in the left view, that are reappearing in the right view, shifted by 8px (= 1 tile).</p>
+
+    </div>
+
+</body>
+</html>

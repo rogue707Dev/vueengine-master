@@ -1,0 +1,162 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+ <title>VUE-MASTER VBDE Pro Tutorial</title>
+ <meta charset="utf-8">
+
+ <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="main-container">
+
+ <h1>
+  VUE-MASTER VBDE Pro Tutorial
+  <span class="sub-title">How to make a ROM from your PNG files (VBDE Pro)</span>
+  <span class="author">By STEREO BOY</span>
+ </h1>
+
+ <p>In this tutorial, I'm sharing my experiences with creating the <a href="http://www.planetvb.com/modules/newbb/viewtopic.php?topic_id=7005" target="_blank"><i>VUE-MASTER</i> Demo Reel</a>. I'm a CG graphics artist with nearly zero programming experience.</p>
+
+ <p>This tutorial shows how to make a VUE-MASTER reel in 6 easy steps using VBDE Pro. If you're using VBDE Light, please refer to <a href="VUE-MASTER Code Tutorial VBDE Light.html">the respective tutorial</a>.<br>
+  The tutorial describes the easiest way to use the VUE-MASTER template: by replacing the 7 existing demo images with your own files.</p>
+
+ <h2>What you will need:</h2>
+ <ul>
+  <li>VUE-prepared PNG files, matching the VB requirements (see the <a href="VUE-MASTER Graphics Tutorial.html">Graphics Tutorial</a>)</li>
+  <li><a href="http://vbde.planetvb.com/" target="_blank">Download</a> and unpack the latest VBDE*</li>
+ </ul>
+
+ <div class="note">
+  *VBDE is a portable application, which means you can move it anywhere, but it's recommended to put it here: <i>C:\vbde\</i>
+ </div>
+
+ <h2>Step 1 – Preparing the VBDE project folder</h2>
+
+ <figure>
+  <img src="img/vbde/VUE-MA-VBDE_Img-01_rename.png"/>
+ </figure>
+
+ <ul>
+  <li>Browse <i>C:\vbde\samples\vuengine\</i> and make a copy of the "vue-master" template folder. Name it after your reel's project title.</li>
+ </ul>
+
+ <figure>
+  <img src="img/vbde/VUE-MA-VBDE_Img-02_replace-pngs.png"/>
+ </figure>
+
+ <ul>
+  <li>Replace the existing demo PNGs under: <i>assets\images\VueMasterImages\</i> with your own files.</li>
+ </ul>
+
+ <figure>
+  <img src="img/vbde/VUE-MA-VBDE_Img-03_delete-c-files.png"/>
+ </figure>
+
+ <ul>
+  <li>Delete all existing .c files under: <i>assets\images\VueMasterImages\VueMasterImage#\Binary\</i> for every image you've replaced.</li>
+ </ul>
+
+
+ <h2>Step 2 – Setting up the VBDE Pro project</h2>
+
+ <ul>
+  <li>Launch <i>C:\vbde\VBDE.exe</i></li>
+  <li>If the Windows firewall gives you any warning like "Unknown Publisher" choose "more" > "run anyway".</li>
+ </ul>
+
+ <figure>
+  <img src="img/vbde/VUE-MA-VBDE_pro_Img-04_Open-project-path.PNG"/>
+ </figure>
+
+ <ul>
+  <li>Open the VUE-MASTER template path as a project with VBDE Pro.</li>
+ </ul>
+
+ <figure>
+  <img src="img/vbde/VUE-MA-VBDE_pro_Img-05_Browse-project.PNG"/>
+ </figure>
+
+ <ul>
+  <li>You can browse the project files in the left explorer window now.</li>
+ </ul>
+
+
+  <h2>Step 3 – Converting images to tiles</h2>
+
+ <figure>
+  <img src="img/vbde/VUE-MA-VBDE_pro_Img-06_convert-images.png"/>
+ </figure>
+
+ <ul>
+  <li>Execute: <i>"Tools" > "External Tools" > "CONVERT images"</i> (or just use the quick button in the top right corner).</li>
+  <li>New .c files were created in the <i>"Binary"</i> folders.</li>
+ </ul>
+
+
+  <h2>Step 4 – Transferring tiles count (for every image)</h2>
+
+ <figure>
+  <img src="img/vbde/VUE-MA-VBDE_pro_Img-07_copy-tiles.PNG"/>
+ </figure>
+
+ <ul>
+  <li>Open: <i>assets\images\VueMasterImages\VueMasterImage1\Binary\VueMasterImage1.c</i> (neither <i>"..Left.c"</i> nor <i>"..Right.c"</i>)
+   <ul>
+    <li>If the "tiles" count from the header comment (line 7) is 2033 or less: copy it.</li>
+    <li>If the tiles count is more than 2033, refer to <a href="VUE-MASTER Graphics Tutorial.html#2">Part 2 of the Graphics Tutorial</a>.</li>
+   </ul></li>
+  <li>Open: <i>assets\images\VueMasterImages\VueMasterImage1\Definition\VueMasterImage1Definition.c</i></li>
+ </ul>
+
+ <figure>
+  <img src="img/vbde/VUE-MA-VBDE_pro_Img-08_paste-tiles.PNG"/>
+ </figure>
+
+ <ul>
+  <li>Paste/replace the tiles count of image 1 under "CharSetROMDef" (line 49).</li>
+  <li>Now repeat this procedure (Step 4) for every image, that you have replaced before...</li>
+ </ul>
+
+  <h2>Step 5 – Adding titles to the main menu</h2>
+
+ <ul>
+   <li>Open: <i>assets\languages\Language_EN.c</i></li>
+ </ul>
+
+ <figure>
+  <img src="img/vbde/VUE-MA-VBDE_pro_Img-09_add-titles.PNG"/>
+ </figure>
+
+ <ul>
+  <li>Add your reel's title at line 49.</li>
+  <li>Add your reel's description text or credits at line 51.</li>
+  <li>Keep your text inside the quotation marks.</li>
+  <li>You can add line breaks by pasting <i>\n</i>.</li>
+ </ul>
+
+
+  <h2>Step 6 – Creating the ROM</h2>
+
+ <figure>
+  <img src="img/vbde/VUE-MA-VBDE_pro_Img-10_compile.png"/>
+ </figure>
+
+ <ul>
+  <li>Execute: "Run" > "External Tools" > "COMPILE" (or just use the quick button in the top right corner).</li>
+  <li>Compiling is done when this message appears in the console: "Process finished with exit code 0".</li>
+ </ul>
+
+
+ <h2>Enjoy your stereo reel!</h2>
+
+ <ul>
+  <li>You will find your VUE-MASTER reel under: <i>...\build\output.vb</i></li>
+  <li>Test the ROM with an emulator and flash it to your FlashBoy!</li>
+ </ul>
+
+</div>
+
+</body>
+</html>
