@@ -236,7 +236,7 @@ StageROMDef ADJUSTMENT_SCREEN_STAGE_ST =
 		},
 
 		// friction
-		__F_TO_FIX19_13(0.1f),
+		__F_TO_FIX10_6(0.1f),
 	},
 
 	// assets

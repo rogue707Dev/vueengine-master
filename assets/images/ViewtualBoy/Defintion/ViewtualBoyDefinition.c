@@ -176,7 +176,7 @@ BgmapSpriteROMDef VIEWTUAL_BOY_LEFT_SP =
 		false,
 
 		// displacement
-		{0, 0, __F_TO_FIX19_13(3), 0},
+		{0, 0, 0, 0},
 	},
 
 	// bgmap mode (__WORLD_BGMAP, __WORLD_AFFINE, __WORLD_OBJECT or __WORLD_HBIAS)
@@ -203,7 +203,7 @@ BgmapSpriteROMDef VIEWTUAL_BOY_RIGHT_SP =
 		false,
 
 		// displacement
-		{0, 0, __F_TO_FIX19_13(3), 0},
+		{0, 0, 0, 0},
 	},
 
 	// bgmap mode (__WORLD_BGMAP, __WORLD_AFFINE, __WORLD_OBJECT or __WORLD_HBIAS)
