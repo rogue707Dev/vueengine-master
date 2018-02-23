@@ -162,14 +162,25 @@ static void VueMasterState_printImageNumber(VueMasterState this)
 
 static void VueMasterState_switchImage(VueMasterState this)
 {
+	// hide screen
+	Camera_startEffect(Camera_getInstance(), kHide);
+
 	// replace sprites
-	Entity_hide(this->imageEntity);
 	Entity_releaseSprites(this->imageEntity);
 	Entity_addSprites(this->imageEntity, (const SpriteDefinition**)VUE_MASTER_SPRITES[this->currentImage]);
-	Entity_show(this->imageEntity);
 
 	// print image number
 	VueMasterState_printImageNumber(this);
+
+	// delayed fade in to hide graphical corruption that occurs during rewriting of chars and maps in memory
+	Camera_startEffect(Camera_getInstance(),
+		kFadeTo, // effect type
+		75, // initial delay (in ms)
+		NULL, // target brightness
+		0, // delay between fading steps (in ms)
+		NULL, // callback function
+		NULL // callback scope
+	);
 }
 
 void VueMasterState_processUserInput(VueMasterState this, UserInput userInput)
