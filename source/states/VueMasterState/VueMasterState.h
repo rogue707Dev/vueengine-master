@@ -41,32 +41,17 @@
 // 											CLASS'S DECLARATION
 //---------------------------------------------------------------------------------------------------------
 
-// declare the virtual methods
-#define VueMasterState_METHODS(ClassName)																\
-    	GameState_METHODS(ClassName)											    				    \
+singleton class VueMasterState : GameState
+{
+	u8 currentImage;
+	bool showNumber;
+	Entity imageEntity;
 
-// declare the virtual methods which are redefined
-#define VueMasterState_SET_VTABLE(ClassName)															\
-        GameState_SET_VTABLE(ClassName)								    								\
-        __VIRTUAL_SET(ClassName, VueMasterState, enter);												\
-        __VIRTUAL_SET(ClassName, VueMasterState, exit);													\
-		__VIRTUAL_SET(ClassName, VueMasterState, processUserInput);										\
-
-__CLASS(VueMasterState);
-
-#define VueMasterState_ATTRIBUTES							        									\
-        GameState_ATTRIBUTES																			\
-		u8 currentImage;																				\
-		bool showNumber;																				\
-		Entity imageEntity;																				\
-
-
-//---------------------------------------------------------------------------------------------------------
-// 										PUBLIC INTERFACE
-//---------------------------------------------------------------------------------------------------------
-
-VueMasterState VueMasterState_getInstance(void);
-void VueMasterState_processUserInput(VueMasterState this, UserInput userInput);
+	static VueMasterState getInstance();
+	override void enter(void* owner);
+	override void exit(void* owner);
+	override void processUserInput(UserInput userInput);
+}
 
 
 #endif

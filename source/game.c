@@ -26,6 +26,7 @@
 
 #include <Game.h>
 #include <AdjustmentScreenState.h>
+#include <TitleScreenState.h>
 #include <VueMasterState.h>
 
 
@@ -35,9 +36,18 @@
 
 int main(void)
 {
+/*
+	// initialize components
+	SplashScreenState::setNextState(
+		SplashScreenState::safeCast(AdjustmentScreenState::getInstance()),
+		GameState::safeCast(TitleScreenState::getInstance())
+	);
+
     // start the game
-	Game_start(Game_getInstance(), __SAFE_CAST(GameState, AdjustmentScreenState_getInstance()));
-	//Game_start(Game_getInstance(), __SAFE_CAST(GameState, VueMasterState_getInstance()));
+	Game_start(Game::getInstance(), GameState::safeCast(AdjustmentScreenState::getInstance()));
+*/
+	Game_start(Game::getInstance(), GameState::safeCast(TitleScreenState::getInstance()));
+	//Game_start(Game::getInstance(), GameState::safeCast(VueMasterState::getInstance()));
 
 	// end program
 	return true;

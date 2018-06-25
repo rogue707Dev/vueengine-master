@@ -128,6 +128,8 @@ StageROMDef TITLE_SCREEN_ST =
 		24,
 		// particle removal delay cycles
 		0,
+		// deferred
+		false,
 	},
 
 	// rendering
@@ -210,23 +212,23 @@ StageROMDef TITLE_SCREEN_ST =
         	__F_TO_FIX10_6(0),
     		__F_TO_FIX10_6(0),
     		__F_TO_FIX10_6(0),
-    		__F_TO_FIX10_6(0)
+    		__F_TO_FIX10_6(0),
         },
 
         // optical configuration values
         {
-    		// maximum view distance's power into the horizon
-    		__MAXIMUM_X_VIEW_DISTANCE_POWER, __MAXIMUM_Y_VIEW_DISTANCE_POWER,
-    		// distance of the eyes to the screen
-        	__DISTANCE_EYE_SCREEN,
-    		// distance from left to right eye (depth sensation)
-    		__BASE_FACTOR,
-    		// horizontal view point center
-    		__HORIZONTAL_VIEW_POINT_CENTER,
-    		// vertical view point center
-    		__VERTICAL_VIEW_POINT_CENTER,
+			// maximum view distance's power into the horizon
+			__MAXIMUM_X_VIEW_DISTANCE, __MAXIMUM_Y_VIEW_DISTANCE,
+			// distance of the eyes to the screen
+			__DISTANCE_EYE_SCREEN,
+			// distance from left to right eye (depth sensation)
+			__BASE_FACTOR,
+			// horizontal view point center
+			__HORIZONTAL_VIEW_POINT_CENTER,
+			// vertical view point center
+			__VERTICAL_VIEW_POINT_CENTER,
 			// scaling factor
-			__SCALLING_MODIFIER_FACTOR,
+			__SCALING_MODIFIER_FACTOR,
         },
 	},
 

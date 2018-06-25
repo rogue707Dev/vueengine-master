@@ -45,31 +45,12 @@ extern StageROMDef TITLE_SCREEN_ST;
 
 
 //---------------------------------------------------------------------------------------------------------
-// 												PROTOTYPES
-//---------------------------------------------------------------------------------------------------------
-
-static void TitleScreenState_destructor(TitleScreenState this);
-static void TitleScreenState_constructor(TitleScreenState this);
-static void TitleScreenState_enter(TitleScreenState this, void* owner);
-static void TitleScreenState_onFadeInComplete(TitleScreenState this, Object eventFirer);
-static void TitleScreenState_onFadeOutComplete(TitleScreenState this, Object eventFirer);
-
-
-//---------------------------------------------------------------------------------------------------------
-// 											CLASS'S DEFINITION
-//---------------------------------------------------------------------------------------------------------
-
-__CLASS_DEFINITION(TitleScreenState, GameState);
-__SINGLETON_DYNAMIC(TitleScreenState);
-
-
-//---------------------------------------------------------------------------------------------------------
 // 												CLASS'S METHODS
 //---------------------------------------------------------------------------------------------------------
 
-static void __attribute__ ((noinline)) TitleScreenState_constructor(TitleScreenState this)
+void TitleScreenState::constructor()
 {
-	__CONSTRUCT_BASE(GameState);
+	Base::constructor();
 
 	// init state
 	this->animationPlaying = true;
@@ -77,34 +58,34 @@ static void __attribute__ ((noinline)) TitleScreenState_constructor(TitleScreenS
 	this->viewtualBoyArrowsEntity = NULL;
 }
 
-static void TitleScreenState_destructor(TitleScreenState this)
+void TitleScreenState::destructor()
 {
 	// destroy base
-	__SINGLETON_DESTROY;
+	Base::destructor();
 }
 
-static void TitleScreenState_enter(TitleScreenState this, void* owner __attribute__ ((unused)))
+void TitleScreenState::enter(void* owner __attribute__ ((unused)))
 {
 	// call base
-	__CALL_BASE_METHOD(GameState, enter, this, owner);
+	Base::enter(this, owner);
 
 	// disable user input
-	Game_disableKeypad(Game_getInstance());
+	Game::disableKeypad(Game::getInstance());
 
 	// register input events to be caught
-	KeypadManager_registerInput(KeypadManager_getInstance(), __KEY_PRESSED | __KEY_RELEASED | __KEY_HOLD);
+	KeypadManager::registerInput(KeypadManager::getInstance(), __KEY_PRESSED | __KEY_RELEASED | __KEY_HOLD);
 
 	// load stage
-	GameState_loadStage(__SAFE_CAST(GameState, this), (StageDefinition*)&TITLE_SCREEN_ST, NULL, true);
+	GameState::loadStage(GameState::safeCast(this), (StageDefinition*)&TITLE_SCREEN_ST, NULL, true);
 
 	// get entities
-	this->viewtualBoyEntity = __SAFE_CAST(AnimatedEntity, Container_getChildByName(
-		__SAFE_CAST(Container, Game_getStage(Game_getInstance())),
+	this->viewtualBoyEntity = AnimatedEntity::safeCast(Container::getChildByName(
+		Container::safeCast(Game::getStage(Game::getInstance())),
 		"VB",
 		false
 	));
-	this->viewtualBoyArrowsEntity = __SAFE_CAST(AnimatedEntity, Container_getChildByName(
-		__SAFE_CAST(Container, Game_getStage(Game_getInstance())),
+	this->viewtualBoyArrowsEntity = AnimatedEntity::safeCast(Container::getChildByName(
+		Container::safeCast(Game::getStage(Game::getInstance())),
 		"Arrows",
 		false
 	));
@@ -113,18 +94,18 @@ static void TitleScreenState_enter(TitleScreenState this, void* owner __attribut
 	this->animationPlaying = true;
 
 	// print reel title and credits
-	const char* strReelTitle = I18n_getText(I18n_getInstance(), STR_REEL_TITLE);
-	const char* strReelCredits = I18n_getText(I18n_getInstance(), STR_REEL_CREDITS);
-	FontSize strReelTitleSize = Printing_getTextSize(Printing_getInstance(), strReelTitle, NULL);
-	FontSize strReelCreditsSize = Printing_getTextSize(Printing_getInstance(), strReelCredits, NULL);
-	Printing_setPalette(Printing_getInstance(), 3);
-	Printing_text(Printing_getInstance(), strReelTitle, 2, 12, NULL);
-	Printing_setPalette(Printing_getInstance(), 2);
-	Printing_text(Printing_getInstance(), strReelCredits, 2, 13 + strReelTitleSize.y, NULL);
+	const char* strReelTitle = I18n::getText(I18n::getInstance(), STR_REEL_TITLE);
+	const char* strReelCredits = I18n::getText(I18n::getInstance(), STR_REEL_CREDITS);
+	FontSize strReelTitleSize = Printing::getTextSize(Printing::getInstance(), strReelTitle, NULL);
+	FontSize strReelCreditsSize = Printing::getTextSize(Printing::getInstance(), strReelCredits, NULL);
+	Printing::setPalette(Printing::getInstance(), 3);
+	Printing::text(Printing::getInstance(), strReelTitle, 2, 12, NULL);
+	Printing::setPalette(Printing::getInstance(), 2);
+	Printing::text(Printing::getInstance(), strReelCredits, 2, 13 + strReelTitleSize.y, NULL);
 
 	// move "press start" according to height of reel title and credits
-	Container pressStartEntity = Container_getChildByName(
-		__SAFE_CAST(Container, Game_getStage(Game_getInstance())),
+	Container pressStartEntity = Container::getChildByName(
+		Container::safeCast(Game::getStage(Game::getInstance())),
 		"PrssStrt",
 		false
 	);
@@ -133,25 +114,25 @@ static void TitleScreenState_enter(TitleScreenState this, void* owner __attribut
 		__PIXELS_TO_METERS(124 + ((strReelTitleSize.y  + strReelCreditsSize.y) << 3)),
 		__PIXELS_TO_METERS(0),
 	};
-	Container_setLocalPosition(pressStartEntity, &localPosition);
+	Container::setLocalPosition(pressStartEntity, &localPosition);
 
 	// start clocks to start animations
-	GameState_startClocks(__SAFE_CAST(GameState, this));
+	GameState::startClocks(GameState::safeCast(this));
 
 	// start fade in effect
-	Camera_startEffect(Camera_getInstance(),
+	Camera::startEffect(Camera::getInstance(),
 		kFadeTo, // effect type
 		0, // initial delay (in ms)
 		NULL, // target brightness
 		0, // delay between fading steps (in ms)
-		(void (*)(Object, Object))TitleScreenState_onFadeInComplete, // callback function
-		__SAFE_CAST(Object, this) // callback scope
+		(void (*)(Object, Object))TitleScreenState::onFadeInComplete, // callback function
+		Object::safeCast(this) // callback scope
 	);
 }
 
-void TitleScreenState_resume(TitleScreenState this, void* owner)
+void TitleScreenState::resume(void* owner)
 {
-	__CALL_BASE_METHOD(GameState, resume, this, owner);
+	Base::resume(this, owner);
 
 	// init state
 	this->animationPlaying = true;
@@ -159,24 +140,24 @@ void TitleScreenState_resume(TitleScreenState this, void* owner)
 	this->viewtualBoyArrowsEntity = NULL;
 }
 
-void TitleScreenState_processUserInput(TitleScreenState this, UserInput userInput)
+void TitleScreenState::processUserInput(UserInput userInput)
 {
 	if((userInput.pressedKey & ~K_PWR) || (userInput.holdKey & ~K_PWR))
 	{
 		if((userInput.pressedKey & K_A) || (userInput.pressedKey & K_STA))
 		{
 			// disable user input
-			Game_disableKeypad(Game_getInstance());
+			Game::disableKeypad(Game::getInstance());
 
 			// start fade out effect
 			Brightness brightness = (Brightness){0, 0, 0};
-			Camera_startEffect(Camera_getInstance(),
+			Camera::startEffect(Camera::getInstance(),
 				kFadeTo, // effect type
 				0, // initial delay (in ms)
 				&brightness, // target brightness
 				0, // delay between fading steps (in ms)
-				(void (*)(Object, Object))TitleScreenState_onFadeOutComplete, // callback function
-				__SAFE_CAST(Object, this) // callback scope
+				(void (*)(Object, Object))TitleScreenState::onFadeOutComplete, // callback function
+				Object::safeCast(this) // callback scope
 			);
 		}
 		else if(
@@ -187,13 +168,13 @@ void TitleScreenState_processUserInput(TitleScreenState this, UserInput userInpu
 			// pause animation
 			if(this->animationPlaying)
 			{
-				AnimatedEntity_pauseAnimation(__SAFE_CAST(AnimatedEntity, this->viewtualBoyEntity), true);
-				AnimatedEntity_playAnimation(__SAFE_CAST(AnimatedEntity, this->viewtualBoyArrowsEntity), "Visible");
+				AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->viewtualBoyEntity), true);
+				AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->viewtualBoyArrowsEntity), "Visible");
 				this->animationPlaying = !this->animationPlaying;
 			}
 
 			// show next frame
-			AnimatedEntity_nextFrame(this->viewtualBoyEntity);
+			AnimatedEntity::nextFrame(this->viewtualBoyEntity);
 		}
 		else if(
 			(userInput.pressedKey & K_LR) || ((userInput.holdKey & K_LR) && (userInput.holdKeyDuration > 12)) ||
@@ -203,43 +184,43 @@ void TitleScreenState_processUserInput(TitleScreenState this, UserInput userInpu
 			// pause animation
 			if(this->animationPlaying)
 			{
-				AnimatedEntity_pauseAnimation(__SAFE_CAST(AnimatedEntity, this->viewtualBoyEntity), true);
-				AnimatedEntity_playAnimation(__SAFE_CAST(AnimatedEntity, this->viewtualBoyArrowsEntity), "Visible");
+				AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->viewtualBoyEntity), true);
+				AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->viewtualBoyArrowsEntity), "Visible");
 				this->animationPlaying = !this->animationPlaying;
 			}
 
 			// show previous frame
-			AnimatedEntity_previousFrame(this->viewtualBoyEntity);
+			AnimatedEntity::previousFrame(this->viewtualBoyEntity);
 		}
 		else if(userInput.pressedKey & K_SEL)
 		{
 			// pause/resume animation
-			AnimatedEntity_pauseAnimation(__SAFE_CAST(AnimatedEntity, this->viewtualBoyEntity), this->animationPlaying);
+			AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->viewtualBoyEntity), this->animationPlaying);
 			this->animationPlaying = !this->animationPlaying;
 			if(this->animationPlaying)
 			{
-				AnimatedEntity_playAnimation(__SAFE_CAST(AnimatedEntity, this->viewtualBoyArrowsEntity), "Hidden");
+				AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->viewtualBoyArrowsEntity), "Hidden");
 			}
 			else
 			{
-				AnimatedEntity_playAnimation(__SAFE_CAST(AnimatedEntity, this->viewtualBoyArrowsEntity), "Visible");
+				AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->viewtualBoyArrowsEntity), "Visible");
 			}
 		}
 	}
 }
 
-static void TitleScreenState_onFadeInComplete(TitleScreenState this __attribute__ ((unused)), Object eventFirer __attribute__ ((unused)))
+void TitleScreenState::onFadeInComplete(Object eventFirer __attribute__ ((unused)))
 {
 	ASSERT(this, "TitleScreenState::onFadeInComplete: null this");
 
 	// enable user input
-	Game_enableKeypad(Game_getInstance());
+	Game::enableKeypad(Game::getInstance());
 
 }
 
-static void TitleScreenState_onFadeOutComplete(TitleScreenState this __attribute__ ((unused)), Object eventFirer __attribute__ ((unused)))
+void TitleScreenState::onFadeOutComplete(Object eventFirer __attribute__ ((unused)))
 {
 	ASSERT(this, "TitleScreenState::onFadeOutComplete: null this");
 
-	Game_changeState(Game_getInstance(), __SAFE_CAST(GameState, VueMasterState_getInstance()));
+	Game::changeState(Game::getInstance(), GameState::safeCast(VueMasterState::getInstance()));
 }

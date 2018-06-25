@@ -26,7 +26,6 @@
 
 #include <Game.h>
 #include <Debug.h>
-#include <ManagedEntity.h>
 #include <StageEditor.h>
 #include <AnimationInspector.h>
 

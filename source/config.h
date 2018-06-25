@@ -105,10 +105,10 @@
 #define __DISTANCE_EYE_SCREEN					384
 
 // Maximum x view distance (depth) (power of two)
-#define __MAXIMUM_X_VIEW_DISTANCE_POWER			7
+#define __MAXIMUM_X_VIEW_DISTANCE				2048
 
 // Maximum y view distance (depth) (power of two)
-#define __MAXIMUM_Y_VIEW_DISTANCE_POWER			15
+#define __MAXIMUM_Y_VIEW_DISTANCE				4096
 
 // Distance between eyes
 #define __BASE_FACTOR							32
@@ -123,7 +123,10 @@
 #define __PARALLAX_CORRECTION_FACTOR			4
 
 // Affects the strong of the scaling
-#define __SCALLING_MODIFIER_FACTOR				0.20f
+#define __SCALING_MODIFIER_FACTOR				0.20f
+
+// minimum number of pixels that the camera can move
+#define __CAMERA_MINIMUM_DISPLACEMENT_PIXELS_POWER	1
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -314,7 +317,13 @@
 
 // divisor to speed up physics simulations
 // bigger numbers equal faster computations
-#define __PHYSICS_TIME_ELAPSED_DIVISOR			2
+#define __PHYSICS_TIME_ELAPSED_DIVISOR			1
+
+// maximum bounciness coefficient allowed
+#define __MAXIMUM_BOUNCINESS_COEFFICIENT		5.5f
+
+#define __FRICTION_FORCE_FACTOR_POWER			4
+#define __USE_HACK_FOR_FRICTION
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -376,40 +385,6 @@
 #define __OBJECT_PALETTE_1						__BGMAP_PALETTE_1
 #define __OBJECT_PALETTE_2						__BGMAP_PALETTE_2
 #define __OBJECT_PALETTE_3						__BGMAP_PALETTE_3
-
-
-//---------------------------------------------------------------------------------------------------------
-//											LOW BATTERY INDICATOR
-//---------------------------------------------------------------------------------------------------------
-/*
-// When defined, the engine's default low battery indicator is used
-#define __LOW_BATTERY_INDICATOR
-
-// Position of low battery indicator
-#define __LOW_BATTERY_INDICATOR_POS_X			45
-#define __LOW_BATTERY_INDICATOR_POS_Y			1
-
-// Delay between showing/not showing the low battery indicator (in milliseconds)
-#define __LOW_BATTERY_INDICATOR_BLINK_DELAY		500
-
-// Wait this long after first receiving the PWR signal
-// before showing the low battery indicator (in milliseconds)
-#define __LOW_BATTERY_INDICATOR_INITIAL_DELAY	2000
-*/
-
-//---------------------------------------------------------------------------------------------------------
-//											AUTOMATIC PAUSE
-//---------------------------------------------------------------------------------------------------------
-
-// Amount of time after which to show auto pause (in milliseconds)
-#define __AUTO_PAUSE_DELAY						(30 * 60 * 1000)
-
-/* The automatic pause state is not pushed until
- * there is only one state in the game's stack.
- * the following defines the time between checks
- * whether the condition is met (in milliseconds)
- */
-#define __AUTO_PAUSE_RECHECK_DELAY				(60 * 1000)
 
 
 //---------------------------------------------------------------------------------------------------------

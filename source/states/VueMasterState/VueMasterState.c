@@ -63,33 +63,12 @@ const SpriteDefinition* VUE_MASTER_SPRITES[__NUMBER_OF_VIEWER_IMAGES] =
 
 
 //---------------------------------------------------------------------------------------------------------
-// 												PROTOTYPES
-//---------------------------------------------------------------------------------------------------------
-
-static void VueMasterState_destructor(VueMasterState this);
-static void VueMasterState_constructor(VueMasterState this);
-static void VueMasterState_enter(VueMasterState this, void* owner);
-static void VueMasterState_exit(VueMasterState this, void* owner);
-static void VueMasterState_printImageNumber(VueMasterState this);
-static void VueMasterState_onFadeInComplete(VueMasterState this, Object eventFirer);
-static void VueMasterState_onFadeOutComplete(VueMasterState this, Object eventFirer);
-
-
-//---------------------------------------------------------------------------------------------------------
-// 											CLASS'S DEFINITION
-//---------------------------------------------------------------------------------------------------------
-
-__CLASS_DEFINITION(VueMasterState, GameState);
-__SINGLETON_DYNAMIC(VueMasterState);
-
-
-//---------------------------------------------------------------------------------------------------------
 // 												CLASS'S METHODS
 //---------------------------------------------------------------------------------------------------------
 
-static void __attribute__ ((noinline)) VueMasterState_constructor(VueMasterState this)
+void VueMasterState::constructor()
 {
-	__CONSTRUCT_BASE(GameState);
+	Base::constructor();
 
 	// init members
 	this->currentImage = 0;
@@ -97,83 +76,83 @@ static void __attribute__ ((noinline)) VueMasterState_constructor(VueMasterState
 	this->imageEntity = NULL;
 }
 
-static void VueMasterState_destructor(VueMasterState this)
+void VueMasterState::destructor()
 {
 	// destroy base
-	__SINGLETON_DESTROY;
+	Base::destructor();
 }
 
-static void VueMasterState_enter(VueMasterState this, void* owner __attribute__ ((unused)))
+void VueMasterState::enter(void* owner __attribute__ ((unused)))
 {
 	// call base
-	GameState_enter(__SAFE_CAST(GameState, this), owner);
+	Base::enter(this, owner);
 
 	// disable user input
-    Game_disableKeypad(Game_getInstance());
+    Game::disableKeypad(Game::getInstance());
 
 	// load stage
-	GameState_loadStage(__SAFE_CAST(GameState, this), (StageDefinition*)&VUE_MASTER_ST, NULL, true);
+	GameState::loadStage(GameState::safeCast(this), (StageDefinition*)&VUE_MASTER_ST, NULL, true);
 
 	// init members
 	this->currentImage = 0;
 	this->showNumber = false;
 
 	// get image entity from stage
-	this->imageEntity = __SAFE_CAST(Entity, Container_getChildByName(
-		__SAFE_CAST(Container, Game_getStage(Game_getInstance())),
+	this->imageEntity = Entity::safeCast(Container::getChildByName(
+		Container::safeCast(Game::getStage(Game::getInstance())),
 		"ImageEntity",
 		false
 	));
 
 	// print image number
-	Printing_setPalette(Printing_getInstance(), 1);
-	VueMasterState_printImageNumber(this);
+	Printing::setPalette(Printing::getInstance(), 1);
+	VueMasterState::printImageNumber(this);
 
 	// start fade in effect
-	Camera_startEffect(Camera_getInstance(),
+	Camera::startEffect(Camera::getInstance(),
 		kFadeTo, // effect type
 		0, // initial delay (in ms)
 		NULL, // target brightness
 		0, // delay between fading steps (in ms)
-		(void (*)(Object, Object))VueMasterState_onFadeInComplete, // callback function
-		__SAFE_CAST(Object, this) // callback scope
+		(void (*)(Object, Object))VueMasterState::onFadeInComplete, // callback function
+		Object::safeCast(this) // callback scope
 	);
 }
 
-static void VueMasterState_exit(VueMasterState this, void* owner)
+void VueMasterState::exit(void* owner)
 {
 	// call base
-	GameState_exit(__SAFE_CAST(GameState, this), owner);
+	Base::exit(this, owner);
 }
 
-static void VueMasterState_printImageNumber(VueMasterState this)
+void VueMasterState::printImageNumber()
 {
 	if (this->showNumber)
 	{
-		Printing_text(Printing_getInstance(), "./.", 45, 0, "NumberFont");
-		Printing_int(Printing_getInstance(), this->currentImage + 1, 45, 0, "NumberFont");
-		Printing_int(Printing_getInstance(), __NUMBER_OF_VIEWER_IMAGES, 47, 0, "NumberFont");
+		Printing::text(Printing::getInstance(), "./.", 45, 0, "NumberFont");
+		Printing::int(Printing::getInstance(), this->currentImage + 1, 45, 0, "NumberFont");
+		Printing::int(Printing::getInstance(), __NUMBER_OF_VIEWER_IMAGES, 47, 0, "NumberFont");
 	}
 	else
 	{
-		Printing_text(Printing_getInstance(), "...", 45, 0, "NumberFont");
+		Printing::text(Printing::getInstance(), "...", 45, 0, "NumberFont");
 	}
 }
 
-static void VueMasterState_switchImage(VueMasterState this)
+void VueMasterState::switchImage()
 {
 	// hide screen
-	Camera_startEffect(Camera_getInstance(), kHide);
+	Camera::startEffect(Camera::getInstance(), kHide);
 
 	// replace sprites
-	Entity_releaseSprites(this->imageEntity);
-	Entity_addSprites(this->imageEntity, (const SpriteDefinition**)VUE_MASTER_SPRITES[this->currentImage]);
+	Entity::releaseSprites(this->imageEntity);
+	Entity::addSprites(this->imageEntity, (const SpriteDefinition**)VUE_MASTER_SPRITES[this->currentImage]);
 
 	// print image number
-	VueMasterState_printImageNumber(this);
+	VueMasterState::printImageNumber(this);
 
 	// delayed fade in to hide graphical corruption that occurs during rewriting of chars and maps in memory
-	Camera_startEffect(Camera_getInstance(),
+	Camera::startEffect(Camera::getInstance(),
 		kFadeTo, // effect type
 		75, // initial delay (in ms)
 		NULL, // target brightness
@@ -183,7 +162,7 @@ static void VueMasterState_switchImage(VueMasterState this)
 	);
 }
 
-void VueMasterState_processUserInput(VueMasterState this, UserInput userInput)
+void VueMasterState::processUserInput(UserInput userInput)
 {
 	if(userInput.pressedKey)
 	{
@@ -192,7 +171,7 @@ void VueMasterState_processUserInput(VueMasterState this, UserInput userInput)
 			this->currentImage = (this->currentImage > 0)
 				? this->currentImage - 1
 				: (__NUMBER_OF_VIEWER_IMAGES - 1);
-			VueMasterState_switchImage(this);
+			VueMasterState::switchImage(this);
 			return;
 		}
 		else if(K_LR & userInput.pressedKey || K_RR & userInput.pressedKey)
@@ -200,45 +179,44 @@ void VueMasterState_processUserInput(VueMasterState this, UserInput userInput)
 			this->currentImage = (this->currentImage < (__NUMBER_OF_VIEWER_IMAGES - 1))
 				? this->currentImage + 1
 				: 0;
-			VueMasterState_switchImage(this);
+			VueMasterState::switchImage(this);
 			return;
 		}
 		else if(K_B & userInput.pressedKey)
 		{
 			// start fade out effect
 			Brightness brightness = (Brightness){0, 0, 0};
-			Camera_startEffect(Camera_getInstance(),
+			Camera::startEffect(Camera::getInstance(),
 				kFadeTo, // effect type
 				0, // initial delay (in ms)
 				&brightness, // target brightness
 				0, // delay between fading steps (in ms)
-				(void (*)(Object, Object))VueMasterState_onFadeOutComplete, // callback function
-				__SAFE_CAST(Object, this) // callback scope
+				(void (*)(Object, Object))VueMasterState::onFadeOutComplete, // callback function
+				Object::safeCast(this) // callback scope
 			);
 			return;
 		}
 		else if(K_SEL & userInput.pressedKey)
 		{
 			this->showNumber = !this->showNumber;
-			VueMasterState_printImageNumber(this);
+			VueMasterState::printImageNumber(this);
 		}
 	}
 }
 
 // handle event
-static void VueMasterState_onFadeInComplete(VueMasterState this __attribute__ ((unused)), Object eventFirer __attribute__ ((unused)))
+void VueMasterState::onFadeInComplete(Object eventFirer __attribute__ ((unused)))
 {
 	ASSERT(this, "VueMasterState::onFadeInComplete: null this");
 
 	// enable user input
-	Game_enableKeypad(Game_getInstance());
-
+	Game::enableKeypad(Game::getInstance());
 }
 
 // handle event
-static void VueMasterState_onFadeOutComplete(VueMasterState this __attribute__ ((unused)), Object eventFirer __attribute__ ((unused)))
+void VueMasterState::onFadeOutComplete(Object eventFirer __attribute__ ((unused)))
 {
 	ASSERT(this, "VueMasterState::onFadeOutComplete: null this");
 
-	Game_changeState(Game_getInstance(), __SAFE_CAST(GameState, TitleScreenState_getInstance()));
+	Game::changeState(Game::getInstance(), GameState::safeCast(TitleScreenState::getInstance()));
 }
