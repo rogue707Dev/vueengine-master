@@ -122,7 +122,7 @@ void TitleScreenState::enter(void* owner __attribute__ ((unused)))
 	// start fade in effect
 	Camera::startEffect(Camera::getInstance(),
 		kFadeTo, // effect type
-		0, // initial delay (in ms)
+		200, // initial delay (in ms)
 		NULL, // target brightness
 		0, // delay between fading steps (in ms)
 		(void (*)(Object, Object))TitleScreenState::onFadeInComplete, // callback function
@@ -142,69 +142,66 @@ void TitleScreenState::resume(void* owner)
 
 void TitleScreenState::processUserInput(UserInput userInput)
 {
-	if((userInput.pressedKey & ~K_PWR) || (userInput.holdKey & ~K_PWR))
+	if((userInput.pressedKey & K_A) || (userInput.pressedKey & K_STA))
 	{
-		if((userInput.pressedKey & K_A) || (userInput.pressedKey & K_STA))
-		{
-			// disable user input
-			Game::disableKeypad(Game::getInstance());
+		// disable user input
+		Game::disableKeypad(Game::getInstance());
 
-			// start fade out effect
-			Brightness brightness = (Brightness){0, 0, 0};
-			Camera::startEffect(Camera::getInstance(),
-				kFadeTo, // effect type
-				0, // initial delay (in ms)
-				&brightness, // target brightness
-				0, // delay between fading steps (in ms)
-				(void (*)(Object, Object))TitleScreenState::onFadeOutComplete, // callback function
-				Object::safeCast(this) // callback scope
-			);
-		}
-		else if(
-			(userInput.pressedKey & K_LL) || ((userInput.holdKey & K_LL) && (userInput.holdKeyDuration > 12)) ||
-			(userInput.pressedKey & K_RR) || ((userInput.holdKey & K_RR) && (userInput.holdKeyDuration > 12))
-		)
+		// start fade out effect
+		Brightness brightness = (Brightness){0, 0, 0};
+		Camera::startEffect(Camera::getInstance(),
+			kFadeTo, // effect type
+			0, // initial delay (in ms)
+			&brightness, // target brightness
+			0, // delay between fading steps (in ms)
+			(void (*)(Object, Object))TitleScreenState::onFadeOutComplete, // callback function
+			Object::safeCast(this) // callback scope
+		);
+	}
+	else if(
+		(userInput.pressedKey & K_LL) || ((userInput.holdKey & K_LL) && (userInput.holdKeyDuration > 12)) ||
+		(userInput.pressedKey & K_RR) || ((userInput.holdKey & K_RR) && (userInput.holdKeyDuration > 12))
+	)
+	{
+		// pause animation
+		if(this->animationPlaying)
 		{
-			// pause animation
-			if(this->animationPlaying)
-			{
-				AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->viewtualBoyEntity), true);
-				AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->viewtualBoyArrowsEntity), "Visible");
-				this->animationPlaying = !this->animationPlaying;
-			}
-
-			// show next frame
-			AnimatedEntity::nextFrame(this->viewtualBoyEntity);
-		}
-		else if(
-			(userInput.pressedKey & K_LR) || ((userInput.holdKey & K_LR) && (userInput.holdKeyDuration > 12)) ||
-			(userInput.pressedKey & K_RL) || ((userInput.holdKey & K_RL) && (userInput.holdKeyDuration > 12))
-		)
-		{
-			// pause animation
-			if(this->animationPlaying)
-			{
-				AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->viewtualBoyEntity), true);
-				AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->viewtualBoyArrowsEntity), "Visible");
-				this->animationPlaying = !this->animationPlaying;
-			}
-
-			// show previous frame
-			AnimatedEntity::previousFrame(this->viewtualBoyEntity);
-		}
-		else if(userInput.pressedKey & K_SEL)
-		{
-			// pause/resume animation
-			AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->viewtualBoyEntity), this->animationPlaying);
+			AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->viewtualBoyEntity), true);
+			AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->viewtualBoyArrowsEntity), "Visible");
 			this->animationPlaying = !this->animationPlaying;
-			if(this->animationPlaying)
-			{
-				AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->viewtualBoyArrowsEntity), "Hidden");
-			}
-			else
-			{
-				AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->viewtualBoyArrowsEntity), "Visible");
-			}
+		}
+
+		// show next frame
+		AnimatedEntity::nextFrame(this->viewtualBoyEntity);
+	}
+	else if(
+		(userInput.pressedKey & K_LR) || ((userInput.holdKey & K_LR) && (userInput.holdKeyDuration > 12)) ||
+		(userInput.pressedKey & K_RL) || ((userInput.holdKey & K_RL) && (userInput.holdKeyDuration > 12))
+	)
+	{
+		// pause animation
+		if(this->animationPlaying)
+		{
+			AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->viewtualBoyEntity), true);
+			AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->viewtualBoyArrowsEntity), "Visible");
+			this->animationPlaying = !this->animationPlaying;
+		}
+
+		// show previous frame
+		AnimatedEntity::previousFrame(this->viewtualBoyEntity);
+	}
+	else if(userInput.pressedKey & K_SEL)
+	{
+		// pause/resume animation
+		AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->viewtualBoyEntity), this->animationPlaying);
+		this->animationPlaying = !this->animationPlaying;
+		if(this->animationPlaying)
+		{
+			AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->viewtualBoyArrowsEntity), "Hidden");
+		}
+		else
+		{
+			AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->viewtualBoyArrowsEntity), "Visible");
 		}
 	}
 }
