@@ -56,6 +56,9 @@ const LangROMDef LANGUAGE_EN =
 	// Language Name
 	"English",
 
+	// Flag Entity
+	NULL,
+
 	// Strings
 	(const char**)LANGUAGE_EN_STRINGS
 };
