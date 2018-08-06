@@ -187,13 +187,13 @@ StageROMDef VUE_MASTER_ST =
     	// obj segments sizes (must total 1024)
         {
             // __spt0
-        	__AVAILABLE_CHAR_OBJECTS / __TOTAL_OBJECT_SEGMENTS,
+        	0,
             // __spt1
-        	__AVAILABLE_CHAR_OBJECTS / __TOTAL_OBJECT_SEGMENTS,
+        	0,
             // __spt2
-        	__AVAILABLE_CHAR_OBJECTS / __TOTAL_OBJECT_SEGMENTS,
+        	0,
             // __spt3
-        	__AVAILABLE_CHAR_OBJECTS / __TOTAL_OBJECT_SEGMENTS,
+        	0,
         },
 
         // obj segments z coordinates
