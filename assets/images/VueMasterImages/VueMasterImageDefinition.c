@@ -32,7 +32,7 @@
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_1_IM_SPRITES[];
+extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_1_SPRITES[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ EntityROMDef VUE_MASTER_IMAGE =
 	__TYPE(Entity),
 
 	// sprites
-	(SpriteROMDef**)VUE_MASTER_IMAGE_1_IM_SPRITES,
+	(SpriteROMDef**)VUE_MASTER_IMAGE_1_SPRITES,
 
 	// collision shapes
 	NULL,

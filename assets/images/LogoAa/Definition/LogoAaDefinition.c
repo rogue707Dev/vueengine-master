@@ -114,7 +114,7 @@ TextureROMDef LOGO_AA_RIGHT_TX =
 	false,
 };
 
-BgmapSpriteROMDef LOGO_AA_LEFT_IM_SPRITE =
+BgmapSpriteROMDef LOGO_AA_LEFT_SPRITE =
 {
     {
         // sprite's type
@@ -140,7 +140,7 @@ BgmapSpriteROMDef LOGO_AA_LEFT_IM_SPRITE =
 	__WORLD_LON,
 };
 
-BgmapSpriteROMDef LOGO_AA_RIGHT_IM_SPRITE =
+BgmapSpriteROMDef LOGO_AA_RIGHT_SPRITE =
 {
     {
         // sprite's type
@@ -166,10 +166,10 @@ BgmapSpriteROMDef LOGO_AA_RIGHT_IM_SPRITE =
 	__WORLD_RON,
 };
 
-BgmapSpriteROMDef* const LOGO_AA_IM_SPS[] =
+BgmapSpriteROMDef* const LOGO_AA_SPRITES[] =
 {
-	&LOGO_AA_LEFT_IM_SPRITE,
-	&LOGO_AA_RIGHT_IM_SPRITE,
+	&LOGO_AA_LEFT_SPRITE,
+	&LOGO_AA_RIGHT_SPRITE,
 	NULL
 };
 
@@ -179,7 +179,7 @@ EntityROMDef LOGO_AA_EN =
 	__TYPE(Entity),
 
 	// sprites
-	(SpriteROMDef**)LOGO_AA_IM_SPS,
+	(SpriteROMDef**)LOGO_AA_SPRITES,
 
 	// collision shapes
 	NULL,
