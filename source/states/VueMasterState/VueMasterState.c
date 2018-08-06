@@ -52,13 +52,13 @@ extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_7_SPRITES;
 
 const SpriteDefinition* VUE_MASTER_SPRITES[__NUMBER_OF_VIEWER_IMAGES] =
 {
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_7_SPRITES,
 	(SpriteDefinition* const) &VUE_MASTER_IMAGE_1_SPRITES,
 	(SpriteDefinition* const) &VUE_MASTER_IMAGE_2_SPRITES,
 	(SpriteDefinition* const) &VUE_MASTER_IMAGE_3_SPRITES,
 	(SpriteDefinition* const) &VUE_MASTER_IMAGE_4_SPRITES,
 	(SpriteDefinition* const) &VUE_MASTER_IMAGE_5_SPRITES,
 	(SpriteDefinition* const) &VUE_MASTER_IMAGE_6_SPRITES,
+	(SpriteDefinition* const) &VUE_MASTER_IMAGE_7_SPRITES,
 };
 
 
