@@ -114,7 +114,7 @@ TextureROMDef LOGO_RIGHT_TX =
 	false,
 };
 
-BgmapSpriteROMDef LOGO_LEFT_IM_SPRITE =
+BgmapSpriteROMDef LOGO_LEFT_SPRITE =
 {
     {
         // sprite's type
@@ -140,7 +140,7 @@ BgmapSpriteROMDef LOGO_LEFT_IM_SPRITE =
 	__WORLD_LON,
 };
 
-BgmapSpriteROMDef LOGO_RIGHT_IM_SPRITE =
+BgmapSpriteROMDef LOGO_RIGHT_SPRITE =
 {
     {
         // sprite's type
@@ -168,8 +168,8 @@ BgmapSpriteROMDef LOGO_RIGHT_IM_SPRITE =
 
 BgmapSpriteROMDef* const LOGO_IM_SPS[] =
 {
-	&LOGO_LEFT_IM_SPRITE,
-	&LOGO_RIGHT_IM_SPRITE,
+	&LOGO_LEFT_SPRITE,
+	&LOGO_RIGHT_SPRITE,
 	NULL
 };
 

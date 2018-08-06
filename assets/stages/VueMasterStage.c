@@ -209,8 +209,9 @@ StageROMDef VUE_MASTER_ST =
 
         // optical configuration values
         {
-			// maximum view distance's power into the horizon
-			__MAXIMUM_X_VIEW_DISTANCE, __MAXIMUM_Y_VIEW_DISTANCE,
+			// maximum view distance's power
+			__MAXIMUM_X_VIEW_DISTANCE,
+			__MAXIMUM_Y_VIEW_DISTANCE,
 			// distance of the eyes to the screen
 			__DISTANCE_EYE_SCREEN,
 			// distance from left to right eye (depth sensation)

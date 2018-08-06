@@ -83,7 +83,7 @@ TextureROMDef CREDITS_TX =
 	false,
 };
 
-BgmapSpriteROMDef CREDITS_IM_SPRITE =
+BgmapSpriteROMDef CREDITS_SPRITE =
 {
 	{
 		// sprite's type
@@ -110,9 +110,9 @@ BgmapSpriteROMDef CREDITS_IM_SPRITE =
 	__WORLD_ON,
 };
 
-BgmapSpriteROMDef* const CREDITS_IM_SPRITES[] =
+BgmapSpriteROMDef* const CREDITS_SPRITES[] =
 {
-	&CREDITS_IM_SPRITE,
+	&CREDITS_SPRITE,
 	NULL
 };
 
@@ -122,7 +122,7 @@ EntityROMDef CREDITS_IM =
 	__TYPE(Entity),
 
 	// sprites
-	(SpriteROMDef**)CREDITS_IM_SPRITES,
+	(SpriteROMDef**)CREDITS_SPRITES,
 
 	// collision shapes
 	(ShapeDefinition*)NULL,
