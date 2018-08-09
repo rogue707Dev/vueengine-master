@@ -36,7 +36,7 @@
 
 int main(void)
 {
-	// initialize components
+	// initialize plugins
 	SplashScreenState::setNextState(
 		SplashScreenState::safeCast(AdjustmentScreenState::getInstance()),
 		GameState::safeCast(TitleScreenState::getInstance())
