@@ -34,6 +34,7 @@
 #include <KeypadManager.h>
 #include <MessageDispatcher.h>
 #include <TitleScreenState.h>
+#include <VueMasterImageDefinition.h>
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -41,25 +42,6 @@
 //---------------------------------------------------------------------------------------------------------
 
 extern StageROMDef VUE_MASTER_ST;
-
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_1_SPRITES;
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_2_SPRITES;
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_3_SPRITES;
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_4_SPRITES;
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_5_SPRITES;
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_6_SPRITES;
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_7_SPRITES;
-
-const SpriteDefinition* VUE_MASTER_SPRITES[__NUMBER_OF_VIEWER_IMAGES] =
-{
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_1_SPRITES,
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_2_SPRITES,
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_3_SPRITES,
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_4_SPRITES,
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_5_SPRITES,
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_6_SPRITES,
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_7_SPRITES,
-};
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -127,6 +109,7 @@ void VueMasterState::exit(void* owner)
 
 void VueMasterState::printImageNumber()
 {
+#if(__NUMBER_OF_VIEWER_IMAGES < 10)
 	if (this->showNumber)
 	{
 		Printing::text(Printing::getInstance(), "./.", 45, 0, "NumberFont");
@@ -137,6 +120,18 @@ void VueMasterState::printImageNumber()
 	{
 		Printing::text(Printing::getInstance(), "...", 45, 0, "NumberFont");
 	}
+#else
+	if (this->showNumber)
+	{
+		Printing::text(Printing::getInstance(), "00/..", 43, 0, "NumberFont");
+		Printing::int(Printing::getInstance(), this->currentImage + 1, (this->currentImage>8 ? 43 : 44), 0, "NumberFont");
+		Printing::int(Printing::getInstance(), __NUMBER_OF_VIEWER_IMAGES, 46, 0, "NumberFont");
+	}
+	else
+	{
+		Printing::text(Printing::getInstance(), ".....", 43, 0, "NumberFont");
+	}
+#endif
 }
 
 void VueMasterState::switchImage()

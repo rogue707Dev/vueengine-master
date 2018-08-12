@@ -82,7 +82,7 @@ TextureROMDef VUE_MASTER_IMAGE_2_LEFT_TX =
     0,
 
 	// recyclable
-	false,
+	true,
 };
 
 TextureROMDef VUE_MASTER_IMAGE_2_RIGHT_TX =
@@ -111,7 +111,7 @@ TextureROMDef VUE_MASTER_IMAGE_2_RIGHT_TX =
     0,
 
 	// recyclable
-	false,
+	true,
 };
 
 BgmapSpriteROMDef VUE_MASTER_IMAGE_2_LEFT_SPRITE =
