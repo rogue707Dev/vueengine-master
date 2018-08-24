@@ -19,6 +19,9 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#include <VueMasterState.h>
+#if(__NUMBER_OF_VIEWER_IMAGES >= 6)
+
 
 //---------------------------------------------------------------------------------------------------------
 //												INCLUDES
@@ -172,3 +175,6 @@ BgmapSpriteROMDef* const VUE_MASTER_IMAGE_6_SPRITES[] =
 	&VUE_MASTER_IMAGE_6_RIGHT_SPRITE,
 	NULL
 };
+
+
+#endif
