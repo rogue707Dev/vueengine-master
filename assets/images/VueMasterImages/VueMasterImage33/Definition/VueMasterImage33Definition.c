@@ -126,8 +126,8 @@ BgmapSpriteROMDef VUE_MASTER_IMAGE_33_LEFT_SPRITE =
         // texture definition
         (TextureDefinition*)&VUE_MASTER_IMAGE_33_LEFT_TX,
 
-		// transparent
-		false,
+		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
+		__TRANSPARENCY_NONE,
 
         // displacement
         {0, 0, 0, 0},
@@ -152,8 +152,8 @@ BgmapSpriteROMDef VUE_MASTER_IMAGE_33_RIGHT_SPRITE =
         // texture definition
         (TextureDefinition*)&VUE_MASTER_IMAGE_33_RIGHT_TX,
 
-		// transparent
-		false,
+		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
+		__TRANSPARENCY_NONE,
 
         // displacement
         {0, 0, 0, 0},

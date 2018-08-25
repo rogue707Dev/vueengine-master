@@ -172,8 +172,8 @@ BgmapSpriteROMDef VIEWTUAL_BOY_LEFT_SP =
 		// texture definition
 		(TextureDefinition*)&VIEWTUAL_BOY_LEFT_TX,
 
-		// transparent
-		false,
+		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
+		__TRANSPARENCY_NONE,
 
 		// displacement
 		{0, 0, 0, 0},
@@ -199,8 +199,8 @@ BgmapSpriteROMDef VIEWTUAL_BOY_RIGHT_SP =
 		// texture definition
 		(TextureDefinition*)&VIEWTUAL_BOY_RIGHT_TX,
 
-		// transparent
-		false,
+		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
+		__TRANSPARENCY_NONE,
 
 		// displacement
 		{0, 0, 0, 0},
