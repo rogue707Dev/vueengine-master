@@ -35,7 +35,7 @@
 extern FontDefinition VUENGINE_FONT;
 extern EntityDefinition VIEWTUAL_BOY_AG;
 extern EntityDefinition VIEWTUAL_BOY_ARROWS_AG;
-extern EntityDefinition CREDITS_IM;
+extern EntityDefinition CREDITS_EN;
 extern EntityDefinition PRESS_START_AG;
 extern EntityDefinition LOGO_AA_EN;
 
@@ -50,7 +50,7 @@ PositionedEntityROMDef TITLE_SCREEN_ST_CHILDREN[] =
 	{&VIEWTUAL_BOY_AG, 			{292, 106, 48, 	0}, 0, "VB", NULL, NULL, false},
 	{&VIEWTUAL_BOY_ARROWS_AG, 	{292, 92,  24, 	0}, 0, "Arrows", NULL, NULL, false},
 	{&PRESS_START_AG, 			{100, 164, 0, 	0}, 0, "PrssStrt", NULL, NULL, false},
-	{&CREDITS_IM, 				{188, 212, 0, 	0}, 0, NULL, NULL, NULL, false},
+	{&CREDITS_EN, 				{192, 212, 0, 	0}, 0, NULL, NULL, NULL, false},
 
 	{NULL,{0,0,0,0}, 0, NULL, NULL, NULL, false},
 };
