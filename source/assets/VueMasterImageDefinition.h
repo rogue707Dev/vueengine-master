@@ -27,7 +27,7 @@
 //												INCLUDES
 //---------------------------------------------------------------------------------------------------------
 
-#include <Entity.h>
+#include <AnimatedEntity.h>
 #include <BgmapSprite.h>
 
 
@@ -36,601 +36,601 @@
 //---------------------------------------------------------------------------------------------------------
 
 #if(__NUMBER_OF_VIEWER_IMAGES >= 1)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_1_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_1_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 2)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_2_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_2_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 3)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_3_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_3_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 4)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_4_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_4_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 5)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_5_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_5_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 6)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_6_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_6_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 7)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_7_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_7_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 8)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_8_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_8_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 9)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_9_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_9_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 10)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_10_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_10_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 11)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_11_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_11_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 12)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_12_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_12_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 13)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_13_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_13_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 14)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_14_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_14_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 15)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_15_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_15_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 16)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_16_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_16_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 17)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_17_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_17_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 18)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_18_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_18_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 19)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_19_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_19_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 20)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_20_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_20_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 21)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_21_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_21_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 22)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_22_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_22_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 23)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_23_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_23_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 24)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_24_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_24_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 25)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_25_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_25_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 26)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_26_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_26_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 27)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_27_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_27_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 28)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_28_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_28_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 29)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_29_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_29_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 30)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_30_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_30_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 31)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_31_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_31_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 32)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_32_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_32_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 33)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_33_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_33_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 34)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_34_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_34_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 35)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_35_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_35_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 36)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_36_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_36_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 37)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_37_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_37_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 38)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_38_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_38_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 39)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_39_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_39_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 40)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_40_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_40_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 41)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_41_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_41_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 42)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_42_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_42_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 43)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_43_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_43_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 44)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_44_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_44_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 45)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_45_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_45_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 46)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_46_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_46_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 47)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_47_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_47_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 48)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_48_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_48_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 49)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_49_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_49_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 50)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_50_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_50_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 51)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_51_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_51_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 52)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_52_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_52_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 53)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_53_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_53_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 54)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_54_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_54_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 55)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_55_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_55_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 56)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_56_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_56_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 57)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_57_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_57_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 58)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_58_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_58_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 59)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_59_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_59_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 60)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_60_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_60_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 61)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_61_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_61_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 62)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_62_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_62_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 63)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_63_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_63_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 64)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_64_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_64_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 65)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_65_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_65_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 66)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_66_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_66_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 67)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_67_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_67_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 68)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_68_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_68_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 69)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_69_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_69_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 70)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_70_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_70_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 71)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_71_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_71_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 72)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_72_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_72_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 73)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_73_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_73_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 74)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_74_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_74_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 75)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_75_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_75_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 76)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_76_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_76_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 77)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_77_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_77_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 78)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_78_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_78_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 79)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_79_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_79_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 80)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_80_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_80_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 81)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_81_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_81_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 82)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_82_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_82_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 83)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_83_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_83_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 84)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_84_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_84_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 85)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_85_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_85_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 86)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_86_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_86_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 87)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_87_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_87_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 88)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_88_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_88_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 89)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_89_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_89_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 90)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_90_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_90_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 91)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_91_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_91_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 92)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_92_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_92_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 93)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_93_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_93_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 94)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_94_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_94_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 95)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_95_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_95_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 96)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_96_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_96_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 97)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_97_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_97_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 98)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_98_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_98_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 99)
-extern BgmapSpriteROMDef* const VUE_MASTER_IMAGE_99_SPRITES;
+extern AnimatedEntityROMDef VUE_MASTER_IMAGE_99_EN;
 #endif
 
-const SpriteDefinition* VUE_MASTER_SPRITES[__NUMBER_OF_VIEWER_IMAGES] =
+const AnimatedEntityROMDef* VUE_MASTER_ENTITIES[__NUMBER_OF_VIEWER_IMAGES] =
 {
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 1)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_1_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_1_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 2)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_2_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_2_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 3)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_3_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_3_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 4)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_4_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_4_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 5)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_5_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_5_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 6)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_6_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_6_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 7)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_7_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_7_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 8)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_8_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_8_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 9)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_9_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_9_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 10)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_10_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_10_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 11)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_11_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_11_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 12)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_12_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_12_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 13)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_13_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_13_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 14)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_14_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_14_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 15)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_15_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_15_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 16)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_16_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_16_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 17)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_17_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_17_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 18)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_18_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_18_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 19)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_19_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_19_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 20)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_20_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_20_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 21)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_21_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_21_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 22)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_22_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_22_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 23)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_23_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_23_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 24)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_24_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_24_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 25)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_25_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_25_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 26)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_26_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_26_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 27)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_27_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_27_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 28)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_28_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_28_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 29)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_29_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_29_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 30)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_30_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_30_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 31)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_31_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_31_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 32)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_32_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_32_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 33)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_33_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_33_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 34)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_34_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_34_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 35)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_35_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_35_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 36)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_36_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_36_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 37)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_37_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_37_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 38)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_38_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_38_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 39)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_39_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_39_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 40)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_40_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_40_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 41)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_41_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_41_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 42)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_42_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_42_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 43)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_43_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_43_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 44)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_44_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_44_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 45)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_45_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_45_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 46)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_46_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_46_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 47)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_47_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_47_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 48)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_48_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_48_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 49)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_49_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_49_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 50)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_50_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_50_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 51)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_51_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_51_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 52)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_52_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_52_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 53)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_53_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_53_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 54)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_54_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_54_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 55)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_55_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_55_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 56)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_56_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_56_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 57)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_57_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_57_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 58)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_58_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_58_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 59)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_59_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_59_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 60)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_60_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_60_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 61)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_61_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_61_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 62)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_62_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_62_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 63)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_63_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_63_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 64)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_64_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_64_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 65)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_65_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_65_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 66)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_66_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_66_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 67)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_67_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_67_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 68)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_68_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_68_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 69)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_69_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_69_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 70)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_70_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_70_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 71)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_71_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_71_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 72)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_72_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_72_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 73)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_73_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_73_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 74)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_74_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_74_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 75)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_75_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_75_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 76)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_76_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_76_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 77)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_77_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_77_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 78)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_78_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_78_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 79)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_79_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_79_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 80)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_80_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_80_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 81)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_81_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_81_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 82)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_82_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_82_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 83)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_83_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_83_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 84)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_84_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_84_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 85)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_85_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_85_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 86)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_86_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_86_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 87)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_87_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_87_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 88)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_88_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_88_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 89)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_89_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_89_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 90)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_90_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_90_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 91)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_91_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_91_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 92)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_92_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_92_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 93)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_93_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_93_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 94)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_94_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_94_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 95)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_95_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_95_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 96)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_96_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_96_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 97)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_97_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_97_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 98)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_98_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_98_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 99)
-	(SpriteDefinition* const) &VUE_MASTER_IMAGE_99_SPRITES,
+	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_99_EN,
 	#endif
 
 };

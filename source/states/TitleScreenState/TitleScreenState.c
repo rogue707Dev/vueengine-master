@@ -208,8 +208,6 @@ void TitleScreenState::processUserInput(UserInput userInput)
 
 void TitleScreenState::onFadeInComplete(Object eventFirer __attribute__ ((unused)))
 {
-	ASSERT(this, "TitleScreenState::onFadeInComplete: null this");
-
 	// enable user input
 	Game::enableKeypad(Game::getInstance());
 
@@ -217,7 +215,5 @@ void TitleScreenState::onFadeInComplete(Object eventFirer __attribute__ ((unused
 
 void TitleScreenState::onFadeOutComplete(Object eventFirer __attribute__ ((unused)))
 {
-	ASSERT(this, "TitleScreenState::onFadeOutComplete: null this");
-
 	Game::changeState(Game::getInstance(), GameState::safeCast(VueMasterState::getInstance()));
 }

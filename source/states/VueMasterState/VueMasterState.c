@@ -80,7 +80,7 @@ void VueMasterState::enter(void* owner __attribute__ ((unused)))
 	this->showNumber = false;
 
 	// get image entity from stage
-	this->imageEntity = Entity::safeCast(Container::getChildByName(
+	this->imageEntity = AnimatedEntity::safeCast(Container::getChildByName(
 		Container::safeCast(Game::getStage(Game::getInstance())),
 		"ImageEntity",
 		false
@@ -89,6 +89,9 @@ void VueMasterState::enter(void* owner __attribute__ ((unused)))
 	// print image number
 	Printing::setPalette(Printing::getInstance(), 1);
 	VueMasterState::printImageNumber(this);
+
+	// start clocks to start animations
+	GameState::startClocks(GameState::safeCast(this));
 
 	// start fade in effect
 	Camera::startEffect(Camera::getInstance(),
@@ -140,8 +143,13 @@ void VueMasterState::switchImage()
 	Camera::startEffect(Camera::getInstance(), kHide);
 
 	// replace sprites
-	Entity::releaseSprites(this->imageEntity);
-	Entity::addSprites(this->imageEntity, (const SpriteDefinition**)VUE_MASTER_SPRITES[this->currentImage]);
+	Entity::releaseSprites(Entity::safeCast(this->imageEntity));
+	AnimatedEntityROMDef* animatedEntityDefinition = VUE_MASTER_ENTITIES[this->currentImage];
+	Entity::addSprites(Entity::safeCast(this->imageEntity), animatedEntityDefinition->entityDefinition.spriteDefinitions);
+
+	// replace animation definition and play animation
+	AnimatedEntity::setAnimationDescription(this->imageEntity, animatedEntityDefinition->animationDescription);
+	AnimatedEntity::playAnimation(this->imageEntity, animatedEntityDefinition->initialAnimation);
 
 	// print image number
 	VueMasterState::printImageNumber(this);
@@ -149,7 +157,7 @@ void VueMasterState::switchImage()
 	// delayed fade in to hide graphical corruption that occurs during rewriting of chars and maps in memory
 	Camera::startEffect(Camera::getInstance(),
 		kFadeTo, // effect type
-		75, // initial delay (in ms)
+		100, // initial delay (in ms)
 		NULL, // target brightness
 		0, // delay between fading steps (in ms)
 		NULL, // callback function
@@ -202,8 +210,6 @@ void VueMasterState::processUserInput(UserInput userInput)
 // handle event
 void VueMasterState::onFadeInComplete(Object eventFirer __attribute__ ((unused)))
 {
-	ASSERT(this, "VueMasterState::onFadeInComplete: null this");
-
 	// enable user input
 	Game::enableKeypad(Game::getInstance());
 }
@@ -211,7 +217,5 @@ void VueMasterState::onFadeInComplete(Object eventFirer __attribute__ ((unused))
 // handle event
 void VueMasterState::onFadeOutComplete(Object eventFirer __attribute__ ((unused)))
 {
-	ASSERT(this, "VueMasterState::onFadeOutComplete: null this");
-
 	Game::changeState(Game::getInstance(), GameState::safeCast(TitleScreenState::getInstance()));
 }

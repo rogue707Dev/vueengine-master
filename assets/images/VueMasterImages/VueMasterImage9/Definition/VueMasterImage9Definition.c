@@ -27,7 +27,7 @@
 //												INCLUDES
 //---------------------------------------------------------------------------------------------------------
 
-#include <Entity.h>
+#include <AnimatedEntity.h>
 #include <BgmapSprite.h>
 
 
@@ -174,6 +174,36 @@ BgmapSpriteROMDef* const VUE_MASTER_IMAGE_9_SPRITES[] =
 	&VUE_MASTER_IMAGE_9_LEFT_SPRITE,
 	&VUE_MASTER_IMAGE_9_RIGHT_SPRITE,
 	NULL
+};
+
+AnimatedEntityROMDef VUE_MASTER_IMAGE_9_EN =
+{
+	{
+		// class allocator
+		__TYPE(AnimatedEntity),
+
+		// sprites
+		(SpriteROMDef**)VUE_MASTER_IMAGE_9_SPRITES,
+
+		// collision shapes
+		(ShapeDefinition*)NULL,
+
+		// size
+		// if 0, width and height will be inferred from the first sprite's texture's size
+		{0, 0, 0},
+
+		// gameworld's character's type
+		kNoType,
+
+		// physical specification
+		(PhysicalSpecification*)NULL,
+	},
+
+	// pointer to the animation definition for the item
+	(AnimationDescription*)NULL,
+
+	// initial animation
+	NULL,
 };
 
 

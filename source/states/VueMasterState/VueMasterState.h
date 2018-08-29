@@ -34,7 +34,7 @@
 // 												DEFINES
 //---------------------------------------------------------------------------------------------------------
 
-#define __NUMBER_OF_VIEWER_IMAGES	10
+#define __NUMBER_OF_VIEWER_IMAGES	11
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ singleton class VueMasterState : GameState
 {
 	u8 currentImage;
 	bool showNumber;
-	Entity imageEntity;
+	AnimatedEntity imageEntity;
 
 	static VueMasterState getInstance();
 	override void enter(void* owner);

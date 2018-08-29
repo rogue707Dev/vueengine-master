@@ -33,7 +33,7 @@
 //---------------------------------------------------------------------------------------------------------
 
 extern FontROMDef NUMBER_FONT;
-extern EntityDefinition VUE_MASTER_IMAGE;
+extern EntityDefinition VUE_MASTER_IMAGE_1_EN;
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ extern EntityDefinition VUE_MASTER_IMAGE;
 
 PositionedEntityROMDef VUE_MASTER_ST_CHILDREN[] =
 {
-	{&VUE_MASTER_IMAGE,	{192, 112, 0, 0}, 0, "ImageEntity", NULL, NULL, true},
+	{&VUE_MASTER_IMAGE_1_EN,	{192, 112, 0, 0}, 0, "ImageEntity", NULL, NULL, true},
 
 	{NULL,{0,0,0,0}, 0, NULL, NULL, NULL, false},
 };
