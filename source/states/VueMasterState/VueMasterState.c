@@ -56,6 +56,7 @@ void VueMasterState::constructor()
 	this->currentImage = 0;
 	this->showNumber = false;
 	this->imageEntity = NULL;
+	this->animationPlaying = false;
 }
 
 void VueMasterState::destructor()
@@ -150,6 +151,7 @@ void VueMasterState::switchImage()
 	// replace animation definition and play animation
 	AnimatedEntity::setAnimationDescription(this->imageEntity, animatedEntityDefinition->animationDescription);
 	AnimatedEntity::playAnimation(this->imageEntity, animatedEntityDefinition->initialAnimation);
+	this->animationPlaying = true;
 
 	// print image number
 	VueMasterState::printImageNumber(this);
@@ -203,6 +205,52 @@ void VueMasterState::processUserInput(UserInput userInput)
 		{
 			this->showNumber = !this->showNumber;
 			VueMasterState::printImageNumber(this);
+		}
+		else if(
+			(userInput.pressedKey & K_LU) || ((userInput.holdKey & K_LU) && (userInput.holdKeyDuration > 12)) ||
+			(userInput.pressedKey & K_RU) || ((userInput.holdKey & K_RU) && (userInput.holdKeyDuration > 12))
+		)
+		{
+			// pause animation
+			if(this->animationPlaying)
+			{
+				AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->imageEntity), true);
+				//AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->arrowsEntity), "Visible");
+				this->animationPlaying = !this->animationPlaying;
+			}
+
+			// show next frame
+			AnimatedEntity::nextFrame(AnimatedEntity::safeCast(this->imageEntity));
+		}
+		else if(
+			(userInput.pressedKey & K_LD) || ((userInput.holdKey & K_LD) && (userInput.holdKeyDuration > 12)) ||
+			(userInput.pressedKey & K_RD) || ((userInput.holdKey & K_RD) && (userInput.holdKeyDuration > 12))
+		)
+		{
+			// pause animation
+			if(this->animationPlaying)
+			{
+				AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->imageEntity), true);
+				//AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->arrowsEntity), "Visible");
+				this->animationPlaying = !this->animationPlaying;
+			}
+
+			// show previous frame
+			AnimatedEntity::previousFrame(AnimatedEntity::safeCast(this->imageEntity));
+		}
+		else if(userInput.pressedKey & K_STA)
+		{
+			// pause/resume animation
+			AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->imageEntity), this->animationPlaying);
+			this->animationPlaying = !this->animationPlaying;
+			if(this->animationPlaying)
+			{
+				//AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->arrowsEntity), "Hidden");
+			}
+			else
+			{
+				//AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->arrowsEntity), "Visible");
+			}
 		}
 	}
 }

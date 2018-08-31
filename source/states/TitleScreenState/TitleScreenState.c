@@ -160,7 +160,7 @@ void TitleScreenState::processUserInput(UserInput userInput)
 	}
 	else if(
 		(userInput.pressedKey & K_LL) || ((userInput.holdKey & K_LL) && (userInput.holdKeyDuration > 12)) ||
-		(userInput.pressedKey & K_RR) || ((userInput.holdKey & K_RR) && (userInput.holdKeyDuration > 12))
+		(userInput.pressedKey & K_RL) || ((userInput.holdKey & K_RL) && (userInput.holdKeyDuration > 12))
 	)
 	{
 		// pause animation
@@ -176,7 +176,7 @@ void TitleScreenState::processUserInput(UserInput userInput)
 	}
 	else if(
 		(userInput.pressedKey & K_LR) || ((userInput.holdKey & K_LR) && (userInput.holdKeyDuration > 12)) ||
-		(userInput.pressedKey & K_RL) || ((userInput.holdKey & K_RL) && (userInput.holdKeyDuration > 12))
+		(userInput.pressedKey & K_RR) || ((userInput.holdKey & K_RR) && (userInput.holdKeyDuration > 12))
 	)
 	{
 		// pause animation
