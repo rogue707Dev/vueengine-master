@@ -192,19 +192,20 @@ StageROMDef TITLE_SCREEN_ST =
         // number of segments reserved for the param table
         0,
 
-    	// obj segments sizes (must total 1024)
+		// object segments sizes (up to 1024 in total)
+        // can impact performance, make sure to configure only as large as maximally needed
         {
             // __spt0
-        	__AVAILABLE_CHAR_OBJECTS / __TOTAL_OBJECT_SEGMENTS,
+        	0,
             // __spt1
-        	__AVAILABLE_CHAR_OBJECTS / __TOTAL_OBJECT_SEGMENTS,
+        	0,
             // __spt2
-        	__AVAILABLE_CHAR_OBJECTS / __TOTAL_OBJECT_SEGMENTS,
+        	0,
             // __spt3
-        	__AVAILABLE_CHAR_OBJECTS / __TOTAL_OBJECT_SEGMENTS,
+        	0,
         },
 
-        // obj segments z coordinates
+        // object segments z coordinates
         // Note that each SPT's z coordinate much be larger than or equal to the previous one's,
         // since the VIP renders OBJ Worlds in reverse order (__SPT3 to __SPT0)
         {
