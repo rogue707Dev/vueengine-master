@@ -26,6 +26,7 @@
 
 #include <Entity.h>
 #include <BgmapSprite.h>
+#include <VueMasterState.h>
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -33,8 +34,8 @@
 //---------------------------------------------------------------------------------------------------------
 
 extern BYTE LogoTiles[];
-extern BYTE LogoLeftMap[];
-extern BYTE LogoRightMap[];
+extern BYTE LogoLMap[];
+extern BYTE LogoRMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -62,7 +63,7 @@ TextureROMDef LOGO_LEFT_TX =
     (CharSetDefinition*)&LOGO_CH,
 
     // bgmap definition
-    LogoLeftMap,
+    LogoLMap,
 
     // cols (max 64)
     23,
@@ -91,7 +92,7 @@ TextureROMDef LOGO_RIGHT_TX =
     (CharSetDefinition*)&LOGO_CH,
 
     // bgmap definition
-    LogoRightMap,
+    LogoRMap,
 
     // cols (max 64)
     23,

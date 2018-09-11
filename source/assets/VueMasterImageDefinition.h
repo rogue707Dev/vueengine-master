@@ -29,6 +29,7 @@
 
 #include <AnimatedEntity.h>
 #include <BgmapSprite.h>
+#include <VueMasterState.h>
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -36,601 +37,601 @@
 //---------------------------------------------------------------------------------------------------------
 
 #if(__NUMBER_OF_VIEWER_IMAGES >= 1)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_1_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_1_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 2)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_2_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_2_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 3)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_3_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_3_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 4)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_4_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_4_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 5)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_5_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_5_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 6)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_6_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_6_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 7)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_7_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_7_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 8)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_8_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_8_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 9)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_9_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_9_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 10)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_10_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_10_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 11)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_11_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_11_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 12)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_12_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_12_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 13)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_13_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_13_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 14)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_14_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_14_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 15)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_15_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_15_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 16)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_16_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_16_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 17)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_17_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_17_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 18)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_18_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_18_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 19)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_19_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_19_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 20)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_20_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_20_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 21)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_21_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_21_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 22)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_22_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_22_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 23)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_23_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_23_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 24)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_24_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_24_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 25)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_25_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_25_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 26)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_26_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_26_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 27)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_27_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_27_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 28)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_28_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_28_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 29)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_29_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_29_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 30)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_30_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_30_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 31)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_31_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_31_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 32)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_32_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_32_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 33)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_33_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_33_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 34)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_34_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_34_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 35)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_35_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_35_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 36)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_36_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_36_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 37)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_37_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_37_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 38)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_38_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_38_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 39)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_39_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_39_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 40)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_40_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_40_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 41)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_41_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_41_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 42)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_42_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_42_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 43)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_43_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_43_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 44)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_44_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_44_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 45)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_45_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_45_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 46)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_46_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_46_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 47)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_47_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_47_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 48)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_48_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_48_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 49)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_49_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_49_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 50)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_50_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_50_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 51)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_51_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_51_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 52)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_52_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_52_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 53)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_53_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_53_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 54)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_54_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_54_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 55)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_55_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_55_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 56)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_56_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_56_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 57)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_57_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_57_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 58)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_58_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_58_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 59)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_59_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_59_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 60)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_60_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_60_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 61)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_61_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_61_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 62)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_62_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_62_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 63)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_63_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_63_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 64)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_64_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_64_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 65)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_65_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_65_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 66)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_66_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_66_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 67)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_67_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_67_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 68)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_68_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_68_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 69)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_69_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_69_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 70)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_70_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_70_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 71)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_71_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_71_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 72)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_72_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_72_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 73)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_73_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_73_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 74)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_74_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_74_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 75)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_75_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_75_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 76)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_76_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_76_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 77)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_77_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_77_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 78)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_78_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_78_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 79)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_79_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_79_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 80)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_80_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_80_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 81)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_81_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_81_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 82)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_82_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_82_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 83)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_83_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_83_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 84)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_84_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_84_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 85)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_85_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_85_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 86)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_86_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_86_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 87)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_87_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_87_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 88)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_88_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_88_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 89)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_89_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_89_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 90)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_90_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_90_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 91)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_91_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_91_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 92)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_92_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_92_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 93)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_93_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_93_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 94)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_94_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_94_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 95)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_95_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_95_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 96)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_96_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_96_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 97)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_97_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_97_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 98)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_98_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_98_EN;
 #endif
 #if(__NUMBER_OF_VIEWER_IMAGES >= 99)
-extern AnimatedEntityROMDef VUE_MASTER_IMAGE_99_EN;
+extern VueMasterImageROMDef VUE_MASTER_IMAGE_99_EN;
 #endif
 
-const AnimatedEntityROMDef* VUE_MASTER_ENTITIES[__NUMBER_OF_VIEWER_IMAGES] =
+const VueMasterImageROMDef* VUE_MASTER_ENTITIES[__NUMBER_OF_VIEWER_IMAGES] =
 {
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 1)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_1_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_1_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 2)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_2_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_2_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 3)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_3_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_3_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 4)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_4_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_4_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 5)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_5_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_5_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 6)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_6_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_6_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 7)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_7_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_7_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 8)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_8_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_8_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 9)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_9_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_9_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 10)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_10_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_10_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 11)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_11_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_11_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 12)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_12_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_12_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 13)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_13_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_13_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 14)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_14_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_14_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 15)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_15_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_15_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 16)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_16_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_16_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 17)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_17_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_17_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 18)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_18_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_18_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 19)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_19_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_19_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 20)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_20_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_20_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 21)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_21_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_21_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 22)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_22_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_22_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 23)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_23_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_23_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 24)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_24_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_24_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 25)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_25_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_25_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 26)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_26_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_26_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 27)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_27_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_27_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 28)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_28_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_28_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 29)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_29_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_29_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 30)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_30_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_30_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 31)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_31_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_31_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 32)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_32_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_32_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 33)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_33_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_33_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 34)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_34_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_34_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 35)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_35_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_35_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 36)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_36_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_36_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 37)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_37_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_37_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 38)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_38_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_38_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 39)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_39_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_39_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 40)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_40_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_40_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 41)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_41_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_41_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 42)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_42_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_42_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 43)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_43_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_43_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 44)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_44_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_44_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 45)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_45_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_45_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 46)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_46_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_46_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 47)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_47_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_47_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 48)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_48_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_48_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 49)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_49_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_49_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 50)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_50_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_50_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 51)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_51_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_51_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 52)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_52_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_52_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 53)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_53_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_53_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 54)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_54_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_54_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 55)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_55_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_55_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 56)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_56_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_56_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 57)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_57_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_57_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 58)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_58_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_58_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 59)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_59_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_59_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 60)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_60_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_60_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 61)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_61_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_61_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 62)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_62_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_62_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 63)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_63_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_63_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 64)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_64_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_64_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 65)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_65_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_65_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 66)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_66_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_66_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 67)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_67_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_67_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 68)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_68_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_68_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 69)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_69_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_69_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 70)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_70_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_70_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 71)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_71_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_71_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 72)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_72_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_72_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 73)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_73_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_73_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 74)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_74_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_74_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 75)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_75_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_75_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 76)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_76_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_76_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 77)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_77_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_77_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 78)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_78_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_78_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 79)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_79_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_79_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 80)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_80_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_80_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 81)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_81_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_81_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 82)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_82_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_82_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 83)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_83_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_83_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 84)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_84_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_84_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 85)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_85_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_85_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 86)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_86_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_86_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 87)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_87_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_87_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 88)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_88_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_88_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 89)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_89_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_89_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 90)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_90_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_90_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 91)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_91_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_91_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 92)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_92_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_92_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 93)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_93_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_93_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 94)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_94_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_94_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 95)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_95_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_95_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 96)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_96_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_96_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 97)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_97_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_97_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 98)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_98_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_98_EN,
 	#endif
 	#if(__NUMBER_OF_VIEWER_IMAGES >= 99)
-	(AnimatedEntityROMDef*)&VUE_MASTER_IMAGE_99_EN,
+	(VueMasterImageROMDef*)&VUE_MASTER_IMAGE_99_EN,
 	#endif
 
 };

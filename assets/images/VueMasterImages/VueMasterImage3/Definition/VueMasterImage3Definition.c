@@ -29,6 +29,7 @@
 
 #include <AnimatedEntity.h>
 #include <BgmapSprite.h>
+#include <VueMasterState.h>
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -36,8 +37,8 @@
 //---------------------------------------------------------------------------------------------------------
 
 extern BYTE VueMasterImage3Tiles[];
-extern BYTE VueMasterImage3LeftMap[];
-extern BYTE VueMasterImage3RightMap[];
+extern BYTE VueMasterImage3LMap[];
+extern BYTE VueMasterImage3RMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -65,7 +66,7 @@ TextureROMDef VUE_MASTER_IMAGE_3_LEFT_TX =
     (CharSetDefinition*)&VUE_MASTER_IMAGE_3_CH,
 
     // bgmap definition
-    VueMasterImage3LeftMap,
+    VueMasterImage3LMap,
 
     // cols (max 64)
     48,
@@ -94,7 +95,7 @@ TextureROMDef VUE_MASTER_IMAGE_3_RIGHT_TX =
     (CharSetDefinition*)&VUE_MASTER_IMAGE_3_CH,
 
     // bgmap definition
-    VueMasterImage3RightMap,
+    VueMasterImage3RMap,
 
     // cols (max 64)
     48,
@@ -176,34 +177,37 @@ BgmapSpriteROMDef* const VUE_MASTER_IMAGE_3_SPRITES[] =
 	NULL
 };
 
-AnimatedEntityROMDef VUE_MASTER_IMAGE_3_EN =
+VueMasterImageROMDef VUE_MASTER_IMAGE_3_EN =
 {
+	// animated entity definition
 	{
-		// class allocator
-		__TYPE(AnimatedEntity),
+		{
+			// class allocator
+			__TYPE(AnimatedEntity),
 
-		// sprites
-		(SpriteROMDef**)VUE_MASTER_IMAGE_3_SPRITES,
+			// sprites
+			(SpriteROMDef**)VUE_MASTER_IMAGE_3_SPRITES,
 
-		// collision shapes
-		(ShapeDefinition*)NULL,
+			// collision shapes
+			(ShapeDefinition*)NULL,
 
-		// size
-		// if 0, width and height will be inferred from the first sprite's texture's size
-		{0, 0, 0},
+			// size
+			// if 0, width and height will be inferred from the first sprite's texture's size
+			{0, 0, 0},
 
-		// gameworld's character's type
-		kNoType,
+			// gameworld's character's type
+			kNoType,
 
-		// physical specification
-		(PhysicalSpecification*)NULL,
-	},
+			// physical specification
+			(PhysicalSpecification*)NULL,
+		},
 
-	// pointer to the animation definition for the item
-	(AnimationDescription*)NULL,
+		// pointer to the animation definition for the item
+		(AnimationDescription*)NULL,
 
-	// initial animation
-	NULL,
+		// initial animation
+		NULL,
+	}
 };
 
 

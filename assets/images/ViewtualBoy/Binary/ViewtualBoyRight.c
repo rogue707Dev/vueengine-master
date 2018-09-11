@@ -1,11 +1,11 @@
 
-//{{BLOCK(ViewtualBoyRight)
+//{{BLOCK(ViewtualBoyR)
 
 //======================================================================
 //
-//	ViewtualBoyRight, 176x6336@2, 
+//	ViewtualBoyR, 176x6336@2,
 //	+ 17425 tiles not compressed
-//	+ regular map (flat), not compressed, 22x792 
+//	+ regular map (flat), not compressed, 22x792
 //	Total size: 278800 + 34848 = 313648
 //
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.6
@@ -13,7 +13,7 @@
 //
 //======================================================================
 
-const unsigned int ViewtualBoyRightTiles[69700] __attribute__((aligned(4)))=
+const unsigned int ViewtualBoyRTiles[69700] __attribute__((aligned(4)))=
 {
 	0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,
 	0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,
@@ -9819,7 +9819,7 @@ const unsigned int ViewtualBoyRightTiles[69700] __attribute__((aligned(4)))=
 	0x00000000,0x00000000,0x00000000,0x00000000,
 };
 
-const unsigned short ViewtualBoyRightMap[17424] __attribute__((aligned(4)))=
+const unsigned short ViewtualBoyRMap[17424] __attribute__((aligned(4)))=
 {
 	0x0001,0x0002,0x0003,0x0004,0x0005,0x0006,0x0007,0x0008,
 	0x0009,0x000A,0x000B,0x000C,0x000D,0x000E,0x000F,0x0010,
@@ -12273,4 +12273,4 @@ const unsigned short ViewtualBoyRightMap[17424] __attribute__((aligned(4)))=
 	0x0409,0x040A,0x040B,0x040C,0x040D,0x040E,0x040F,0x0410,
 };
 
-//}}BLOCK(ViewtualBoyRight)
+//}}BLOCK(ViewtualBoyR)

@@ -28,6 +28,8 @@
 //---------------------------------------------------------------------------------------------------------
 
 #include <GameState.h>
+#include <AnimatedEntity.h>
+#include <VIPManager.h>
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -35,6 +37,23 @@
 //---------------------------------------------------------------------------------------------------------
 
 #define __NUMBER_OF_VIEWER_IMAGES	11
+
+
+//---------------------------------------------------------------------------------------------------------
+//											TYPE DEFINITIONS
+//---------------------------------------------------------------------------------------------------------
+
+typedef struct VueMasterImageDefinition
+{
+	/// animated entity definition
+	AnimatedEntityDefinition animatedEntityDefinition;
+
+	/// stage color config
+	ColorConfig colorConfig;
+
+} VueMasterImageDefinition;
+
+typedef const VueMasterImageDefinition VueMasterImageROMDef;
 
 
 //---------------------------------------------------------------------------------------------------------

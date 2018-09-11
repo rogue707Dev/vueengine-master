@@ -1,10 +1,10 @@
 
-//{{BLOCK(LogoAaLeft)
+//{{BLOCK(LogoAaL)
 
 //======================================================================
 //
-//	LogoAaLeft, 184x64@2, 
-//	+ regular map (flat), not compressed, 23x8 
+//	LogoAaL, 184x64@2,
+//	+ regular map (flat), not compressed, 23x8
 //	External tile file: (null).
 //	Total size: 368 = 368
 //
@@ -13,7 +13,7 @@
 //
 //======================================================================
 
-const unsigned short LogoAaLeftMap[184] __attribute__((aligned(4)))=
+const unsigned short LogoAaLMap[184] __attribute__((aligned(4)))=
 {
 	0x0001,0x0002,0x0003,0x0004,0x0005,0x0006,0x0007,0x0008,
 	0x0000,0x0009,0x000A,0x000B,0x000C,0x000D,0x000E,0x000F,
@@ -42,4 +42,4 @@ const unsigned short LogoAaLeftMap[184] __attribute__((aligned(4)))=
 	0x0087,0x0088,0x0089,0x008A,0x008B,0x008C,0x0000,0x0000,
 };
 
-//}}BLOCK(LogoAaLeft)
+//}}BLOCK(LogoAaL)

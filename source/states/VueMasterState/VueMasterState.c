@@ -29,6 +29,7 @@
 #include <Game.h>
 #include <Camera.h>
 #include <Printing.h>
+#include <VIPManager.h>
 #include <I18n.h>
 #include <VueMasterState.h>
 #include <KeypadManager.h>
@@ -91,6 +92,9 @@ void VueMasterState::enter(void* owner __attribute__ ((unused)))
 	Printing::setPalette(Printing::getInstance(), 1);
 	VueMasterState::printImageNumber(this);
 
+	// set initial image's color config
+	// TODO
+
 	// start clocks to start animations
 	GameState::startClocks(GameState::safeCast(this));
 
@@ -145,13 +149,27 @@ void VueMasterState::switchImage()
 
 	// replace sprites
 	Entity::releaseSprites(Entity::safeCast(this->imageEntity));
-	AnimatedEntityROMDef* animatedEntityDefinition = VUE_MASTER_ENTITIES[this->currentImage];
+	VueMasterImageROMDef* vueMasterImageDefinition = VUE_MASTER_ENTITIES[this->currentImage];
+	AnimatedEntityROMDef* animatedEntityDefinition = (AnimatedEntityDefinition*)&(vueMasterImageDefinition->animatedEntityDefinition);
 	Entity::addSprites(Entity::safeCast(this->imageEntity), animatedEntityDefinition->entityDefinition.spriteDefinitions);
 
 	// replace animation definition and play animation
 	AnimatedEntity::setAnimationDescription(this->imageEntity, animatedEntityDefinition->animationDescription);
 	AnimatedEntity::playAnimation(this->imageEntity, animatedEntityDefinition->initialAnimation);
 	this->animationPlaying = true;
+
+	// set color config
+	VIPManager::setBackgroundColor(VIPManager::getInstance(), vueMasterImageDefinition->colorConfig.backgroundColor);
+	BrightnessRepeatDefinition* brightnessRepeat = vueMasterImageDefinition->colorConfig.brightnessRepeat;
+	if(brightnessRepeat != NULL)
+	{
+		VIPManager::setupBrightnessRepeat(VIPManager::getInstance(), vueMasterImageDefinition->colorConfig.brightnessRepeat);
+	}
+	__SET_BRIGHT(
+		vueMasterImageDefinition->colorConfig.brightness.darkRed,
+		vueMasterImageDefinition->colorConfig.brightness.mediumRed,
+		vueMasterImageDefinition->colorConfig.brightness.brightRed - (vueMasterImageDefinition->colorConfig.brightness.darkRed + vueMasterImageDefinition->colorConfig.brightness.mediumRed)
+	);
 
 	// print image number
 	VueMasterState::printImageNumber(this);

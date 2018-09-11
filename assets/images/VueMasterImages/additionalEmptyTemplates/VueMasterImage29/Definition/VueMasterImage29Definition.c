@@ -29,6 +29,7 @@
 
 #include <AnimatedEntity.h>
 #include <BgmapSprite.h>
+#include <VueMasterState.h>
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -36,8 +37,8 @@
 //---------------------------------------------------------------------------------------------------------
 
 extern BYTE VueMasterImage29Tiles[];
-extern BYTE VueMasterImage29LeftMap[];
-extern BYTE VueMasterImage29RightMap[];
+extern BYTE VueMasterImage29LMap[];
+extern BYTE VueMasterImage29RMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -65,7 +66,7 @@ TextureROMDef VUE_MASTER_IMAGE_29_LEFT_TX =
     (CharSetDefinition*)&VUE_MASTER_IMAGE_29_CH,
 
     // bgmap definition
-    VueMasterImage29LeftMap,
+    VueMasterImage29LMap,
 
     // cols (max 64)
     48,
@@ -94,7 +95,7 @@ TextureROMDef VUE_MASTER_IMAGE_29_RIGHT_TX =
     (CharSetDefinition*)&VUE_MASTER_IMAGE_29_CH,
 
     // bgmap definition
-    VueMasterImage29RightMap,
+    VueMasterImage29RMap,
 
     // cols (max 64)
     48,
@@ -176,34 +177,58 @@ BgmapSpriteROMDef* const VUE_MASTER_IMAGE_29_SPRITES[] =
 	NULL
 };
 
-AnimatedEntityROMDef VUE_MASTER_IMAGE_29_EN =
+VueMasterImageROMDef VUE_MASTER_IMAGE_29_EN =
 {
+	// animated entity definition
 	{
-		// class allocator
-		__TYPE(AnimatedEntity),
+		{
+			// class allocator
+			__TYPE(AnimatedEntity),
 
-		// sprites
-		(SpriteROMDef**)VUE_MASTER_IMAGE_29_SPRITES,
+			// sprites
+			(SpriteROMDef**)VUE_MASTER_IMAGE_29_SPRITES,
 
-		// collision shapes
-		(ShapeDefinition*)NULL,
+			// collision shapes
+			(ShapeDefinition*)NULL,
 
-		// size
-		// if 0, width and height will be inferred from the first sprite's texture's size
-		{0, 0, 0},
+			// size
+			// if 0, width and height will be inferred from the first sprite's texture's size
+			{0, 0, 0},
 
-		// gameworld's character's type
-		kNoType,
+			// gameworld's character's type
+			kNoType,
 
-		// physical specification
-		(PhysicalSpecification*)NULL,
+			// physical specification
+			(PhysicalSpecification*)NULL,
+		},
+
+		// pointer to the animation definition for the item
+		(AnimationDescription*)NULL,
+
+		// initial animation
+		NULL
 	},
 
-	// pointer to the animation definition for the item
-	(AnimationDescription*)NULL,
+	// colors config
+	{
+		// background color
+		__COLOR_BLACK,
 
-	// initial animation
-	NULL,
+		// brightness
+		// these values times the repeat values specified in the column table (max. 16) make the final
+		// brightness values on the respective regions of the screen. maximum brightness is 128.
+		{
+			// dark red
+			__BRIGHTNESS_DARK_RED,
+			// medium red
+			__BRIGHTNESS_MEDIUM_RED,
+			// bright red
+			__BRIGHTNESS_BRIGHT_RED,
+		},
+
+		// brightness repeat
+		(BrightnessRepeatDefinition*)NULL,
+	},
 };
 
 

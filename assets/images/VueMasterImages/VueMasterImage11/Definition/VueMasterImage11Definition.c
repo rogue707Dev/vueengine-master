@@ -35,10 +35,10 @@
 //												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE VueMasterImage11LeftTiles[];
-extern BYTE VueMasterImage11LeftMap[];
-extern BYTE VueMasterImage11RightTiles[];
-extern BYTE VueMasterImage11RightMap[];
+extern BYTE VueMasterImage11LTiles[];
+extern BYTE VueMasterImage11LMap[];
+extern BYTE VueMasterImage11RTiles[];
+extern BYTE VueMasterImage11RMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -91,7 +91,7 @@ CharSetROMDef VUE_MASTER_IMAGE_11_L_CH =
 	__ANIMATED_SINGLE_OPTIMIZED,
 
 	// char definition
-	VueMasterImage11LeftTiles,
+	VueMasterImage11LTiles,
 };
 
 TextureROMDef VUE_MASTER_IMAGE_11_L_TX =
@@ -100,7 +100,7 @@ TextureROMDef VUE_MASTER_IMAGE_11_L_TX =
 	(CharSetDefinition*)&VUE_MASTER_IMAGE_11_L_CH,
 
 	// bgmap definition
-	VueMasterImage11LeftMap,
+	VueMasterImage11LMap,
 
 	// cols (max 64)
 	48,
@@ -162,7 +162,7 @@ CharSetROMDef VUE_MASTER_IMAGE_11_R_CH =
 	__ANIMATED_SINGLE_OPTIMIZED,
 
 	// char definition
-	VueMasterImage11RightTiles,
+	VueMasterImage11RTiles,
 };
 
 TextureROMDef VUE_MASTER_IMAGE_11_R_TX =
@@ -171,7 +171,7 @@ TextureROMDef VUE_MASTER_IMAGE_11_R_TX =
 	(CharSetDefinition*)&VUE_MASTER_IMAGE_11_R_CH,
 
 	// bgmap definition
-	VueMasterImage11RightMap,
+	VueMasterImage11RMap,
 
 	// cols (max 64)
 	48,
@@ -228,34 +228,58 @@ BgmapSpriteROMDef* const VUE_MASTER_IMAGE_11_SPRITES[] =
 	NULL
 };
 
-AnimatedEntityROMDef VUE_MASTER_IMAGE_11_EN =
+VueMasterImageROMDef VUE_MASTER_IMAGE_11_EN =
 {
+	// animated entity definition
 	{
-		// class allocator
-		__TYPE(AnimatedEntity),
+		{
+			// class allocator
+			__TYPE(AnimatedEntity),
 
-		// sprites
-		(SpriteROMDef**)VUE_MASTER_IMAGE_11_SPRITES,
+			// sprites
+			(SpriteROMDef**)VUE_MASTER_IMAGE_11_SPRITES,
 
-		// collision shapes
-		(ShapeDefinition*)NULL,
+			// collision shapes
+			(ShapeDefinition*)NULL,
 
-		// size
-		// if 0, width and height will be inferred from the first sprite's texture's size
-		{0, 0, 0},
+			// size
+			// if 0, width and height will be inferred from the first sprite's texture's size
+			{0, 0, 0},
 
-		// gameworld's character's type
-		0,
+			// gameworld's character's type
+			0,
 
-		// physical specification
-		(PhysicalSpecification*)NULL,
+			// physical specification
+			(PhysicalSpecification*)NULL,
+		},
+
+		// pointer to the animation definition for the item
+		(AnimationDescription*)&VUE_MASTER_IMAGE_11_ANIM,
+
+		// initial animation
+		"Default"
 	},
 
-	// pointer to the animation definition for the item
-	(AnimationDescription*)&VUE_MASTER_IMAGE_11_ANIM,
+	// colors config
+	{
+		// background color
+		__COLOR_BLACK,
 
-	// initial animation
-	"Default",
+		// brightness
+		// these values times the repeat values specified in the column table (max. 16) make the final
+		// brightness values on the respective regions of the screen. maximum brightness is 128.
+		{
+			// dark red
+			__BRIGHTNESS_DARK_RED,
+			// medium red
+			__BRIGHTNESS_MEDIUM_RED,
+			// bright red
+			__BRIGHTNESS_BRIGHT_RED,
+		},
+
+		// brightness repeat
+		(BrightnessRepeatDefinition*)NULL,
+	},
 };
 
 

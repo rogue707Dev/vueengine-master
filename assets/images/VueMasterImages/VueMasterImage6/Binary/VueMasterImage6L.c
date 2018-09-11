@@ -1,9 +1,9 @@
 
-//{{BLOCK(VueMasterImage6Left)
+//{{BLOCK(VueMasterImage6L)
 
 //======================================================================
 //
-//	VueMasterImage6Left, 384x224@2, 
+//	VueMasterImage6L, 384x224@2, 
 //	+ regular map (flat), not compressed, 48x28 
 //	External tile file: (null).
 //	Total size: 2688 = 2688
@@ -13,7 +13,7 @@
 //
 //======================================================================
 
-const unsigned short VueMasterImage6LeftMap[1344] __attribute__((aligned(4)))=
+const unsigned short VueMasterImage6LMap[1344] __attribute__((aligned(4)))=
 {
 	0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,
 	0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,
@@ -205,4 +205,4 @@ const unsigned short VueMasterImage6LeftMap[1344] __attribute__((aligned(4)))=
 	0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,
 };
 
-//}}BLOCK(VueMasterImage6Left)
+//}}BLOCK(VueMasterImage6L)

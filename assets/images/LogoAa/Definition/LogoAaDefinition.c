@@ -26,6 +26,7 @@
 
 #include <Entity.h>
 #include <BgmapSprite.h>
+#include <VueMasterState.h>
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -33,8 +34,8 @@
 //---------------------------------------------------------------------------------------------------------
 
 extern BYTE LogoAaTiles[];
-extern BYTE LogoAaLeftMap[];
-extern BYTE LogoAaRightMap[];
+extern BYTE LogoAaLMap[];
+extern BYTE LogoAaRMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -62,7 +63,7 @@ TextureROMDef LOGO_AA_LEFT_TX =
     (CharSetDefinition*)&LOGO_AA_CH,
 
     // bgmap definition
-    LogoAaLeftMap,
+    LogoAaLMap,
 
     // cols (max 64)
     23,
@@ -91,7 +92,7 @@ TextureROMDef LOGO_AA_RIGHT_TX =
     (CharSetDefinition*)&LOGO_AA_CH,
 
     // bgmap definition
-    LogoAaRightMap,
+    LogoAaRMap,
 
     // cols (max 64)
     23,

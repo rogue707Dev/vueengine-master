@@ -1,7 +1,7 @@
 // Number of frames: 8
 // Number of chars per frame: 260
  
-const unsigned int VueMasterImage11RightTiles[] __attribute__((aligned(4))) = 
+const unsigned int VueMasterImage11RTiles[] __attribute__((aligned(4))) = 
 {
 0x00000000,0x00000000,0x00000000,0x00000000,0xFFFFFFFF,0xFFFFFFFF,0xFFFFFFFF,0xFFFFFFFF,
 0xFFFFFFFF,0xFFFFFFFF,0xEBFFFFFF,0x5553141F,0xFFFFFFFF,0xEFFFFFFF,0x501610BF,0x001A4069,
@@ -1407,7 +1407,7 @@ const unsigned int VueMasterImage11RightTiles[] __attribute__((aligned(4))) =
 0x00000000,
 };
  
-const unsigned short VueMasterImage11RightMap[] __attribute__((aligned(4)))=
+const unsigned short VueMasterImage11RMap[] __attribute__((aligned(4)))=
 {
 0x0001,0x0001,0x0001,0x0001,0x0001,0x0001,0x0001,0x0001,
 0x0001,0x0001,0x0001,0x0001,0x0001,0x0001,0x0001,0x0001,

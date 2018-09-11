@@ -32,10 +32,10 @@
 //												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE ViewtualBoyLeftTiles[];
-extern BYTE ViewtualBoyRightTiles[];
-extern BYTE ViewtualBoyLeftMap[];
-extern BYTE ViewtualBoyRightMap[];
+extern BYTE ViewtualBoyLTiles[];
+extern BYTE ViewtualBoyRTiles[];
+extern BYTE ViewtualBoyLMap[];
+extern BYTE ViewtualBoyRMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -87,7 +87,7 @@ CharSetROMDef VIEWTUAL_BOY_LEFT_CH =
 	__ANIMATED_SINGLE,
 
 	// char definition
-	ViewtualBoyLeftTiles,
+	ViewtualBoyLTiles,
 };
 
 CharSetROMDef VIEWTUAL_BOY_RIGHT_CH =
@@ -102,7 +102,7 @@ CharSetROMDef VIEWTUAL_BOY_RIGHT_CH =
 	__ANIMATED_SINGLE,
 
 	// char definition
-	ViewtualBoyRightTiles,
+	ViewtualBoyRTiles,
 };
 
 TextureROMDef VIEWTUAL_BOY_LEFT_TX =
@@ -111,7 +111,7 @@ TextureROMDef VIEWTUAL_BOY_LEFT_TX =
 	(CharSetDefinition*)&VIEWTUAL_BOY_LEFT_CH,
 
 	// bgmap definition
-	ViewtualBoyLeftMap,
+	ViewtualBoyLMap,
 
 	// cols (max 64)
 	22,
@@ -140,7 +140,7 @@ TextureROMDef VIEWTUAL_BOY_RIGHT_TX =
 	(CharSetDefinition*)&VIEWTUAL_BOY_RIGHT_CH,
 
 	// bgmap definition
-	ViewtualBoyRightMap,
+	ViewtualBoyRMap,
 
 	// cols (max 64)
 	22,
