@@ -212,7 +212,7 @@ VueMasterImageROMDef VUE_MASTER_IMAGE_2_EN =
 	// colors config
 	{
 		// background color
-		__COLOR_BRIGHT_RED,
+		__COLOR_BLACK,
 
 		// brightness
 		// these values times the repeat values specified in the column table (max. 16) make the final

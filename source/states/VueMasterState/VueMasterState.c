@@ -93,7 +93,9 @@ void VueMasterState::enter(void* owner __attribute__ ((unused)))
 	VueMasterState::printImageNumber(this);
 
 	// set initial image's color config
-	// TODO
+	VueMasterImageROMDef* vueMasterImageDefinition = VUE_MASTER_ENTITIES[this->currentImage];
+	ColorConfig colorConfig = vueMasterImageDefinition->colorConfig;
+	VueMasterState::setColorConfig(this, colorConfig);
 
 	// start clocks to start animations
 	GameState::startClocks(GameState::safeCast(this));
@@ -102,7 +104,7 @@ void VueMasterState::enter(void* owner __attribute__ ((unused)))
 	Camera::startEffect(Camera::getInstance(),
 		kFadeTo, // effect type
 		0, // initial delay (in ms)
-		NULL, // target brightness
+		&colorConfig.brightness, // target brightness
 		0, // delay between fading steps (in ms)
 		(void (*)(Object, Object))VueMasterState::onFadeInComplete, // callback function
 		Object::safeCast(this) // callback scope
@@ -159,17 +161,8 @@ void VueMasterState::switchImage()
 	this->animationPlaying = true;
 
 	// set color config
-	VIPManager::setBackgroundColor(VIPManager::getInstance(), vueMasterImageDefinition->colorConfig.backgroundColor);
-	BrightnessRepeatDefinition* brightnessRepeat = vueMasterImageDefinition->colorConfig.brightnessRepeat;
-	if(brightnessRepeat != NULL)
-	{
-		VIPManager::setupBrightnessRepeat(VIPManager::getInstance(), vueMasterImageDefinition->colorConfig.brightnessRepeat);
-	}
-	__SET_BRIGHT(
-		vueMasterImageDefinition->colorConfig.brightness.darkRed,
-		vueMasterImageDefinition->colorConfig.brightness.mediumRed,
-		vueMasterImageDefinition->colorConfig.brightness.brightRed - (vueMasterImageDefinition->colorConfig.brightness.darkRed + vueMasterImageDefinition->colorConfig.brightness.mediumRed)
-	);
+	ColorConfig colorConfig = vueMasterImageDefinition->colorConfig;
+	VueMasterState::setColorConfig(this, colorConfig);
 
 	// print image number
 	VueMasterState::printImageNumber(this);
@@ -178,7 +171,7 @@ void VueMasterState::switchImage()
 	Camera::startEffect(Camera::getInstance(),
 		kFadeTo, // effect type
 		100, // initial delay (in ms)
-		NULL, // target brightness
+		&colorConfig.brightness, // target brightness
 		0, // delay between fading steps (in ms)
 		NULL, // callback function
 		NULL // callback scope
@@ -270,6 +263,19 @@ void VueMasterState::processUserInput(UserInput userInput)
 				//AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->arrowsEntity), "Visible");
 			}
 		}
+	}
+}
+
+void VueMasterState::setColorConfig(ColorConfig colorConfig)
+{
+	// background color
+	VIPManager::setBackgroundColor(VIPManager::getInstance(), colorConfig.backgroundColor);
+
+	// brightness repeat
+	BrightnessRepeatDefinition* brightnessRepeat = colorConfig.brightnessRepeat;
+	if(brightnessRepeat)
+	{
+		VIPManager::setupBrightnessRepeat(VIPManager::getInstance(), colorConfig.brightnessRepeat);
 	}
 }
 

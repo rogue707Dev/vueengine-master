@@ -207,7 +207,28 @@ VueMasterImageROMDef VUE_MASTER_IMAGE_3_EN =
 
 		// initial animation
 		NULL,
-	}
+	},
+
+	// colors config
+	{
+		// background color
+		__COLOR_BLACK,
+
+		// brightness
+		// these values times the repeat values specified in the column table (max. 16) make the final
+		// brightness values on the respective regions of the screen. maximum brightness is 128.
+		{
+			// dark red
+			__BRIGHTNESS_DARK_RED,
+			// medium red
+			__BRIGHTNESS_MEDIUM_RED,
+			// bright red
+			__BRIGHTNESS_BRIGHT_RED,
+		},
+
+		// brightness repeat
+		(BrightnessRepeatDefinition*)NULL,
+	},
 };
 
 
