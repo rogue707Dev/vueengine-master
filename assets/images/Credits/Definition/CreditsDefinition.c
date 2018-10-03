@@ -44,7 +44,7 @@ CharSetROMDef CREDITS_CH =
 	// number of chars, depending on allocation type:
 	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
 	// __ANIMATED_MULTI, __NOT_ANIMATED: sum of all chars
-	39,
+	36,
 
 	// allocation type
 	// (__ANIMATED_SINGLE, __ANIMATED_SINGLE_OPTIMIZED, __ANIMATED_SHARED, __ANIMATED_SHARED_COORDINATED, __ANIMATED_MULTI or __NOT_ANIMATED)
@@ -63,7 +63,7 @@ TextureROMDef CREDITS_TX =
 	CreditsMap,
 
 	// cols (max 64)
-	44,
+	36,
 
 	// rows (max 64)
 	1,
@@ -77,7 +77,7 @@ TextureROMDef CREDITS_TX =
 	1,
 
 	// palette number (0-3)
-	0,
+	1,
 
 	// recyclable
 	false,

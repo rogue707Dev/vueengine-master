@@ -48,7 +48,7 @@ const char* const LANGUAGE_EN_STRINGS[] =
 	/* STR_REEL_TITLE */
 	"The VUE-MASTER Demo Reel\n   2018 by STEREO BOY",
 	/* STR_REEL_CREDITS */
-	"Photos & CGI by STEREO\nBOY. VB Controller &\nStand 3D models by\nHedgetrimmer.",
+	"Photos & CGI by STEREO BOY.\n VB Controller & Stand 3D\n  models by Hedgetrimmer.",
 };
 
 const LangROMDef LANGUAGE_EN =

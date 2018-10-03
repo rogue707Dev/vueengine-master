@@ -33,8 +33,6 @@
 //---------------------------------------------------------------------------------------------------------
 
 extern FontDefinition VUENGINE_FONT;
-extern EntityDefinition VIEWTUAL_BOY_AG;
-extern EntityDefinition VIEWTUAL_BOY_ARROWS_AG;
 extern EntityDefinition CREDITS_EN;
 extern EntityDefinition PRESS_START_AG;
 extern EntityDefinition LOGO_AA_EN;
@@ -46,11 +44,9 @@ extern EntityDefinition LOGO_AA_EN;
 
 PositionedEntityROMDef TITLE_SCREEN_ST_CHILDREN[] =
 {
-	{&LOGO_AA_EN, 				{100, 48,  0, 	0}, 0, NULL, NULL, NULL, false},
-	{&VIEWTUAL_BOY_AG, 			{292, 106, 48, 	0}, 0, "VB", NULL, NULL, false},
-	{&VIEWTUAL_BOY_ARROWS_AG, 	{292, 92,  24, 	0}, 0, "Arrows", NULL, NULL, false},
-	{&PRESS_START_AG, 			{100, 164, 0, 	0}, 0, "PrssStrt", NULL, NULL, false},
-	{&CREDITS_EN, 				{192, 212, 0, 	0}, 0, NULL, NULL, NULL, false},
+	{&LOGO_AA_EN, 		{192,  52, 0, 0}, 0, NULL, NULL, NULL, false},
+	{&PRESS_START_AG, 	{192, 164, 0, 0}, 0, "PrssStrt", NULL, NULL, false},
+	{&CREDITS_EN, 		{192, 212, 0, 0}, 0, NULL, NULL, NULL, false},
 
 	{NULL,{0,0,0,0}, 0, NULL, NULL, NULL, false},
 };
@@ -146,7 +142,7 @@ StageROMDef TITLE_SCREEN_ST =
         // colors config
         {
             // background color
-            __COLOR_BRIGHT_RED,
+            __COLOR_DARK_RED,
 
             // brightness
             // these values times the repeat values specified in the column table (max. 16) make the final

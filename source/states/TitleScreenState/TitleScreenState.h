@@ -36,13 +36,8 @@
 
 singleton class TitleScreenState : GameState
 {
-	AnimatedEntity viewtualBoyEntity;
-	AnimatedEntity viewtualBoyArrowsEntity;
-	bool animationPlaying;
-
 	static TitleScreenState getInstance();
 	override void enter(void* owner);
-	override void resume(void* owner);
 	override void processUserInput(UserInput userInput);
 }
 
