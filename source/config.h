@@ -377,9 +377,9 @@
 
 // Default palette values, actual values are set in stage definitions
 #define __BGMAP_PALETTE_0						0b11100100
-#define __BGMAP_PALETTE_1						0b10100000
+#define __BGMAP_PALETTE_1						0b11100000
 #define __BGMAP_PALETTE_2						0b01010000
-#define __BGMAP_PALETTE_3						0b00100100
+#define __BGMAP_PALETTE_3						0b10100000
 
 #define __OBJECT_PALETTE_0						__BGMAP_PALETTE_0
 #define __OBJECT_PALETTE_1						__BGMAP_PALETTE_1

@@ -35,7 +35,7 @@
 extern FontDefinition VUENGINE_FONT;
 extern EntityDefinition CREDITS_EN;
 extern EntityDefinition PRESS_START_AG;
-extern EntityDefinition LOGO_AA_EN;
+extern EntityDefinition LOGO_AE;
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ extern EntityDefinition LOGO_AA_EN;
 
 PositionedEntityROMDef TITLE_SCREEN_ST_CHILDREN[] =
 {
-	{&LOGO_AA_EN, 		{192,  52, 0, 0}, 0, NULL, NULL, NULL, false},
+	{&LOGO_AE, 			{186,  52, 0, 0}, 0, NULL, NULL, NULL, false},
 	{&PRESS_START_AG, 	{192, 164, 0, 0}, 0, "PrssStrt", NULL, NULL, false},
 	{&CREDITS_EN, 		{192, 212, 0, 0}, 0, NULL, NULL, NULL, false},
 

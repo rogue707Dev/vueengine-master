@@ -89,7 +89,7 @@ void VueMasterState::enter(void* owner __attribute__ ((unused)))
 	));
 
 	// print image number
-	Printing::setPalette(Printing::getInstance(), 1);
+	Printing::setPalette(Printing::getInstance(), 3);
 	VueMasterState::printImageNumber(this);
 
 	// set initial image's color config

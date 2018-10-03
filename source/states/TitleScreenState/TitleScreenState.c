@@ -86,7 +86,7 @@ void TitleScreenState::enter(void* owner __attribute__ ((unused)))
 		12,
 		NULL
 	);
-	Printing::setPalette(Printing::getInstance(), 1);
+	Printing::setPalette(Printing::getInstance(), 3);
 	Printing::text(
 		Printing::getInstance(),
 		strReelCredits,

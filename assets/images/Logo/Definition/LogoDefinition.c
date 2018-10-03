@@ -24,114 +24,119 @@
 //												INCLUDES
 //---------------------------------------------------------------------------------------------------------
 
-#include <Entity.h>
-#include <BgmapSprite.h>
-#include <VueMasterState.h>
+#include <AnimatedEntity.h>
+#include <BgmapAnimatedSprite.h>
 
 
 //---------------------------------------------------------------------------------------------------------
-// 												DECLARATIONS
+//												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE LogoTiles[];
+extern BYTE LogoLTiles[];
 extern BYTE LogoLMap[];
+extern BYTE LogoRTiles[];
 extern BYTE LogoRMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
-// 												DEFINITIONS
+//												DEFINITIONS
 //---------------------------------------------------------------------------------------------------------
 
-CharSetROMDef LOGO_CH =
+AnimationFunctionROMDef LOGO_DEFAULT_ANIM =
+{
+	// number of frames of this animation function
+	2,
+
+	// frames to play in animation
+	{0, 1},
+
+	// number of cycles a frame of animation is displayed
+	1,
+
+	// whether to play it in loop or not
+	true,
+
+	// method to call on function completion
+	NULL,
+
+	// function's name
+	"Default",
+};
+
+// an animation definition
+AnimationDescriptionROMDef LOGO_ANIM =
+{
+	// animation functions
+	{
+		(AnimationFunction*)&LOGO_DEFAULT_ANIM,
+		NULL,
+	}
+};
+
+/* LEFT */
+
+CharSetROMDef LOGO_L_CH =
 {
 	// number of chars, depending on allocation type:
 	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
 	// __ANIMATED_MULTI, __NOT_ANIMATED: sum of all chars
-    250,
+	23*8,
 
-    // allocation type
-    // (__ANIMATED_SINGLE, __ANIMATED_SINGLE_OPTIMIZED, __ANIMATED_SHARED, __ANIMATED_SHARED_COORDINATED, __ANIMATED_MULTI or __NOT_ANIMATED)
-    __NOT_ANIMATED,
+	// allocation type
+	// (__ANIMATED_SINGLE, __ANIMATED_SINGLE_OPTIMIZED, __ANIMATED_SHARED, __ANIMATED_SHARED_COORDINATED, __ANIMATED_MULTI or __NOT_ANIMATED)
+	__ANIMATED_SINGLE,
 
-    // char definition
-    LogoTiles,
+	// char definition
+	LogoLTiles,
 };
 
-TextureROMDef LOGO_LEFT_TX =
+TextureROMDef LOGO_L_TX =
 {
-    // charset definition
-    (CharSetDefinition*)&LOGO_CH,
+	// charset definition
+	(CharSetDefinition*)&LOGO_L_CH,
 
-    // bgmap definition
-    LogoLMap,
+	// bgmap definition
+	LogoLMap,
 
-    // cols (max 64)
-    23,
+	// cols (max 64)
+	23,
 
-    // rows (max 64)
-    8,
+	// rows (max 64)
+	8,
 
-    // padding for affine/hbias transformations (cols, rows)
+	// padding for affine/hbias transformations (cols, rows)
 	{0, 0},
 
 	// number of frames, depending on charset's allocation type:
-    // __ANIMATED_SINGLE, _SHARED, _SHARED_COORDINATED, __NOT_ANIMATED: 1
-    // __ANIMATED_MULTI: total number of frames
-    1,
+	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*, __NOT_ANIMATED: 1
+	// __ANIMATED_MULTI: total number of frames
+	1,
 
-    // palette number (0-3)
-    3,
+	// palette number (0-3)
+	1,
 
 	// recyclable
 	false,
 };
 
-TextureROMDef LOGO_RIGHT_TX =
+BgmapSpriteROMDef LOGO_L_SP =
 {
-    // charset definition
-    (CharSetDefinition*)&LOGO_CH,
+	{
+		// sprite's type
+		__TYPE(BgmapAnimatedSprite),
 
-    // bgmap definition
-    LogoRMap,
-
-    // cols (max 64)
-    23,
-
-    // rows (max 64)
-    8,
-
-    // padding for affine/hbias transformations (cols, rows)
-	{0, 0},
-
-	// number of frames, depending on charset's allocation type:
-    // __ANIMATED_SINGLE, _SHARED, _SHARED_COORDINATED, __NOT_ANIMATED: 1
-    // __ANIMATED_MULTI: total number of frames
-    1,
-
-    // palette number (0-3)
-    3,
-
-	// recyclable
-	false,
-};
-
-BgmapSpriteROMDef LOGO_LEFT_SPRITE =
-{
-    {
-        // sprite's type
-        __TYPE(BgmapSprite),
-
-        // texture definition
-        (TextureDefinition*)&LOGO_LEFT_TX,
+		// texture definition
+		(TextureDefinition*)&LOGO_L_TX,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
 
-        // displacement
-        {0, 0, 0, 0},
-    },
+		// displacement
+		{0, 0, 0, 0},
+	},
 
-	// bgmap mode (__WORLD_BGMAP, __WORLD_AFFINE, __WORLD_OBJ or __WORLD_HBIAS)
+	// bgmap mode (__WORLD_BGMAP, __WORLD_AFFINE, __WORLD_OBJECT or __WORLD_HBIAS)
+	// make sure to use the proper corresponding sprite type throughout the definition (BgmapSprite or ObjectSprite)
 	__WORLD_BGMAP,
 
 	// pointer to affine/hbias manipulation function
@@ -141,23 +146,70 @@ BgmapSpriteROMDef LOGO_LEFT_SPRITE =
 	__WORLD_LON,
 };
 
-BgmapSpriteROMDef LOGO_RIGHT_SPRITE =
-{
-    {
-        // sprite's type
-        __TYPE(BgmapSprite),
+/* RIGHT */
 
-        // texture definition
-        (TextureDefinition*)&LOGO_RIGHT_TX,
+CharSetROMDef LOGO_R_CH =
+{
+	// number of chars, depending on allocation type:
+	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
+	// __ANIMATED_MULTI, __NOT_ANIMATED: sum of all chars
+	23*8,
+
+	// allocation type
+	// (__ANIMATED_SINGLE, __ANIMATED_SINGLE_OPTIMIZED, __ANIMATED_SHARED, __ANIMATED_SHARED_COORDINATED, __ANIMATED_MULTI or __NOT_ANIMATED)
+	__ANIMATED_SINGLE,
+
+	// char definition
+	LogoRTiles,
+};
+
+TextureROMDef LOGO_R_TX =
+{
+	// charset definition
+	(CharSetDefinition*)&LOGO_R_CH,
+
+	// bgmap definition
+	LogoRMap,
+
+	// cols (max 64)
+	23,
+
+	// rows (max 64)
+	8,
+
+	// padding for affine/hbias transformations (cols, rows)
+	{0, 0},
+
+	// number of frames, depending on charset's allocation type:
+	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*, __NOT_ANIMATED: 1
+	// __ANIMATED_MULTI: total number of frames
+	1,
+
+	// palette number (0-3)
+	1,
+
+	// recyclable
+	false,
+};
+
+BgmapSpriteROMDef LOGO_R_SP =
+{
+	{
+		// sprite's type
+		__TYPE(BgmapAnimatedSprite),
+
+		// texture definition
+		(TextureDefinition*)&LOGO_R_TX,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
 
-        // displacement
-        {0, 0, 0, 0},
-    },
+		// displacement
+		{0, 0, 0, 0},
+	},
 
-	// bgmap mode (__WORLD_BGMAP, __WORLD_AFFINE, __WORLD_OBJ or __WORLD_HBIAS)
+	// bgmap mode (__WORLD_BGMAP, __WORLD_AFFINE, __WORLD_OBJECT or __WORLD_HBIAS)
+	// make sure to use the proper corresponding sprite type throughout the definition (BgmapSprite or ObjectSprite)
 	__WORLD_BGMAP,
 
 	// pointer to affine/hbias manipulation function
@@ -167,31 +219,41 @@ BgmapSpriteROMDef LOGO_RIGHT_SPRITE =
 	__WORLD_RON,
 };
 
-BgmapSpriteROMDef* const LOGO_IM_SPS[] =
+/* ENTITY */
+
+BgmapSpriteROMDef* const LOGO_SPRITES[] =
 {
-	&LOGO_LEFT_SPRITE,
-	&LOGO_RIGHT_SPRITE,
+	&LOGO_L_SP,
+	&LOGO_R_SP,
 	NULL
 };
 
-EntityROMDef LOGO_EN =
+AnimatedEntityROMDef LOGO_AE =
 {
-	// class allocator
-	__TYPE(Entity),
+	{
+		// class allocator
+		__TYPE(AnimatedEntity),
 
-	// sprites
-	(SpriteROMDef**)LOGO_IM_SPS,
+		// sprites
+		(SpriteROMDef**)LOGO_SPRITES,
 
-	// collision shapes
-	NULL,
+		// collision shapes
+		(ShapeDefinition*)NULL,
 
-	// size
-	// if 0, width and height will be inferred from the first sprite's texture's size
-	{0, 0, 0},
+		// size
+		// if 0, width and height will be inferred from the first sprite's texture's size
+		{0, 0, 0},
 
-	// gameworld's character's type
-	kNoType,
+		// gameworld's character's type
+		kNoType,
 
-	// physical specification
-	NULL,
+		// physical specification
+		(PhysicalSpecification*)NULL,
+	},
+
+	// pointer to the animation definition for the item
+	(AnimationDescription*)&LOGO_ANIM,
+
+	// initial animation
+	"Default",
 };

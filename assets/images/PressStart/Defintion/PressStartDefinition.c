@@ -110,7 +110,7 @@ TextureROMDef PRESS_START_TX =
 	1,
 
 	// palette number (0-3)
-	1,
+	3,
 
 	// recyclable
 	false,
