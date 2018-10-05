@@ -42,7 +42,7 @@ extern BYTE LogoRMap[];
 //												DEFINITIONS
 //---------------------------------------------------------------------------------------------------------
 
-AnimationFunctionROMDef LOGO_DEFAULT_ANIM =
+AnimationFunctionROMDef LOGO_HI_COLOR_ANIM =
 {
 	// number of frames of this animation function
 	2,
@@ -60,7 +60,28 @@ AnimationFunctionROMDef LOGO_DEFAULT_ANIM =
 	NULL,
 
 	// function's name
-	"Default",
+	"HiColor",
+};
+
+AnimationFunctionROMDef LOGO_4_COLOR_ANIM =
+{
+	// number of frames of this animation function
+	1,
+
+	// frames to play in animation
+	{0},
+
+	// number of cycles a frame of animation is displayed
+	1,
+
+	// whether to play it in loop or not
+	false,
+
+	// method to call on function completion
+	NULL,
+
+	// function's name
+	"4Color",
 };
 
 // an animation definition
@@ -68,7 +89,8 @@ AnimationDescriptionROMDef LOGO_ANIM =
 {
 	// animation functions
 	{
-		(AnimationFunction*)&LOGO_DEFAULT_ANIM,
+		(AnimationFunction*)&LOGO_HI_COLOR_ANIM,
+		(AnimationFunction*)&LOGO_4_COLOR_ANIM,
 		NULL,
 	}
 };
@@ -255,5 +277,5 @@ AnimatedEntityROMDef LOGO_AE =
 	(AnimationDescription*)&LOGO_ANIM,
 
 	// initial animation
-	"Default",
+	"HiColor",
 };

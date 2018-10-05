@@ -36,6 +36,10 @@
 
 singleton class TitleScreenState : GameState
 {
+	AnimatedEntity hiColorEntity;
+	AnimatedEntity logoEntity;
+	bool hiColorMode;
+
 	static TitleScreenState getInstance();
 	override void enter(void* owner);
 	override void processUserInput(UserInput userInput);

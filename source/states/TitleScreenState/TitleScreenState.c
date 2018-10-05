@@ -57,6 +57,11 @@ void TitleScreenState::destructor()
 {
 	// destroy base
 	Base::destructor();
+
+	// init members
+	this->hiColorMode = true;
+	this->hiColorEntity = NULL;
+	this->logoEntity = NULL;
 }
 
 void TitleScreenState::enter(void* owner __attribute__ ((unused)))
@@ -72,6 +77,18 @@ void TitleScreenState::enter(void* owner __attribute__ ((unused)))
 
 	// load stage
 	GameState::loadStage(GameState::safeCast(this), (StageDefinition*)&TITLE_SCREEN_ST, NULL, true);
+
+	// get entities
+	this->hiColorEntity = AnimatedEntity::safeCast(Container::getChildByName(
+		Container::safeCast(Game::getStage(Game::getInstance())),
+		"HiColor",
+		false
+	));
+	this->logoEntity = AnimatedEntity::safeCast(Container::getChildByName(
+		Container::safeCast(Game::getStage(Game::getInstance())),
+		"Logo",
+		false
+	));
 
 	// print reel title and credits
 	const char* strReelTitle = I18n::getText(I18n::getInstance(), STR_REEL_TITLE);
@@ -139,6 +156,12 @@ void TitleScreenState::processUserInput(UserInput userInput)
 			(void (*)(Object, Object))TitleScreenState::onFadeOutComplete, // callback function
 			Object::safeCast(this) // callback scope
 		);
+	}
+	else if(userInput.pressedKey & (K_LL|K_RL|K_LR|K_RR))
+	{
+		this->hiColorMode = !this->hiColorMode;
+		AnimatedEntity::playAnimation(this->hiColorEntity, this->hiColorMode ? "HiColor" : "4Color");
+		AnimatedEntity::playAnimation(this->logoEntity, this->hiColorMode ? "HiColor" : "4Color");
 	}
 }
 

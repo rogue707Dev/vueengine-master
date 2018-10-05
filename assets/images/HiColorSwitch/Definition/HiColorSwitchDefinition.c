@@ -24,49 +24,102 @@
 //												INCLUDES
 //---------------------------------------------------------------------------------------------------------
 
-#include <Entity.h>
+#include <AnimatedEntity.h>
+#include <BgmapAnimatedSprite.h>
 
 
 //---------------------------------------------------------------------------------------------------------
 //												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE CreditsTiles[];
-extern BYTE CreditsMap[];
+extern BYTE HiColorSwitchTiles[];
+extern BYTE HiColorSwitchMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
 //												DEFINITIONS
 //---------------------------------------------------------------------------------------------------------
 
-CharSetROMDef CREDITS_CH =
+AnimationFunctionROMDef HI_COLOR_SWITCH_HI_COLOR_ANIM =
+{
+	// number of frames of this animation function
+	2,
+
+	// frames to play in animation
+	{0, 1},
+
+	// number of cycles a frame of animation is displayed
+	1,
+
+	// whether to play it in loop or not
+	true,
+
+	// method to call on function completion
+	NULL,
+
+	// function's name
+	"HiColor",
+};
+AnimationFunctionROMDef HI_COLOR_SWITCH_4_COLOR_ANIM =
+{
+	// number of frames of this animation function
+	1,
+
+	// frames to play in animation
+	{2},
+
+	// number of cycles a frame of animation is displayed
+	1,
+
+	// whether to play it in loop or not
+	false,
+
+	// method to call on function completion
+	NULL,
+
+	// function's name
+	"4Color",
+};
+
+// an animation definition
+AnimationDescriptionROMDef HI_COLOR_SWITCH_ANIM =
+{
+	// animation functions
+	{
+		(AnimationFunction*)&HI_COLOR_SWITCH_HI_COLOR_ANIM,
+		(AnimationFunction*)&HI_COLOR_SWITCH_4_COLOR_ANIM,
+		NULL,
+	}
+};
+
+CharSetROMDef HI_COLOR_SWITCH_CH =
 {
 	// number of chars, depending on allocation type:
 	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
 	// __ANIMATED_MULTI, __NOT_ANIMATED: sum of all chars
-	36,
+	5*6,
 
 	// allocation type
 	// (__ANIMATED_SINGLE, __ANIMATED_SINGLE_OPTIMIZED, __ANIMATED_SHARED, __ANIMATED_SHARED_COORDINATED, __ANIMATED_MULTI or __NOT_ANIMATED)
-	__NOT_ANIMATED,
+	__ANIMATED_SINGLE,
 
 	// char definition
-	CreditsTiles,
+	HiColorSwitchTiles,
 };
 
-TextureROMDef CREDITS_TX =
+TextureROMDef HI_COLOR_SWITCH_TX =
 {
 	// charset definition
-	(CharSetDefinition*)&CREDITS_CH,
+	(CharSetDefinition*)&HI_COLOR_SWITCH_CH,
 
 	// bgmap definition
-	CreditsMap,
+	HiColorSwitchMap,
 
 	// cols (max 64)
-	36,
+	5,
 
 	// rows (max 64)
-	1,
+	6,
 
 	// padding for affine/hbias transformations (cols, rows)
 	{0, 0},
@@ -77,20 +130,20 @@ TextureROMDef CREDITS_TX =
 	1,
 
 	// palette number (0-3)
-	0,
+	1,
 
 	// recyclable
 	false,
 };
 
-BgmapSpriteROMDef CREDITS_SPRITE =
+BgmapSpriteROMDef HI_COLOR_SWITCH_SP =
 {
 	{
 		// sprite's type
-		__TYPE(BgmapSprite),
+		__TYPE(BgmapAnimatedSprite),
 
 		// texture definition
-		(TextureDefinition*)&CREDITS_TX,
+		(TextureDefinition*)&HI_COLOR_SWITCH_TX,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
@@ -110,30 +163,38 @@ BgmapSpriteROMDef CREDITS_SPRITE =
 	__WORLD_ON,
 };
 
-BgmapSpriteROMDef* const CREDITS_SPRITES[] =
+BgmapSpriteROMDef* const HI_COLOR_SWITCH_SPRITES[] =
 {
-	&CREDITS_SPRITE,
+	&HI_COLOR_SWITCH_SP,
 	NULL
 };
 
-EntityROMDef CREDITS_EN =
+AnimatedEntityROMDef HI_COLOR_SWITCH_AE =
 {
-	// class allocator
-	__TYPE(Entity),
+	{
+		// class allocator
+		__TYPE(AnimatedEntity),
 
-	// sprites
-	(SpriteROMDef**)CREDITS_SPRITES,
+		// sprites
+		(SpriteROMDef**)HI_COLOR_SWITCH_SPRITES,
 
-	// collision shapes
-	(ShapeDefinition*)NULL,
+		// collision shapes
+		(ShapeDefinition*)NULL,
 
-	// size
-	// if 0, width and height will be inferred from the first sprite's texture's size
-	{0, 0, 0},
+		// size
+		// if 0, width and height will be inferred from the first sprite's texture's size
+		{0, 0, 0},
 
-	// gameworld's character's type
-	kNoType,
+		// gameworld's character's type
+		kNoType,
 
-	// physical specification
-	(PhysicalSpecification*)NULL,
+		// physical specification
+		(PhysicalSpecification*)NULL,
+	},
+
+	// pointer to the animation definition for the item
+	(AnimationDescription*)&HI_COLOR_SWITCH_ANIM,
+
+	// initial animation
+	"HiColor",
 };
