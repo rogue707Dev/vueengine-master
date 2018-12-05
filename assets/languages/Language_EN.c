@@ -51,7 +51,7 @@ const char* const LANGUAGE_EN_STRINGS[] =
 	"Photos & CGI by STEREO BOY.\n VB Controller & Stand 3D\n  models by Hedgetrimmer.",
 };
 
-const LangROMDef LANGUAGE_EN =
+const LangROMSpec LANGUAGE_EN =
 {
 	// Language Name
 	"English",

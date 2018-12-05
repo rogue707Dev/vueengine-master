@@ -35,8 +35,8 @@
 //											  DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern FontDefinition NUMBER_FONT;
-extern FontDefinition VUENGINE_FONT;
+extern FontSpec NUMBER_FONT;
+extern FontSpec VUENGINE_FONT;
 
 
 #endif

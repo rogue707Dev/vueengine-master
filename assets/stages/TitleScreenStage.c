@@ -32,18 +32,18 @@
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern FontDefinition VUENGINE_FONT;
-extern EntityDefinition CREDITS_EN;
-extern EntityDefinition HI_COLOR_SWITCH_AE;
-extern EntityDefinition LOGO_AE;
-extern EntityDefinition PRESS_START_AG;
+extern FontSpec VUENGINE_FONT;
+extern EntitySpec CREDITS_EN;
+extern EntitySpec HI_COLOR_SWITCH_AE;
+extern EntitySpec LOGO_AE;
+extern EntitySpec PRESS_START_AG;
 
 
 //---------------------------------------------------------------------------------------------------------
 // 												ASSETS
 //---------------------------------------------------------------------------------------------------------
 
-PositionedEntityROMDef TITLE_SCREEN_ST_CHILDREN[] =
+PositionedEntityROMSpec TITLE_SCREEN_ST_CHILDREN[] =
 {
 	{&LOGO_AE, 				{186,  52, 0, 0}, 0, "Logo", NULL, NULL, false},
 	{&PRESS_START_AG, 		{192, 164, 0, 0}, 0, "PrssStrt", NULL, NULL, false},
@@ -58,7 +58,7 @@ PositionedEntityROMDef TITLE_SCREEN_ST_CHILDREN[] =
 // 											PRELOAD LISTS
 //---------------------------------------------------------------------------------------------------------
 
-FontROMDef* const TITLE_SCREEN_ST_FONTS[] =
+FontROMSpec* const TITLE_SCREEN_ST_FONTS[] =
 {
 	&VUENGINE_FONT,
 
@@ -70,7 +70,7 @@ FontROMDef* const TITLE_SCREEN_ST_FONTS[] =
 // 											STAGE DEFINITION
 //---------------------------------------------------------------------------------------------------------
 
-StageROMDef TITLE_SCREEN_ST =
+StageROMSpec TITLE_SCREEN_ST =
 {
 	// allocator
 	__TYPE(Stage),
@@ -159,7 +159,7 @@ StageROMDef TITLE_SCREEN_ST =
             },
 
             // brightness repeat
-            (BrightnessRepeatDefinition*)NULL,
+            (BrightnessRepeatSpec*)NULL,
         },
 
         // palettes' config
@@ -247,13 +247,13 @@ StageROMDef TITLE_SCREEN_ST =
     // assets
     {
         // fonts to preload
-        (FontDefinition**)TITLE_SCREEN_ST_FONTS,
+        (FontSpec**)TITLE_SCREEN_ST_FONTS,
 
 		// char sets to preload
-		(CharSetDefinition**)NULL,
+		(CharSetSpec**)NULL,
 
 		// textures to preload
-		(TextureDefinition**)NULL,
+		(TextureSpec**)NULL,
 
         // background music
         NULL,

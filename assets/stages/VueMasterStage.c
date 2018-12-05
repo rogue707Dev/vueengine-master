@@ -32,15 +32,15 @@
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern FontROMDef NUMBER_FONT;
-extern EntityDefinition VUE_MASTER_IMAGE_1_EN;
+extern FontROMSpec NUMBER_FONT;
+extern EntitySpec VUE_MASTER_IMAGE_1_EN;
 
 
 //---------------------------------------------------------------------------------------------------------
 // 												ASSETS
 //---------------------------------------------------------------------------------------------------------
 
-PositionedEntityROMDef VUE_MASTER_ST_CHILDREN[] =
+PositionedEntityROMSpec VUE_MASTER_ST_CHILDREN[] =
 {
 	{&VUE_MASTER_IMAGE_1_EN,	{192, 112, 0, 0}, 0, "ImageEntity", NULL, NULL, true},
 
@@ -52,7 +52,7 @@ PositionedEntityROMDef VUE_MASTER_ST_CHILDREN[] =
 // 											PRELOAD LISTS
 //---------------------------------------------------------------------------------------------------------
 
-FontROMDef* const VUE_MASTER_ST_FONTS[] =
+FontROMSpec* const VUE_MASTER_ST_FONTS[] =
 {
 	&NUMBER_FONT,
 
@@ -64,7 +64,7 @@ FontROMDef* const VUE_MASTER_ST_FONTS[] =
 // 											STAGE DEFINITION
 //---------------------------------------------------------------------------------------------------------
 
-StageROMDef VUE_MASTER_ST =
+StageROMSpec VUE_MASTER_ST =
 {
 	// allocator
 	__TYPE(Stage),
@@ -153,7 +153,7 @@ StageROMDef VUE_MASTER_ST =
             },
 
             // brightness repeat
-            (BrightnessRepeatDefinition*)NULL,
+            (BrightnessRepeatSpec*)NULL,
         },
 
         // palettes' config
@@ -242,13 +242,13 @@ StageROMDef VUE_MASTER_ST =
     // assets
     {
         // fonts to preload
-        (FontDefinition**)VUE_MASTER_ST_FONTS,
+        (FontSpec**)VUE_MASTER_ST_FONTS,
 
         // char sets to preload
-        (CharSetDefinition**)NULL,
+        (CharSetSpec**)NULL,
 
         // textures to preload
-		(TextureDefinition**)NULL,
+		(TextureSpec**)NULL,
 
         // background music
         NULL,

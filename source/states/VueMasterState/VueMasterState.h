@@ -43,17 +43,17 @@
 //											TYPE DEFINITIONS
 //---------------------------------------------------------------------------------------------------------
 
-typedef struct VueMasterImageDefinition
+typedef struct VueMasterImageSpec
 {
-	/// animated entity definition
-	AnimatedEntityDefinition animatedEntityDefinition;
+	/// animated entity spec
+	AnimatedEntitySpec animatedEntitySpec;
 
 	/// stage color config
 	ColorConfig colorConfig;
 
-} VueMasterImageDefinition;
+} VueMasterImageSpec;
 
-typedef const VueMasterImageDefinition VueMasterImageROMDef;
+typedef const VueMasterImageSpec VueMasterImageROMSpec;
 
 
 //---------------------------------------------------------------------------------------------------------
