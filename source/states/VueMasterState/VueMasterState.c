@@ -35,14 +35,14 @@
 #include <KeypadManager.h>
 #include <MessageDispatcher.h>
 #include <TitleScreenState.h>
-#include <VueMasterImageDefinition.h>
+#include <VueMasterImageSpec.h>
 
 
 //---------------------------------------------------------------------------------------------------------
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern StageROMDef VUE_MASTER_ST;
+extern StageROMSpec VUE_MASTER_ST;
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -75,7 +75,7 @@ void VueMasterState::enter(void* owner __attribute__ ((unused)))
     Game::disableKeypad(Game::getInstance());
 
 	// load stage
-	GameState::loadStage(GameState::safeCast(this), (StageDefinition*)&VUE_MASTER_ST, NULL, true);
+	GameState::loadStage(GameState::safeCast(this), (StageSpec*)&VUE_MASTER_ST, NULL, true);
 
 	// init members
 	this->currentImage = 0;
@@ -93,8 +93,8 @@ void VueMasterState::enter(void* owner __attribute__ ((unused)))
 	VueMasterState::printImageNumber(this);
 
 	// set initial image's color config
-	VueMasterImageROMDef* vueMasterImageDefinition = VUE_MASTER_ENTITIES[this->currentImage];
-	ColorConfig colorConfig = vueMasterImageDefinition->colorConfig;
+	VueMasterImageROMSpec* vueMasterImageSpec = VUE_MASTER_ENTITIES[this->currentImage];
+	ColorConfig colorConfig = vueMasterImageSpec->colorConfig;
 	VueMasterState::setColorConfig(this, colorConfig);
 
 	// start clocks to start animations
@@ -151,17 +151,17 @@ void VueMasterState::switchImage()
 
 	// replace sprites
 	Entity::releaseSprites(Entity::safeCast(this->imageEntity));
-	VueMasterImageROMDef* vueMasterImageDefinition = VUE_MASTER_ENTITIES[this->currentImage];
-	AnimatedEntityROMDef* animatedEntityDefinition = (AnimatedEntityDefinition*)&(vueMasterImageDefinition->animatedEntityDefinition);
-	Entity::addSprites(Entity::safeCast(this->imageEntity), animatedEntityDefinition->entityDefinition.spriteDefinitions);
+	VueMasterImageROMSpec* vueMasterImageSpec = VUE_MASTER_ENTITIES[this->currentImage];
+	AnimatedEntityROMSpec* animatedEntitySpec = (AnimatedEntitySpec*)&(vueMasterImageSpec->animatedEntitySpec);
+	Entity::addSprites(Entity::safeCast(this->imageEntity), animatedEntitySpec->entitySpec.spriteSpecs);
 
-	// replace animation definition and play animation
-	AnimatedEntity::setAnimationDescription(this->imageEntity, animatedEntityDefinition->animationDescription);
-	AnimatedEntity::playAnimation(this->imageEntity, animatedEntityDefinition->initialAnimation);
+	// replace animation spec and play animation
+	AnimatedEntity::setAnimationDescription(this->imageEntity, animatedEntitySpec->animationDescription);
+	AnimatedEntity::playAnimation(this->imageEntity, animatedEntitySpec->initialAnimation);
 	this->animationPlaying = true;
 
 	// set color config
-	ColorConfig colorConfig = vueMasterImageDefinition->colorConfig;
+	ColorConfig colorConfig = vueMasterImageSpec->colorConfig;
 	VueMasterState::setColorConfig(this, colorConfig);
 
 	// print image number
@@ -272,7 +272,7 @@ void VueMasterState::setColorConfig(ColorConfig colorConfig)
 	VIPManager::setBackgroundColor(VIPManager::getInstance(), colorConfig.backgroundColor);
 
 	// brightness repeat
-	BrightnessRepeatDefinition* brightnessRepeat = colorConfig.brightnessRepeat;
+	BrightnessRepeatSpec* brightnessRepeat = colorConfig.brightnessRepeat;
 	if(brightnessRepeat)
 	{
 		VIPManager::setupBrightnessRepeat(VIPManager::getInstance(), colorConfig.brightnessRepeat);

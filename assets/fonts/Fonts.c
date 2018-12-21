@@ -32,9 +32,9 @@
 //												DEFINITIONS
 //---------------------------------------------------------------------------------------------------------
 
-FontDefinition* const __FONTS[] =
+FontSpec* const __FONTS[] =
 {
-	(FontDefinition*)&VUENGINE_FONT,
-	(FontDefinition*)&NUMBER_FONT,
+	(FontSpec*)&VUENGINE_FONT,
+	(FontSpec*)&NUMBER_FONT,
 	NULL
 };
