@@ -1,5 +1,5 @@
 # VUEngine based plugins that the project uses
-PLUGINS = 	vuengine/plugins/states/SplashScreens														\
+PLUGINS = 	vuengine/plugins/states/SplashScreens
 
 # Compiler's output
 COMPILER_OUTPUT         = c
