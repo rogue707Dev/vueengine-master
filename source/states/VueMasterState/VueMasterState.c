@@ -106,7 +106,7 @@ void VueMasterState::enter(void* owner __attribute__ ((unused)))
 		0, // initial delay (in ms)
 		&colorConfig.brightness, // target brightness
 		0, // delay between fading steps (in ms)
-		(void (*)(Object, Object))VueMasterState::onFadeInComplete, // callback function
+		(EventListener)VueMasterState::onFadeInComplete, // callback function
 		Object::safeCast(this) // callback scope
 	);
 }
@@ -146,11 +146,24 @@ void VueMasterState::printImageNumber()
 
 void VueMasterState::switchImage()
 {
+	// Prevent more user inputs before the image has been switched
+	Game::disableKeypad(Game::getInstance());	
+
 	// hide screen
 	Camera::startEffect(Camera::getInstance(), kHide);
 
+	if (__NUMBER_OF_VIEWER_IMAGES <= this->currentImage)
+	{
+		this->currentImage = __NUMBER_OF_VIEWER_IMAGES;
+	}
+
+	if(0 > this->currentImage)
+	{
+		this->currentImage = 0;
+	}
+
 	// replace sprites
-	Entity::releaseSprites(Entity::safeCast(this->imageEntity));
+	Entity::releaseSprites(Entity::safeCast(this->imageEntity), true);
 	VueMasterImageROMSpec* vueMasterImageSpec = VUE_MASTER_ENTITIES[this->currentImage];
 	AnimatedEntityROMSpec* animatedEntitySpec = (AnimatedEntitySpec*)&(vueMasterImageSpec->animatedEntitySpec);
 	Entity::addSprites(Entity::safeCast(this->imageEntity), animatedEntitySpec->entitySpec.spriteSpecs);
@@ -173,9 +186,14 @@ void VueMasterState::switchImage()
 		100, // initial delay (in ms)
 		&colorConfig.brightness, // target brightness
 		0, // delay between fading steps (in ms)
-		NULL, // callback function
-		NULL // callback scope
+		(EventListener)VueMasterState::onSwitchImageFadeIn, // callback function
+		Object::safeCast(this) // callback scope
 	);
+}
+
+void VueMasterState::onSwitchImageFadeIn(Object eventFirer __attribute((unused)))
+{
+	Game::enableKeypad(Game::getInstance());	
 }
 
 void VueMasterState::processUserInput(UserInput userInput)
@@ -200,6 +218,9 @@ void VueMasterState::processUserInput(UserInput userInput)
 		}
 		else if(K_B & userInput.pressedKey)
 		{
+			// Prevent more user inputs 
+			Game::disableKeypad(Game::getInstance());	
+
 			// start fade out effect
 			Brightness brightness = (Brightness){0, 0, 0};
 			Camera::startEffect(Camera::getInstance(),

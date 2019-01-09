@@ -65,7 +65,7 @@ singleton class VueMasterState : GameState
 	AnimatedEntity imageEntity;
 	bool showNumber;
 	bool animationPlaying;
-	u8 currentImage;
+	s8 currentImage;
 
 	static VueMasterState getInstance();
 	override void enter(void* owner);
