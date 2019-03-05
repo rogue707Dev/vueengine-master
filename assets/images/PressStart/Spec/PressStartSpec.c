@@ -155,8 +155,11 @@ AnimatedEntityROMSpec PRESS_START_AG =
 		// class allocator
 		__TYPE(AnimatedEntity),
 
+		// behaviors 
+		NULL,
+
 		// sprites
-		(SpriteROMSpec**)PRESS_START_SPRITES,
+		(SpriteSpec**)PRESS_START_SPRITES,
 
 		// collision shapes
 		(ShapeSpec*)NULL,

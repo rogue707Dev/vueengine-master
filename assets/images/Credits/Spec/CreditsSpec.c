@@ -121,8 +121,11 @@ EntityROMSpec CREDITS_EN =
 	// class allocator
 	__TYPE(Entity),
 
+	// behaviors 
+	NULL,
+
 	// sprites
-	(SpriteROMSpec**)CREDITS_SPRITES,
+	(SpriteSpec**)CREDITS_SPRITES,
 
 	// collision shapes
 	(ShapeSpec*)NULL,

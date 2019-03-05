@@ -175,8 +175,11 @@ AnimatedEntityROMSpec HI_COLOR_SWITCH_AE =
 		// class allocator
 		__TYPE(AnimatedEntity),
 
+		// behaviors 
+		NULL,
+
 		// sprites
-		(SpriteROMSpec**)HI_COLOR_SWITCH_SPRITES,
+		(SpriteSpec**)HI_COLOR_SWITCH_SPRITES,
 
 		// collision shapes
 		(ShapeSpec*)NULL,

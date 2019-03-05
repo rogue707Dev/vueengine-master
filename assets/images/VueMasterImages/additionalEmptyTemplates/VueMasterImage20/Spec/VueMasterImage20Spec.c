@@ -185,8 +185,11 @@ VueMasterImageROMSpec VUE_MASTER_IMAGE_20_EN =
 			// class allocator
 			__TYPE(AnimatedEntity),
 
+			// behaviors 
+			NULL,
+
 			// sprites
-			(SpriteROMSpec**)VUE_MASTER_IMAGE_20_SPRITES,
+			(SpriteSpec**)VUE_MASTER_IMAGE_20_SPRITES,
 
 			// collision shapes
 			(ShapeSpec*)NULL,

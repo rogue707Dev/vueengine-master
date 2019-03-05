@@ -256,8 +256,11 @@ AnimatedEntityROMSpec LOGO_AE =
 		// class allocator
 		__TYPE(AnimatedEntity),
 
+		// behaviors 
+		NULL,
+
 		// sprites
-		(SpriteROMSpec**)LOGO_SPRITES,
+		(SpriteSpec**)LOGO_SPRITES,
 
 		// collision shapes
 		(ShapeSpec*)NULL,
