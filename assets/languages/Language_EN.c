@@ -24,10 +24,14 @@
 
 const char* const LANGUAGE_EN_STRINGS[] =
 {
-	/* STR_REEL_TITLE: */
-	"VUE Master 2",
-	/* STR_REEL_CREDITS: */
+	/* STR_MENU_CREDITS: */
 	"Credits",
+	/* STR_MENU_VIEW: */
+	"View Stereo Reel",
+	/* STR_REEL_CREDITS: */
+	"Photos & CGI by STEREO BOY.\n VB Controller & Stand 3D\n  models by Hedgetrimmer.",
+	/* STR_REEL_TITLE: */
+	"The VUE-MASTER Demo Reel\n   2018 by STEREO BOY",
 	
 };
 

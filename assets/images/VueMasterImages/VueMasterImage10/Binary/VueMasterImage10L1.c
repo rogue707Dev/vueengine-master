@@ -3,8 +3,8 @@
 
 //======================================================================
 //
-//	VueMasterImage10L1, 384x224@2,
-//	+ regular map (flat), not compressed, 48x28
+//	VueMasterImage10L1, 384x224@2, 
+//	+ regular map (flat), not compressed, 48x28 
 //	External tile file: (null).
 //	Total size: 2688 = 2688
 //

@@ -18,8 +18,10 @@ enum LanguageIdentifiers
 
 enum LanguageStrings
 {
-	STR_REEL_TITLE,
+	STR_MENU_CREDITS,
+	STR_MENU_VIEW,
 	STR_REEL_CREDITS,
+	STR_REEL_TITLE,
 	
 };
 
