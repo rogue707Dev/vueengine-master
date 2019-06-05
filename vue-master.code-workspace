@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-            "name": "VUE Master",
+            "name": "VUE-MASTER",
 			"path": "."
 		},
 		{
@@ -15,14 +15,12 @@
 	],
 	"extensions": {
         "recommendations": [
-			//"kr155e.vbde",
-			"ms-vscode.cpptools"
+			//"vuengine.vuengine-ide",
 		]
 	},
 	"settings": {
 		"files.autoGuessEncoding": true,
 		"C_Cpp.autoAddFileAssociations": false,
-		"editor.insertSpaces": false,
-		"files.hotExit": "onExitAndWindowClose"
+		"editor.insertSpaces": false
 	}
 }

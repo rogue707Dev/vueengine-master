@@ -1,13 +1,13 @@
 {
 	"compiler": {
 		"framePointer": false,
-		"optimization": "O2",
+		"optimization": "Ofast",
 		"output": "c",
 		"prologFunctions": false
 	},
 	"romHeader": {
 		"gameCode": "VV2E",
-		"gameTitle": "VUE-MASTER 2        ",
+		"gameTitle": "VUE-MASTER 2",
 		"makerCode": "CR",
 		"revision": 0
 	},

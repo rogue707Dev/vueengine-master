@@ -1,43 +1,68 @@
 {
 	"images": {
 		"folders": {
-			"assets/images/Backgrounds/Repeating/Clouds01": {
+			"assets/fonts/NumberFont": {
+				"template": "font"
+			},
+			"assets/images/Credits": {
 				"template": "entity"
 			},
-			"assets/images/Backgrounds/Repeating/M01": {
-				"name": "BackgroundM01",
+			"assets/images/HiColorSwitch": {
+				"template": "animatedEntity"
+			},
+			"assets/images/Logo": {
+				"template": "animatedEntity"
+			},
+			"assets/images/PressStart": {
+				"template": "animatedEntity"
+			},
+			"assets/images/VueMasterImages/VueMasterImage1": {
+				"name": "VueMasterImage1",
 				"template": "entitySharedTileset"
 			},
-			"assets/images/Backgrounds/Repeating/M02/Left": {
-				"name": "BackgroundM02L",
+			"assets/images/VueMasterImages/VueMasterImage2": {
+				"name": "VueMasterImage2",
+				"template": "entitySharedTileset"
+			},
+			"assets/images/VueMasterImages/VueMasterImage3": {
+				"name": "VueMasterImage3",
+				"template": "entitySharedTileset"
+			},
+			"assets/images/VueMasterImages/VueMasterImage4": {
+				"name": "VueMasterImage4",
+				"template": "entitySharedTileset"
+			},
+			"assets/images/VueMasterImages/VueMasterImage5": {
+				"name": "VueMasterImage5",
+				"template": "entitySharedTileset"
+			},
+			"assets/images/VueMasterImages/VueMasterImage6": {
+				"name": "VueMasterImage6",
+				"template": "entitySharedTileset"
+			},
+			"assets/images/VueMasterImages/VueMasterImage7": {
+				"name": "VueMasterImage7",
+				"template": "entitySharedTileset"
+			},
+			"assets/images/VueMasterImages/VueMasterImage8": {
+				"name": "VueMasterImage8",
+				"template": "entitySharedTileset"
+			},
+			"assets/images/VueMasterImages/VueMasterImage9": {
+				"name": "VueMasterImage9",
+				"template": "entitySharedTileset"
+			},
+			"assets/images/VueMasterImages/VueMasterImage10": {
+				"name": "VueMasterImage10",
+				"template": "entitySharedTileset"
+			},
+			"assets/images/VueMasterImages/VueMasterImage11/Left": {
+				"name": "VueMasterImage11L",
 				"template": "entityStacked"
 			},
-			"assets/images/Backgrounds/Repeating/M02/Right": {
-				"name": "BackgroundM02R",
+			"assets/images/VueMasterImages/VueMasterImage11/Right": {
+				"name": "VueMasterImage11R",
 				"template": "entityStacked"
-			},
-			"assets/images/Backgrounds/Segments": {
-				"template": "entity"
-			},
-			"assets/images/FinishLine": {
-				"template": "animatedEntity"
-			},
-			"assets/images/Gui": {
-				"template": "entity"
-			},
-			"assets/images/Particles/RacerTrail1": {
-				"template": "animatedEntity"
-			},
-			"assets/images/Racer": {
-				"template": "animatedEntity"
-			},
-			"assets/images/TrackSets/01": {
-				"name": "TrackSet01",
-				"template": "entitySharedTileset"
-			},
-			"assets/images/TrackElements/Bridge1": {
-				"name": "Bridge1",
-				"template": "entitySharedTileset"
 			}
 		}
 	}

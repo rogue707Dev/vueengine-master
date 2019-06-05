@@ -5,11 +5,17 @@
 		}
 	},
 	"strings": {
-		"STR_REEL_TITLE": {
-			"EN": "VUE Master 2"
+		"STR_MENU_CREDITS": {
+			"EN": "Credits"
+		},
+		"STR_MENU_VIEW": {
+			"EN": "View Stereo Reel"
 		},
 		"STR_REEL_CREDITS": {
-			"EN": "Credits"
+			"EN": "Photos & CGI by STEREO BOY.\n VB Controller & Stand 3D\n  models by Hedgetrimmer."
+		},
+		"STR_REEL_TITLE": {
+			"EN": "The VUE-MASTER Demo Reel\n   2018 by STEREO BOY"
 		}
 	}
 }

@@ -4,12 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "./assets/**",
-                "./source/**",
-                "./../../vuengine/core/assets/**",
-                "./../../vuengine/core/source/**",
-                "./../../vuengine/plugins/**",
-                "./../../tools/gcc/msys32/v810/v810-win/lib/gcc/v810/4.7.4/include",
-                "./../../tools/gcc/msys32/v810/v810-win/v810/include"
+                "./source/**"
             ],
             "defines": [
                 "_DEBUG",
