@@ -1,0 +1,15 @@
+{
+	"languages": {
+		"EN": {
+			"name": "English"
+		}
+	},
+	"strings": {
+		"STR_REEL_TITLE": {
+			"EN": "VUE Master 2"
+		},
+		"STR_REEL_CREDITS": {
+			"EN": "Credits"
+		}
+	}
+}

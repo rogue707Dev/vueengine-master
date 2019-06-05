@@ -1,0 +1,5 @@
+{
+	"plugins": [
+		"vuengine/states/SplashScreens"
+	]
+}

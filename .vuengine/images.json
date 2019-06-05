@@ -1,0 +1,44 @@
+{
+	"images": {
+		"folders": {
+			"assets/images/Backgrounds/Repeating/Clouds01": {
+				"template": "entity"
+			},
+			"assets/images/Backgrounds/Repeating/M01": {
+				"name": "BackgroundM01",
+				"template": "entitySharedTileset"
+			},
+			"assets/images/Backgrounds/Repeating/M02/Left": {
+				"name": "BackgroundM02L",
+				"template": "entityStacked"
+			},
+			"assets/images/Backgrounds/Repeating/M02/Right": {
+				"name": "BackgroundM02R",
+				"template": "entityStacked"
+			},
+			"assets/images/Backgrounds/Segments": {
+				"template": "entity"
+			},
+			"assets/images/FinishLine": {
+				"template": "animatedEntity"
+			},
+			"assets/images/Gui": {
+				"template": "entity"
+			},
+			"assets/images/Particles/RacerTrail1": {
+				"template": "animatedEntity"
+			},
+			"assets/images/Racer": {
+				"template": "animatedEntity"
+			},
+			"assets/images/TrackSets/01": {
+				"name": "TrackSet01",
+				"template": "entitySharedTileset"
+			},
+			"assets/images/TrackElements/Bridge1": {
+				"name": "Bridge1",
+				"template": "entitySharedTileset"
+			}
+		}
+	}
+}

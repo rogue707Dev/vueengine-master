@@ -1,16 +1,16 @@
 {
 	"folders": [
 		{
-            "name": "Project",
+            "name": "VUE Master",
 			"path": "."
 		},
 		{
 			"name": "VUEngine",
-			"path": "..\\..\\..\\libs\\vuengine\\core"
+			"path": "../../vuengine/core"
 		},
 		{
 			"name": "Plugins",
-			"path": "..\\..\\..\\libs\\vuengine\\plugins"
+			"path": "../../vuengine/plugins"
 		}
 	],
 	"extensions": {
