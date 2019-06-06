@@ -41,7 +41,7 @@ extern BYTE NumberFontTiles[];
 CharSetROMSpec NUMBER_FONT_CH =
 {
 	// number of chars
-	11,
+	12,
 
 	// allocation type
 	__NOT_ANIMATED,

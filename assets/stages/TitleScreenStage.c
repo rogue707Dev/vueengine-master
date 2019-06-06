@@ -36,7 +36,7 @@ extern FontSpec VUENGINE_FONT;
 extern EntitySpec CREDITS_EN;
 extern EntitySpec HI_COLOR_SWITCH_AE;
 extern EntitySpec LOGO_AE;
-extern EntitySpec PRESS_START_AG;
+extern EntitySpec PRESS_START_AE;
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -46,7 +46,7 @@ extern EntitySpec PRESS_START_AG;
 PositionedEntityROMSpec TITLE_SCREEN_ST_CHILDREN[] =
 {
 	{&LOGO_AE, 				{186,  52, 0, 0}, 0, "Logo", NULL, NULL, false},
-	{&PRESS_START_AG, 		{192, 164, 0, 0}, 0, "PrssStrt", NULL, NULL, false},
+	{&PRESS_START_AE, 		{192, 164, 0, 0}, 0, "PrssStrt", NULL, NULL, false},
 	{&HI_COLOR_SWITCH_AE, 	{360, 196, 0, 0}, 0, "HiColor", NULL, NULL, false},
 	{&CREDITS_EN, 			{176, 212, 0, 0}, 0, NULL, NULL, NULL, false},
 
