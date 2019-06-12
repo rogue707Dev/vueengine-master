@@ -19,7 +19,7 @@
 			"fadeDelay": 8
 		},
 		"palettes": {
-			"printingPalette": 0,
+			"printingPalette": 2,
 			"bgMap": {
 				"0": "0b11100100",
 				"1": "0b11100000",

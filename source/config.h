@@ -345,7 +345,7 @@
 //											COLOR PALETTES
 //---------------------------------------------------------------------------------------------------------
 
-#define __PRINTING_PALETTE							0
+#define __PRINTING_PALETTE							2
 
 // default palette values, actual values are set in stage specs
 #define __BGMAP_PALETTE_0							0b11100100
