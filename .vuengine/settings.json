@@ -103,18 +103,9 @@
 		"stopVelocityThreshold": 8,
 		"stopBouncingVelocityThreshold": 48
 	},
-	"project": {
-		"name": "VUE-MASTER"
-	},
 	"random": {
 		"addUserInputAndTimeToRandomSeed": false,
 		"seedCycles": 2
-	},
-	"romHeader": {
-		"gameCode": "VV2E",
-		"gameTitle": "VUE-MASTER 2",
-		"makerCode": "CR",
-		"revision": 0
 	},
 	"sections": {
 		"initializedData": ".sdata",
