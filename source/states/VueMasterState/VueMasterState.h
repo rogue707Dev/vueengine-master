@@ -65,6 +65,7 @@ singleton class VueMasterState : GameState
 	AnimatedEntity imageEntity;
 	bool showNumber;
 	bool animationPlaying;
+	bool currentIsVideo;
 	s8 currentImage;
 
 	static VueMasterState getInstance();

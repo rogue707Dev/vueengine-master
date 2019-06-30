@@ -1,7 +1,7 @@
 {
 	"images": {
 		"folders": {
-			"assets/fonts/NumberFont": {
+			"assets/fonts/GuiFont": {
 				"template": "font"
 			},
 			"assets/images/Credits": {

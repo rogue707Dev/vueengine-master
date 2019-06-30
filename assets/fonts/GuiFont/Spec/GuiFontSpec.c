@@ -31,7 +31,7 @@
 //												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE NumberFontTiles[];
+extern BYTE GuiFontTiles[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -41,13 +41,13 @@ extern BYTE NumberFontTiles[];
 CharSetROMSpec NUMBER_FONT_CH =
 {
 	// number of chars
-	12,
+	15,
 
 	// allocation type
 	__NOT_ANIMATED,
 
 	// char spec
-	NumberFontTiles,
+	GuiFontTiles,
 };
 
 FontROMSpec NUMBER_FONT =
@@ -59,12 +59,12 @@ FontROMSpec NUMBER_FONT =
 	46,
 
 	// number of characters in this font
-	12,
+	15,
 
 	// size of a single character (in chars) ({width, height})
 	{1, 1},
 
 	// font's name
-	"NumberFont",
+	"GuiFont",
 };
 

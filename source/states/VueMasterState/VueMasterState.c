@@ -39,6 +39,20 @@
 
 
 //---------------------------------------------------------------------------------------------------------
+// 												DEFINES
+//---------------------------------------------------------------------------------------------------------
+
+#define __NUMBER_INDICATOR_X_POS				42
+#define __NUMBER_INDICATOR_Y_POS				1
+
+#define __HI_COLOR_INDICATOR_X_POS				46
+#define __HI_COLOR_INDICATOR_Y_POS				26
+
+#define __VIDEO_CONTROLS_INDICATOR_X_POS		1
+#define __VIDEO_CONTROLS_INDICATOR_Y_POS		1
+
+
+//---------------------------------------------------------------------------------------------------------
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
@@ -58,6 +72,7 @@ void VueMasterState::constructor()
 	this->showNumber = false;
 	this->imageEntity = NULL;
 	this->animationPlaying = false;
+	this->currentIsVideo = false;
 }
 
 void VueMasterState::destructor()
@@ -88,14 +103,20 @@ void VueMasterState::enter(void* owner __attribute__ ((unused)))
 		false
 	));
 
-	// print image number
-	Printing::setPalette(Printing::getInstance(), 3);
-	VueMasterState::printImageNumber(this);
-
 	// set initial image's color config
 	VueMasterImageROMSpec* vueMasterImageSpec = VUE_MASTER_ENTITIES[this->currentImage];
 	ColorConfig colorConfig = vueMasterImageSpec->colorConfig;
 	VueMasterState::setColorConfig(this, colorConfig);
+
+	// determine if initial image is video
+	AnimatedEntityROMSpec* animatedEntitySpec = (AnimatedEntitySpec*)&(vueMasterImageSpec->animatedEntitySpec);
+	this->currentIsVideo = (animatedEntitySpec->animationDescription != NULL);
+
+	// print minimal gui
+	Printing::setPalette(Printing::getInstance(), 3);
+	VueMasterState::printImageNumber(this);
+	VueMasterState::printVideoControls(this);
+	//VueMasterState::printHiColorIndicator(this);
 
 	// start clocks to start animations
 	GameState::startClocks(GameState::safeCast(this));
@@ -122,26 +143,53 @@ void VueMasterState::printImageNumber()
 #if(__NUMBER_OF_VIEWER_IMAGES < 10)
 	if (this->showNumber)
 	{
-		Printing::text(Printing::getInstance(), "./.", 45, 0, "NumberFont");
-		Printing::int(Printing::getInstance(), this->currentImage + 1, 45, 0, "NumberFont");
-		Printing::int(Printing::getInstance(), __NUMBER_OF_VIEWER_IMAGES, 47, 0, "NumberFont");
+		Printing::text(Printing::getInstance(), "./.", __NUMBER_INDICATOR_X_POS + 2, __NUMBER_INDICATOR_Y_POS, "GuiFont");
+		Printing::int(Printing::getInstance(), this->currentImage + 1, __NUMBER_INDICATOR_X_POS + 2, __NUMBER_INDICATOR_Y_POS, "GuiFont");
+		Printing::int(Printing::getInstance(), __NUMBER_OF_VIEWER_IMAGES, __NUMBER_INDICATOR_X_POS + 4, __NUMBER_INDICATOR_Y_POS, "GuiFont");
 	}
 	else
 	{
-		Printing::text(Printing::getInstance(), "...", 45, 0, "NumberFont");
+		Printing::text(Printing::getInstance(), "...", __NUMBER_INDICATOR_X_POS + 2, __NUMBER_INDICATOR_Y_POS, "GuiFont");
 	}
 #else
 	if (this->showNumber)
 	{
-		Printing::text(Printing::getInstance(), "00/..", 43, 0, "NumberFont");
-		Printing::int(Printing::getInstance(), this->currentImage + 1, (this->currentImage>8 ? 43 : 44), 0, "NumberFont");
-		Printing::int(Printing::getInstance(), __NUMBER_OF_VIEWER_IMAGES, 46, 0, "NumberFont");
+		Printing::text(Printing::getInstance(), "00/..", __NUMBER_INDICATOR_X_POS, __NUMBER_INDICATOR_Y_POS, "GuiFont");
+		Printing::int(Printing::getInstance(), this->currentImage + 1, (this->currentImage>8 ? __NUMBER_INDICATOR_X_POS : __NUMBER_INDICATOR_X_POS + 1), __NUMBER_INDICATOR_Y_POS, "GuiFont");
+		Printing::int(Printing::getInstance(), __NUMBER_OF_VIEWER_IMAGES, __NUMBER_INDICATOR_X_POS + 3, __NUMBER_INDICATOR_Y_POS, "GuiFont");
 	}
 	else
 	{
-		Printing::text(Printing::getInstance(), ".....", 43, 0, "NumberFont");
+		Printing::text(Printing::getInstance(), ".....", __NUMBER_INDICATOR_X_POS, __NUMBER_INDICATOR_Y_POS, "GuiFont");
 	}
 #endif
+}
+
+void VueMasterState::printVideoControls()
+{
+	if(this->currentIsVideo) 
+	{
+		if (this->animationPlaying)
+		{
+			// print playing
+			Printing::text(Printing::getInstance(), ";", __VIDEO_CONTROLS_INDICATOR_X_POS, __VIDEO_CONTROLS_INDICATOR_Y_POS, "GuiFont");
+		} 
+		else
+		{
+			// print paused
+			Printing::text(Printing::getInstance(), ":", __VIDEO_CONTROLS_INDICATOR_X_POS, __VIDEO_CONTROLS_INDICATOR_Y_POS, "GuiFont");
+		} 
+	}
+	else 
+	{
+		// print whitespace
+		Printing::text(Printing::getInstance(), ".", __VIDEO_CONTROLS_INDICATOR_X_POS, __VIDEO_CONTROLS_INDICATOR_Y_POS, "GuiFont");
+	} 
+}
+
+void VueMasterState::printHiColorIndicator()
+{
+	Printing::text(Printing::getInstance(), "<", __HI_COLOR_INDICATOR_X_POS, __HI_COLOR_INDICATOR_Y_POS, "GuiFont");
 }
 
 void VueMasterState::switchImage()
@@ -168,10 +216,13 @@ void VueMasterState::switchImage()
 	AnimatedEntityROMSpec* animatedEntitySpec = (AnimatedEntitySpec*)&(vueMasterImageSpec->animatedEntitySpec);
 	Entity::addSprites(Entity::safeCast(this->imageEntity), animatedEntitySpec->entitySpec.spriteSpecs);
 
+	this->currentIsVideo = (animatedEntitySpec->animationDescription != NULL);
+
 	// replace animation spec and play animation
 	AnimatedEntity::setAnimationDescription(this->imageEntity, animatedEntitySpec->animationDescription);
 	AnimatedEntity::playAnimation(this->imageEntity, animatedEntitySpec->initialAnimation);
 	this->animationPlaying = true;
+	VueMasterState::printVideoControls(this);
 
 	// set color config
 	ColorConfig colorConfig = vueMasterImageSpec->colorConfig;
@@ -249,6 +300,7 @@ void VueMasterState::processUserInput(UserInput userInput)
 				AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->imageEntity), true);
 				//AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->arrowsEntity), "Visible");
 				this->animationPlaying = !this->animationPlaying;
+				VueMasterState::printVideoControls(this);
 			}
 
 			// show next frame
@@ -265,6 +317,7 @@ void VueMasterState::processUserInput(UserInput userInput)
 				AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->imageEntity), true);
 				//AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->arrowsEntity), "Visible");
 				this->animationPlaying = !this->animationPlaying;
+				VueMasterState::printVideoControls(this);
 			}
 
 			// show previous frame
@@ -275,6 +328,7 @@ void VueMasterState::processUserInput(UserInput userInput)
 			// pause/resume animation
 			AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->imageEntity), this->animationPlaying);
 			this->animationPlaying = !this->animationPlaying;
+			VueMasterState::printVideoControls(this);
 			if(this->animationPlaying)
 			{
 				//AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->arrowsEntity), "Hidden");
