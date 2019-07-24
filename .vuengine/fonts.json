@@ -1,6 +1,4 @@
-{
-	"fonts": [
-		"VUENGINE_FONT",
-		"NUMBER_FONT"
-	]
-}
+[
+	"VUENGINE_FONT",
+	"NUMBER_FONT"
+]

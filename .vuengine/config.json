@@ -38,7 +38,8 @@
 		"framePointer": false,
 		"optimization": "Ofast",
 		"output": "c",
-		"prologFunctions": false
+		"prologFunctions": false,
+		"scrambleBinary": false
 	},
 	"debug": {
 		"alertStackOverflow": false,
@@ -145,6 +146,7 @@
 			"offset": {
 				"x": 0,
 				"y": 0,
+				"parallax": 0,
 				"z": 0
 			},
 			"printableArea": 1792

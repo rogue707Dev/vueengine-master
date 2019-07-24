@@ -1,69 +1,67 @@
 {
-	"images": {
-		"folders": {
-			"assets/fonts/GuiFont": {
-				"template": "font"
-			},
-			"assets/images/Credits": {
-				"template": "entity"
-			},
-			"assets/images/HiColorSwitch": {
-				"template": "animatedEntity"
-			},
-			"assets/images/Logo": {
-				"template": "animatedEntity"
-			},
-			"assets/images/PressStart": {
-				"template": "animatedEntity"
-			},
-			"assets/images/VueMasterImages/VueMasterImage1": {
-				"name": "VueMasterImage1",
-				"template": "entitySharedTileset"
-			},
-			"assets/images/VueMasterImages/VueMasterImage2": {
-				"name": "VueMasterImage2",
-				"template": "entitySharedTileset"
-			},
-			"assets/images/VueMasterImages/VueMasterImage3": {
-				"name": "VueMasterImage3",
-				"template": "entitySharedTileset"
-			},
-			"assets/images/VueMasterImages/VueMasterImage4": {
-				"name": "VueMasterImage4",
-				"template": "entitySharedTileset"
-			},
-			"assets/images/VueMasterImages/VueMasterImage5": {
-				"name": "VueMasterImage5",
-				"template": "entitySharedTileset"
-			},
-			"assets/images/VueMasterImages/VueMasterImage6": {
-				"name": "VueMasterImage6",
-				"template": "entitySharedTileset"
-			},
-			"assets/images/VueMasterImages/VueMasterImage7": {
-				"name": "VueMasterImage7",
-				"template": "entitySharedTileset"
-			},
-			"assets/images/VueMasterImages/VueMasterImage8": {
-				"name": "VueMasterImage8",
-				"template": "entitySharedTileset"
-			},
-			"assets/images/VueMasterImages/VueMasterImage9": {
-				"name": "VueMasterImage9",
-				"template": "entitySharedTileset"
-			},
-			"assets/images/VueMasterImages/VueMasterImage10": {
-				"name": "VueMasterImage10",
-				"template": "entitySharedTileset"
-			},
-			"assets/images/VueMasterImages/VueMasterImage11/Left": {
-				"name": "VueMasterImage11L",
-				"template": "entityStacked"
-			},
-			"assets/images/VueMasterImages/VueMasterImage11/Right": {
-				"name": "VueMasterImage11R",
-				"template": "entityStacked"
-			}
+	"folders": {
+		"assets/fonts/GuiFont": {
+			"template": "font"
+		},
+		"assets/images/Credits": {
+			"template": "entity"
+		},
+		"assets/images/HiColorSwitch": {
+			"template": "animatedEntity"
+		},
+		"assets/images/Logo": {
+			"template": "animatedEntity"
+		},
+		"assets/images/PressStart": {
+			"template": "animatedEntity"
+		},
+		"assets/images/VueMasterImages/VueMasterImage1": {
+			"name": "VueMasterImage1",
+			"template": "entitySharedTileset"
+		},
+		"assets/images/VueMasterImages/VueMasterImage2": {
+			"name": "VueMasterImage2",
+			"template": "entitySharedTileset"
+		},
+		"assets/images/VueMasterImages/VueMasterImage3": {
+			"name": "VueMasterImage3",
+			"template": "entitySharedTileset"
+		},
+		"assets/images/VueMasterImages/VueMasterImage4": {
+			"name": "VueMasterImage4",
+			"template": "entitySharedTileset"
+		},
+		"assets/images/VueMasterImages/VueMasterImage5": {
+			"name": "VueMasterImage5",
+			"template": "entitySharedTileset"
+		},
+		"assets/images/VueMasterImages/VueMasterImage6": {
+			"name": "VueMasterImage6",
+			"template": "entitySharedTileset"
+		},
+		"assets/images/VueMasterImages/VueMasterImage7": {
+			"name": "VueMasterImage7",
+			"template": "entitySharedTileset"
+		},
+		"assets/images/VueMasterImages/VueMasterImage8": {
+			"name": "VueMasterImage8",
+			"template": "entitySharedTileset"
+		},
+		"assets/images/VueMasterImages/VueMasterImage9": {
+			"name": "VueMasterImage9",
+			"template": "entitySharedTileset"
+		},
+		"assets/images/VueMasterImages/VueMasterImage10": {
+			"name": "VueMasterImage10",
+			"template": "entitySharedTileset"
+		},
+		"assets/images/VueMasterImages/VueMasterImage11/Left": {
+			"name": "VueMasterImage11L",
+			"template": "entityStacked"
+		},
+		"assets/images/VueMasterImages/VueMasterImage11/Right": {
+			"name": "VueMasterImage11R",
+			"template": "entityStacked"
 		}
 	}
 }
