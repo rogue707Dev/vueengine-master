@@ -1,5 +1,7 @@
 {
-	"gameCode": "VV2E",
+	"gameCodeSystem": "V",
+	"gameCodeId": "V2",
+	"gameCodeLanguage": "E",
 	"gameTitle": "VUE-MASTER 2",
 	"makerCode": "CR",
 	"revision": 0
