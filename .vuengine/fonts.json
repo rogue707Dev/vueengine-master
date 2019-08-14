@@ -1,4 +1,12 @@
 [
-	"VUENGINE_FONT",
-	"NUMBER_FONT"
+	{
+		"name": "Number",
+		"image": "GuiFont/GuiFont",
+		"offset": 46,
+		"characterCount": 15,
+		"size": {
+			"x": 1,
+			"y": 1
+		}
+	}
 ]

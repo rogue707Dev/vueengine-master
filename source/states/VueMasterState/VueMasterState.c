@@ -143,59 +143,59 @@ void VueMasterState::printImageNumber()
 #if(__NUMBER_OF_VIEWER_IMAGES < 10)
 	if (this->showNumber)
 	{
-		Printing::text(Printing::getInstance(), "./.", __NUMBER_INDICATOR_X_POS + 2, __NUMBER_INDICATOR_Y_POS, "GuiFont");
-		Printing::int(Printing::getInstance(), this->currentImage + 1, __NUMBER_INDICATOR_X_POS + 2, __NUMBER_INDICATOR_Y_POS, "GuiFont");
-		Printing::int(Printing::getInstance(), __NUMBER_OF_VIEWER_IMAGES, __NUMBER_INDICATOR_X_POS + 4, __NUMBER_INDICATOR_Y_POS, "GuiFont");
+		Printing::text(Printing::getInstance(), "./.", __NUMBER_INDICATOR_X_POS + 2, __NUMBER_INDICATOR_Y_POS, "Number");
+		Printing::int(Printing::getInstance(), this->currentImage + 1, __NUMBER_INDICATOR_X_POS + 2, __NUMBER_INDICATOR_Y_POS, "Number");
+		Printing::int(Printing::getInstance(), __NUMBER_OF_VIEWER_IMAGES, __NUMBER_INDICATOR_X_POS + 4, __NUMBER_INDICATOR_Y_POS, "Number");
 	}
 	else
 	{
-		Printing::text(Printing::getInstance(), "...", __NUMBER_INDICATOR_X_POS + 2, __NUMBER_INDICATOR_Y_POS, "GuiFont");
+		Printing::text(Printing::getInstance(), "...", __NUMBER_INDICATOR_X_POS + 2, __NUMBER_INDICATOR_Y_POS, "Number");
 	}
 #else
 	if (this->showNumber)
 	{
-		Printing::text(Printing::getInstance(), "00/..", __NUMBER_INDICATOR_X_POS, __NUMBER_INDICATOR_Y_POS, "GuiFont");
-		Printing::int(Printing::getInstance(), this->currentImage + 1, (this->currentImage>8 ? __NUMBER_INDICATOR_X_POS : __NUMBER_INDICATOR_X_POS + 1), __NUMBER_INDICATOR_Y_POS, "GuiFont");
-		Printing::int(Printing::getInstance(), __NUMBER_OF_VIEWER_IMAGES, __NUMBER_INDICATOR_X_POS + 3, __NUMBER_INDICATOR_Y_POS, "GuiFont");
+		Printing::text(Printing::getInstance(), "00/..", __NUMBER_INDICATOR_X_POS, __NUMBER_INDICATOR_Y_POS, "Number");
+		Printing::int(Printing::getInstance(), this->currentImage + 1, (this->currentImage>8 ? __NUMBER_INDICATOR_X_POS : __NUMBER_INDICATOR_X_POS + 1), __NUMBER_INDICATOR_Y_POS, "Number");
+		Printing::int(Printing::getInstance(), __NUMBER_OF_VIEWER_IMAGES, __NUMBER_INDICATOR_X_POS + 3, __NUMBER_INDICATOR_Y_POS, "Number");
 	}
 	else
 	{
-		Printing::text(Printing::getInstance(), ".....", __NUMBER_INDICATOR_X_POS, __NUMBER_INDICATOR_Y_POS, "GuiFont");
+		Printing::text(Printing::getInstance(), ".....", __NUMBER_INDICATOR_X_POS, __NUMBER_INDICATOR_Y_POS, "Number");
 	}
 #endif
 }
 
 void VueMasterState::printVideoControls()
 {
-	if(this->currentIsVideo) 
+	if(this->currentIsVideo)
 	{
 		if (this->animationPlaying)
 		{
 			// print playing
-			Printing::text(Printing::getInstance(), ";", __VIDEO_CONTROLS_INDICATOR_X_POS, __VIDEO_CONTROLS_INDICATOR_Y_POS, "GuiFont");
-		} 
+			Printing::text(Printing::getInstance(), ";", __VIDEO_CONTROLS_INDICATOR_X_POS, __VIDEO_CONTROLS_INDICATOR_Y_POS, "Number");
+		}
 		else
 		{
 			// print paused
-			Printing::text(Printing::getInstance(), ":", __VIDEO_CONTROLS_INDICATOR_X_POS, __VIDEO_CONTROLS_INDICATOR_Y_POS, "GuiFont");
-		} 
+			Printing::text(Printing::getInstance(), ":", __VIDEO_CONTROLS_INDICATOR_X_POS, __VIDEO_CONTROLS_INDICATOR_Y_POS, "Number");
+		}
 	}
-	else 
+	else
 	{
 		// print whitespace
-		Printing::text(Printing::getInstance(), ".", __VIDEO_CONTROLS_INDICATOR_X_POS, __VIDEO_CONTROLS_INDICATOR_Y_POS, "GuiFont");
-	} 
+		Printing::text(Printing::getInstance(), ".", __VIDEO_CONTROLS_INDICATOR_X_POS, __VIDEO_CONTROLS_INDICATOR_Y_POS, "Number");
+	}
 }
 
 void VueMasterState::printHiColorIndicator()
 {
-	Printing::text(Printing::getInstance(), "<", __HI_COLOR_INDICATOR_X_POS, __HI_COLOR_INDICATOR_Y_POS, "GuiFont");
+	Printing::text(Printing::getInstance(), "<", __HI_COLOR_INDICATOR_X_POS, __HI_COLOR_INDICATOR_Y_POS, "Number");
 }
 
 void VueMasterState::switchImage()
 {
 	// Prevent more user inputs before the image has been switched
-	Game::disableKeypad(Game::getInstance());	
+	Game::disableKeypad(Game::getInstance());
 
 	// hide screen
 	Camera::startEffect(Camera::getInstance(), kHide);
@@ -244,7 +244,7 @@ void VueMasterState::switchImage()
 
 void VueMasterState::onSwitchImageFadeIn(Object eventFirer __attribute((unused)))
 {
-	Game::enableKeypad(Game::getInstance());	
+	Game::enableKeypad(Game::getInstance());
 }
 
 void VueMasterState::processUserInput(UserInput userInput)
@@ -269,8 +269,8 @@ void VueMasterState::processUserInput(UserInput userInput)
 		}
 		else if(K_B & userInput.pressedKey)
 		{
-			// Prevent more user inputs 
-			Game::disableKeypad(Game::getInstance());	
+			// Prevent more user inputs
+			Game::disableKeypad(Game::getInstance());
 
 			// start fade out effect
 			Brightness brightness = (Brightness){0, 0, 0};

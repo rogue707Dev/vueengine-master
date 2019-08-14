@@ -16,7 +16,7 @@
 
 FontSpec* const __FONTS[] =
 {
-	(FontSpec*)&VUENGINE_FONT,
+	(FontSpec*)&DEFAULT_FONT,
 	(FontSpec*)&NUMBER_FONT,
 	
 	NULL
